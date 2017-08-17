@@ -48,13 +48,13 @@
             <a class="item">
               Qui Sommes-nous?
             </a>
-            <a class="item">
+            <a class="item" href="{{URL::to('projet')}}">
               Nos Projets
             </a>
-            <a class="item">
+            <a class="item" href="{{URL::to('partenaire')}}">
               Nos Partenaires
             </a>
-            <a class="item">
+            <a class="item" href="{{URL::to('evenement')}}">
               Nos Événements
             </a>
             <a class="item">
@@ -63,7 +63,7 @@
               @else
               <div class="ui dropdown">
                 <div class="text">
-                  <img class="ui avatar image" src="images/man.png" alt="" >
+                  <img class="ui avatar image" src="images/man.jpg" alt="" >
                   {{ Auth::user()->name }}
                 </div>
                 <i class="dropdown icon"></i>
@@ -96,11 +96,13 @@
         <div class="ten wide column middle aligned" id="navigation_menu">
           <div class="ui five stackable item secondary menu" >
             <a href="" class="item"> <p class="ui orange small header">Qui Sommes-nous?</p></a>
-            <a href="" class="item"><p class="ui orange small header">Nos Projets</p></a>
-            <a href="" class="item">
+            <a href="{{URL::to('projet')}}" class="item"><p class="ui orange small header">Nos Projets</p></a>
+            <a href="{{URL::to('evenement')}}" class="item">
               <p class="ui orange small header">Nos Événements</p></a>
-              <a href="" class="item"><p class="ui orange small header">Nos Partenaires</p></a>
-             <a class="item">
+              
+              <a href="{{URL::to('partenaire')}}" class="item"><p class="ui orange small header">Nos Partenaires</p></a>
+
+             <a class="item" href="{{URL::to('login')}}">
               @if(Auth::guest())
               <div class="ui orange button">Se connecter</div>
               @else
@@ -143,7 +145,7 @@
               <h4 class="ui orange header" id="footer_titles">LABEL-INITIATIVE</h4>
               <div class="ui inverted link list" id="footer_items">
                 <a href="#" class="item">Qui sommes-nous</a>
-                <a href="#" class="item">Espace Pr esse</a>
+                <a href="#" class="item">Espace Presse</a>
                 <a href="#" class="item">Contact</a>
                 <a href="#" class="item">Réclamation</a>
               </div>

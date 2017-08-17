@@ -12,14 +12,14 @@
 					<div class="field">
 						<label>Nom du l'utilisateur</label>
 						<div class="ui left icon input">
-							<input type="text" name="name" placeholder="Nom Complet" required>
+							<input type="text" name="name" value="{{$user->name}}" required>
 							<i class="user icon orange"></i>
 						</div>
 					</div>
 					<div class="field">
 						<label>Nom du l'utilisateur</label>
 						<div class="ui left icon input">
-							<input type="email" name="email" placeholder="email" required>
+							<input type="email" name="email" value="{{$user->email}}" required>
 							<i class="mail icon orange"></i>
 						</div>
 					</div>

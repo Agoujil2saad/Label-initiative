@@ -1,10 +1,10 @@
 @extends('layouts.master_1')
 @section('title', '| Users')
 @section('content')
-<div class="  row">
-  <h1 class="ui header">User administration
-  <a href="{{route('roles.index')}}" class="ui green button">Roles</a>
-  <a href="{{route('permissions.index')}}" class="ui blue button">Permissions</a>
+ <h1 class="ui center aligned icon header">
+    <i class="circular privacy icon"></i> gestion des utilisateurs <br>
+  <a href="{{route('roles.index')}}" class="ui green button"> gestion des Roles</a>
+  <a href="{{route('permissions.index')}}" class="ui blue button">gestion des Permissions</a>
   </h1>
   <table class="ui very padded unstackable celled table">
     <thead>
@@ -24,10 +24,10 @@
                     <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
                     <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
                     <td>
-                    <a href="{{ route('users.edit', $user->id) }}" class="ui positive button" style="margin-right: 3px;">Edit</a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="ui left floated button">Edit</a>
 
                     {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'ui negative button']) !!}
+                    {!! Form::submit('Delete', ['class' => 'ui right floated red button']) !!}
                     {!! Form::close() !!}
 
                     </td>
@@ -36,10 +36,10 @@
     </tbody>
     </table>
 
-             <a href="{{ route('users.create') }}" class="ui animated button">
+             <a href="{{ route('users.create') }}" class="ui  animated blue button" style="margin:2em;">
 <div class="visible content">Add User</div>
-  <div class="hidden content">
-    <i class="add user icon"></i>
+  <div class="hidden  content">
+    <i class="add  user  icon"></i>
   </div>
          </a>
     </div>

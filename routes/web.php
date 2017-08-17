@@ -26,3 +26,5 @@ Route::resource('roles', 'RoleController');
 Route::resource('permissions', 'PermissionController');
 
 Route::resource('projet', 'ProjetController');
+Route::resource('partenaire', 'PartenaireController');
+Route::resource('evenement', 'EvenementController');

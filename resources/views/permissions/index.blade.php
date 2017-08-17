@@ -2,11 +2,12 @@
 @section('title', '| Permissions')
 @section('content')
 <div class="row">
-  <h1 class="ui header">Available Permissions
-  <a href="{{route('roles.index')}}" class="ui green button">Roles</a>
-  <a href="{{route('users.index')}}" class="ui blue button">users</a>
+ <h1 class="ui center aligned icon header">
+    <i class="circular privacy icon"></i> gestion des Permissions <br>
+  <a href="{{route('roles.index')}}" class="ui green button"> gestion des Roles</a>
+  <a href="{{route('users.index')}}" class="ui blue button">gestion des Utilisateurs</a>
   </h1>
-  <table class="ui unstackable celled table">
+  <table class="ui unstackable very padded celled table">
     <thead>
       <tr>
         <th>Permissions</th>
@@ -18,16 +19,16 @@
       <tr>
         <td>{{ $permission->name }}</td>
         <td>
-        <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="ui blue button">Edit</a>
+        <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="ui  left floated  button">Edit</a>
         {!! Form::open(['method' => 'DELETE', 'route' => ['permissions.destroy', $permission->id] ]) !!}
-        {!! Form::submit('Delete', ['class' => 'ui red button']) !!}
+        {!! Form::submit('Delete', ['class' => 'ui red right floated button']) !!}
         {!! Form::close() !!}
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
-<a href="{{ URL::to('permissions/create') }}" class="ui animated button">
+<a href="{{ URL::to('permissions/create') }}" class="ui animated button" style="margin:2em;">
   <div class="visible content">Add permission</div>
   <div class="hidden content">
     <i class="plug icon"></i>

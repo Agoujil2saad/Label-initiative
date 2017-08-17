@@ -19,7 +19,7 @@
 				</div>
 				<div class="eight wide column">
 					<div class="grouped fields">
-						<label>assign permission</label>
+						<label>attribu une  permission</label>
 						@foreach($permissions as $permission)
 						<div class="field">
 							<div class="ui radio checkbox">

@@ -17,7 +17,7 @@ class ClearanceMiddleware {
         if (Auth::user()->hasPermissionTo('Administer roles & permissions')) //If user has this //permission
     {
             return $next($request);
-        }
+    }
 
         if ($request->is('projets/create'))//If user is creating a projet
          {
