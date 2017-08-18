@@ -98,6 +98,7 @@ class ProjetController extends Controller
             'description' =>'required',
             'montant_estime'=>'required'
             ]);
+
 $projet = Projet::findOrFail($id); //Find post of id = $id
 
         $title = $request->input('title');
@@ -106,8 +107,8 @@ $projet = Projet::findOrFail($id); //Find post of id = $id
 
         $projet->save();
 //Display a successful message upon save
-        return redirect()->route('projets.show',$projet->id)
-            ->with('flash_message', 'Projet'. $projet->title.' updated');
+        return redirect()->route('projet.show',$projet->id)
+            ->with('flash_message','Projet'.$projet->title.' updated');
     }
 
     /**

@@ -4,7 +4,7 @@
      <div class="row">
             <div class="nine wide column">
                    {{-- Using the Laravel HTML Form Collective to create our form --}}
-                   {{ Form::model($post, array('route' => array('projet.update', $projet->id), 'method' => 'PUT')) }}
+                   {{ Form::model($projet, array('route' => array('projet.update', $projet->id), 'method' => 'PUT')) }}
                 <div class="ui form segment">
                   <div class="ui centered grid">
                    <div class="eight wide column">

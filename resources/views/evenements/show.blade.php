@@ -4,23 +4,17 @@
 	
 	
 	<div class="ui very padded segment">
-		<div class="ui orange  header">
-		
-		<img src="{{asset('images/partners/'.$partenaire->logo)}}" class="ui avatar image">
-		<div class="content">
-			{{$partenaire->name}}
-		</div>
-	</div>
-    
+<center> <h1>{{{$evenement->title}}}</h1></center>
+<p>{{$evenement->body}}</p>
 
-    {!! Form::open(['method' => 'DELETE', 'route' => ['partenaire.destroy', $partenaire->id] ]) !!}
+    {!! Form::open(['method' => 'DELETE', 'route' => ['evenement.destroy', $evenement->id] ]) !!}
 
     <a href="{{ url()->previous() }}" class="ui orange fluid  button"> 
     <i class="backward icon"></i>Back</a>
 
     @can('Edit Partenaire')
     <br>
-    <a href="{{ route('partenaire.edit', $partenaire->id) }}" class="ui green button" role="button">
+    <a href="{{ route('evenement.edit', $evenement->id) }}" class="ui green button" role="button">
     <i class="edit icon"></i>Edit</a>
     @endcan
     @can('Delete Partenaire')

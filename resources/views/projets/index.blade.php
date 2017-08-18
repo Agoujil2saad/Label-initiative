@@ -21,6 +21,7 @@
 			</div>
 			@endforeach
 		</div>
+		{{$projets->links()}}
 	</div>
 </div>
 @endsection
