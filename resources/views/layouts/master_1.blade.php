@@ -42,7 +42,7 @@
   <script>
         var OneSignal = window.OneSignal || [];
         OneSignal.push(["init", {
-            appId: "YOUR_APP_ID",
+            appId: "fde5427c-6447-4dc6-ae18-528489e21018",
             autoRegister: false,
             notifyButton: {
                 enable: true /* Set to false to hide */
@@ -89,6 +89,7 @@
             });
         }
     </script>
+
   </head>
   <body>
     <div class="ui centered grid">
@@ -236,5 +237,5 @@
       });
       $('.ui.dropdown').dropdown();
       </script>
-    </body>
+</body>
   </html>
