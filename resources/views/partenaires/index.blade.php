@@ -22,6 +22,8 @@
 		</div>
 	</div>
 
+	{{$partenaires->links()}}
+
 @can('Create Partenaire')
 <div class="row">
 		<a class="fluid ui orange large button" href="{{URL::to('partenaire\create')}}"> 
