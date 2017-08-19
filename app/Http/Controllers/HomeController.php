@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Partenaire;
+use App\Projet;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $partenaires = Partenaire::orderby('id', 'desc')->paginate(5);
+        $projets = Projet::orderby('id', 'desc')->paginate(3);
+        return view('home',compact('partenaires','projets'));
     }
 }
