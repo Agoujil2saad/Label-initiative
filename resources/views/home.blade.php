@@ -82,12 +82,12 @@
   <body>
     <div class="se-pre-con"></div>
     <div class="ui stackable grid">
-      <div class="row">
-  
 
+  <div class="row">
   <div class="three wide column middle aligned">
           <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui centered small image" id="logo_left">
-          <div class="ui sidebar orange vertical menu" id="sidebar_navigation">
+
+                <div class="ui sidebar orange vertical menu" id="sidebar_navigation">
             <a class="item">
               Qui Sommes-nous?
             </a>
@@ -134,21 +134,33 @@
             <i class="sidebar icon"></i>
             </button>
           </div>
-        </div>
+  </div>
 
-     <div class="ten wide column middle aligned" id="navigation_menu">
+     <div class="nine wide column middle aligned" id="navigation_menu">
           <div class="ui five stackable item secondary menu" >
-            <a href="" class="item"> <p class="ui orange small header">Qui Sommes-nous?</p></a>
-            <a href="{{URL::to('projet')}}" class="item"><p class="ui orange small header">Nos Projets</p></a>
-            <a href="{{URL::to('evenement')}}" class="item">
-              <p class="ui orange small header">Nos Événements</p></a>
-              
-              <a href="{{URL::to('partenaire')}}" class="item"><p class="ui orange small header">Nos Partenaires</p></a>
 
-             <a class="item" href="{{URL::to('login')}}">
-              @if(Auth::guest())
-              <div class="ui orange button">Se connecter</div>
-              @else
+            <a href="" class="item"> 
+            <p class="ui orange small header">Qui Sommes-nous?</p>
+            </a>
+
+            <a href="{{URL::to('projet')}}" class="item">
+            <p class="ui orange small header">Nos Projets</p></a>
+
+            <a href="{{URL::to('evenement')}}" class="item">
+              <p class="ui orange small header">Nos Événements</p>
+            </a>
+              
+              <a href="{{URL::to('partenaire')}}" class="item"><p class="ui orange small header">Nos Partenaires</p>
+              </a>
+{{-- condition --}}
+             @if(Auth::guest())
+
+              <a class="item" href="{{URL::to('login')}}">
+                <div class="ui orange button">Se connecter</div>
+              </a>
+                @else
+
+            <div class="item">
               <div class="ui dropdown">
                 <div class="text">
                   <img class="ui avatar image" src="{{asset('images/man.jpg')}}" alt="" >
@@ -157,7 +169,7 @@
                 <i class="dropdown icon"></i>
                 <div class="menu">
                   @role('Admin') {{-- Laravel-permission blade helper --}}
-                  <a href="#"><i class="unlock alternate icon"></i>Admin</a>
+                  <div  class="text" href="#"><i class="unlock alternate icon"></i>Admin</div>
                   @endrole
                   
                   <div class="item">
@@ -167,17 +179,20 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
                     </form>
-                  </div>
-                  
+                  </div>                
                 </div>
               </div>
-              @endif
-            </a>
-            </div>
-          </div>
+           </div> 
+           @endif
+</div>
+  </div>
+
         <div class="three wide column middle aligned">
           <img src="images/test_modified.png" alt="" class="ui centered small image" id="logo_right">
         </div>
+
+
+
       </div>
       
       <div class="row">
@@ -434,6 +449,8 @@ $("#pusher").click(function(){
   .sidebar('toggle')
 ;
 });
+$('.ui.dropdown').dropdown();
+
     
     </script>
   </body>

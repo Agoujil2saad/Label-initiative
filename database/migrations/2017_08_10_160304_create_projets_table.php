@@ -17,6 +17,7 @@ class CreateProjetsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
+            $table->string('categorie')->nullable();
             $table->text('description');
             $table->integer('montant_estime');
             $table->timestamps();

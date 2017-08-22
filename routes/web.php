@@ -18,6 +18,11 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/deposer', 'DeposerProjetController@index');
+Route::post('/deposer', 'DeposerProjetController@store');
+
+
+
 
 Route::resource('users', 'UserController');
 

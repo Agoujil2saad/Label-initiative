@@ -1,10 +1,11 @@
 @extends('layouts.master_1')
 @section('title','|Add User')
 @section('content')
+@include('layouts.errors')
 <div class="row">
 	<div class="nine wide column">
 		{{-- Using the Laravel HTML Form Collective to create our form --}}
-		{{ Form::open(array('route' => 'projet.store')) }}
+		{{ Form::open(array('route' => 'users.store')) }}
 		<div class="ui form segment">
 			<div class="ui centered grid">
 				<div class="eight wide column">

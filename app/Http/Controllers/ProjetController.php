@@ -99,6 +99,7 @@ class ProjetController extends Controller
             'montant_estime'=>'required'
             ]);
 
+
 $projet = Projet::findOrFail($id); //Find post of id = $id
 
         $title = $request->input('title');

@@ -1,9 +1,13 @@
-
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 
-// Variables
-@import "variables";
+// Settings
+@import 'settings';
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Import Foundation and Font Awesome
+@import "node_modules/foundation-sites/scss/foundation";
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Include everything from foundation and
+// use flex-grid for our grid system.
+@include foundation-everything($flex: true);
