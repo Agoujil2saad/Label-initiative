@@ -9,7 +9,8 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use Notifiable;
-     use HasRoles;
+    use HasRoles;
+    use CanFollow, CanLike, CanFavorite, CanSubscribe;
     /**
      * The attributes that are mass assignable.
      *
