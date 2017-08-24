@@ -1,11 +1,11 @@
 @extends('layouts.master_1')
 @section('title', '| Create New Post')
 @section('content')
-<div class="row">
+<div class="row" id="evenement_create">
 @include('layouts.errors')
 	<div class="nine wide column">
 		{{-- Using the Laravel HTML Form Collective to create our form --}}
-		{{ Form::open(array('route' => 'evenement.store')) }}
+		{{ Form::open(array('route' => 'evenement.store','files' => true)) }}
 		<div class="ui form segment">
 			<div class="ui centered grid">
 				<div class=" column">
@@ -17,10 +17,17 @@
 							<i class="user icon orange"></i>
 						</div>
 					</div>
+
 					<div class="field">
+
 						<label>Description de l'evenement</label>
 						<textarea name="body" required></textarea>
 					</div>
+
+					<div class="field">
+						  <input type="file" name="photos[]" multiple />
+					</div>
+
 				</div>
 				
 			</div>

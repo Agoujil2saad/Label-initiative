@@ -2,8 +2,14 @@
 @section('content')
 @include('layouts.errors')
 <div class="row" id="app">
-    <form-wizard @on-complete="onComplete" shape="circle" color="#ff6600" error-color="#ff4949">
-      <tab-content title="Personal details" icon="el-icon-edit" :before-change="validateFirstStep">
+    <form-wizard @on-complete="onComplete"
+    shape="circle"
+    color="#ff6600"
+    error-color="#ff4949"
+    title=""
+    subtitle=""
+       >
+      <tab-content title="information personelle" icon="el-icon-edit" :before-change="validateFirstStep">
 
         <el-form  label-width="120px"   :model="formInline" class="ui form segment" :rules="rules" ref="ruleForm">
         
@@ -109,9 +115,22 @@
 </el-form>
       </tab-content>
 
-      <button class="ui orange button"  type="primary" slot="prev">Back</button>
-      <button class="ui orange button" type="primary" slot="next">Next</button>
-      <button class="ui orange button" type="primary" slot="finish">Finish</button>
+      <button class="ui orange left labeled icon button"  type="primary" slot="prev">
+
+      Precedent
+      <i class="left chevron icon"></i>
+      </button>
+
+      <button class="ui orange right labeled icon button" type="primary" slot="next">
+      Suivant
+      <i class="right chevron icon"></i>
+      </button>
+
+      <button class="ui orange right labeled icon button" type="primary" slot="finish">
+      Creer mon compte
+      <i class="idea icon"></i>
+      </button>
+
     </form-wizard>
   </div>
 

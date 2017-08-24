@@ -34,4 +34,10 @@ class User extends Authenticatable
 }
 
 
+  public function projet()
+  {
+    return $this->hasOne('App\Projet');
+  }
+
+
 }

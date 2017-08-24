@@ -8,7 +8,7 @@
 </h2>
 		@include('layouts.errors')
 		{{-- Using the Laravel HTML Form Collective to create our form --}}
-		{!! Form::model($evenement, ['method' => 'PATCH', 'action' =>  ['EvenementController@update', $evenement->id] ]) !!}
+		{!! Form::model($evenement, ['method' => 'PATCH', 'action' =>  ['EvenementController@update', $evenement->id] ,'files' => true]) !!}
 		<div class="ui form segment">
 			<div class="ui centered grid">
 				<div class=" column">
@@ -23,8 +23,15 @@
 
 					<div class="field">
 						<label>description  de l'evenement</label>
-						<textarea name="body"></textarea>
+						<textarea name="body">
+							{{$evenement->body}}
+						</textarea>
 					</div>
+
+					<div class="field">
+						  <input type="file" name="photos[]" multiple />
+					</div>
+
 				</div>
 				
 			</div>

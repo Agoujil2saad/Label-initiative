@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/deposer', 'DeposerProjetController@index');
 Route::post('/deposer', 'DeposerProjetController@store');
+Route::get('/espace_porteur', 'EspacePorteurProjetController@index');
+
+Route::get('/espace_porteur/edit', 'EspacePorteurProjetController@edit');
 
 
 

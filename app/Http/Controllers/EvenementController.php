@@ -1,7 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 use App\Evenement;
+use App\EvenementsPhoto;
+use App\Http\Requests\UploadEvenementRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 class EvenementController extends Controller
 {
 /**
@@ -11,6 +15,7 @@ class EvenementController extends Controller
 */
 public function index() {
 $evenements = Evenement::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
+
 return view('evenements.index', compact('evenements'));
 }
 /**
@@ -28,17 +33,18 @@ return view('evenements.create');
 * @param  \Illuminate\Http\Request  $request
 * @return \Illuminate\Http\Response
 */
-public function store(Request $request)
+public function store(UploadEvenementRequest $request)
 {
-$this->validate($request,
-[
-'title'=>'required',
-'body' => 'required|max:2048'
-]);
 //
-$body = $request['body'];
-$title = $request['title'];
-$evenement= Evenement::create($request->only('title','body'));
+ $evenement = Evenement::create($request->all());
+ foreach ($request->photos as $photo) {
+            $filename = $photo->store('photos','public');
+            EvenementsPhoto::create([
+                'evenement_id' => $evenement->id,
+                'filename' => $filename
+            ]);
+        }
+
 //Display a successful message upon save
 return redirect()->route('evenement.index')
 ->with('flash_message', 'Evenement,
@@ -73,26 +79,28 @@ return view('evenements.edit', compact('evenement'));
 * @param  int  $id
 * @return \Illuminate\Http\Response
 */
-public function update(Request $request, $id)
+public function update(UploadEvenementRequest $request, $id)
 {
-
-$this->validate($request,
-[
-'title'=>'required',
-'body' => 'required|max:2048'
-]);
 $evenement = Evenement::findOrFail($id);
-//
-$title = $request->input('title');
-$body = $request->input('body');
-$evenement->title= $title;
-$evenement->body= $body;
-$evenement->save();
-
-//Display a successful message upon save
-        return redirect()->route('evenement.show',$evenement->id)
-            ->with('flash_message', 'Evenement'. $evenement->title.' updated');
+$photos = $evenement->photos;
+foreach ($photos as $photo) {
+    $file = storage_path('/app/public/').$photo->filename;
+  if ($file) {
+      if(File::isFile($file)){
+            \File::delete($file);
+        }
+  }
 }
+ $evenement->delete();
+$this->store($request);
+//Display a successful message upon save
+return redirect()->route('evenement.index')
+->with('flash_message','Evenement,
+'.$evenement->title.'Updated');
+}
+
+
+
 /**
 * Remove the specified resource from storage.
 *
@@ -103,8 +111,16 @@ public function destroy($id)
 {
 
 $evenement = Evenement::findOrFail($id);
+$photos = $evenement->photos;
+foreach ($photos as $photo) {
+    $file = storage_path('/app/public/').$photo->filename;
+  if ($file) {
+      if(File::isFile($file)){
+            \File::delete($file);
+        }
+  }
+}
         $evenement->delete();
-
         return redirect()->route('evenement.index')
             ->with('flash_message',
              ' Evenement successfully deleted');  

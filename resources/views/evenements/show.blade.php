@@ -12,14 +12,14 @@
     <a href="{{ url()->previous() }}" class="ui orange fluid  button"> 
     <i class="backward icon"></i>Back</a>
 
-    @can('Edit Partenaire')
+ 
     <br>
     <a href="{{ route('evenement.edit', $evenement->id) }}" class="ui green button" role="button">
     <i class="edit icon"></i>Edit</a>
-    @endcan
-    @can('Delete Partenaire')
+   
+    
     {!! Form::submit('Delete', ['class' => 'ui red button ']) !!}
-    @endcan
+
     {!! Form::close() !!}
 	</div>
 
