@@ -64,6 +64,8 @@
     </style> 
       <link rel="shortcut icon" href="images/home.png" />
 {{-- styles --}}
+
+
   <link rel="stylesheet" href="{{asset('modern-slide-in/css/sequence-theme.modern-slide-in.css')}}" />
       <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
@@ -81,7 +83,7 @@
   </head>
   <body>
     <div class="se-pre-con"></div>
-    <div class="ui stackable grid">
+    <div class="ui centered stackable grid">
 
   <div class="row">
   <div class="three wide column middle aligned">
@@ -245,11 +247,42 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
         </div>
       </div>
       <!-- new row -->
-      <div class=" orange middle aligned row">
-        <p id="message_principale">Vous êtes une association ou une coopérative de la province de <b>KENITRA</b>,<br> vous cherchez des solutions à vos besoins,<br> vous souhaitez participer au développement de votre territoire,<br> trouver des partenaires et gagner en visibilité,<br>   <b> LABEL INITIATIVE</b> vous accompagne et facilite la réalisation de vos projets.
-          <br><br>
-          <button class="ui inverted  button">Déposer mon projet</button>
+      <div class="orange row">
+<div class="ten wide column">
+<div id="message_principale">
+
+      <template>
+      <vue-particles class="particles-background"
+        color="#fff"
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="edge"
+        :particleSize="4"
+        linesColor="#fff"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="5"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      >   
+
+      </vue-particles>
+   
+ </template>
+
+        </div>
+        <p class="main-title">Vous êtes une association ou une coopérative de la province de <b>KENITRA</b>,<br> vous cherchez des solutions à vos besoins,<br> vous souhaitez participer au développement de votre territoire,<br> trouver des partenaires et gagner en visibilité,<br>   <b> LABEL INITIATIVE</b> vous accompagne et facilite la réalisation de vos projets.
+        <br>
+          <button class="ui inverted large  labeled icon button">
+<i class="idea icon"></i>
+          Déposer mon projet
+          </button>
         </p>
+      </div>
       </div>
       <!-- new row -->
       <div class="row">
@@ -278,7 +311,8 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
       </div>
       <!-- new row -->
       <div class="row">
-        <p id="centred"><a class="ui orange large button" href="{{URL::to('projet')}}">Tous Les Projets</a></p>
+      <div class="twelve wide column">
+    <center><a class="ui orange large button" href="{{URL::to('projet')}}">Tous Les Projets</a></center>
         <h1 id="centred_title">LES CHIFFRES CLÉS</h1>
         <div class="ui container four  statistics" id="numbers_1">
           <div class="statistic" >
@@ -314,20 +348,31 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
             </div>
           </div>
         </div>
-        <h1 id="centred_title">PARTENAIRES OFFICIELS</h1>
-        <div class="owl-carousel"  id="owl-carousel_1">
-          @foreach($partenaires as $partenaire)
-          <div class="item">
-            <img src="{{  asset('images/partners/'.$partenaire->logo)}}" alt="partenaire">
-            <h1 class="ui medium orange  center aligned header">{{$partenaire->name}}</h1>
-          </div>
-         @endforeach
+
         </div>
-        <h1 id="centred_title">VIDÉOTHÈQUE </h1>
+      </div>
+      <div class="middle aligned row"> 
+
+<div class=" six wide column">
+ <h1 id="centred_title">PARTENAIRES OFFICIELS</h1>
+
+        <div id="photo_caroussel">
+<template>
+  <el-carousel :interval="4000" type="card" height="300px">
+@foreach($partenaires as $partenaire)
+    <el-carousel-item>
+      <img src="{{  asset('images/partners/'.$partenaire->logo)}}" alt="partenaire">
+    </el-carousel-item>
+@endforeach
+  </el-carousel>
+</template>
+</div>
+</div>
+
       </div>
     </div>
     <!-- new row -->
-    
+    <h1 id="centred_title">VIDÉOTHÈQUE </h1>
     <div class="rvs-container">
       <div class="rvs-item-container">
         <div class="rvs-item-stage">
@@ -427,31 +472,24 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"></script>
     <script>
-    $(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-    margin:10,
-    loop:true,
-    items:7,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-    });
     $('.rating')
     .rating('disable')
     ;
     $('.special.cards .image').dimmer({
     on: 'hover'
     });
-    });
+
 
 $("#pusher").click(function(){
   $('.ui.sidebar')
   .sidebar('toggle')
 ;
 });
+
 $('.ui.dropdown').dropdown();
 
     
     </script>
+     <script src="{{ mix('js/app.js') }}"></script>
   </body>
 </html>

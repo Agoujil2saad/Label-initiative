@@ -16,7 +16,7 @@ $table->increments('id');
 $table->integer('user_id')->unsigned()->nullable();
 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 $table->string('title');
-$table->string('categorie')->nullable();
+$table->string('categorie');
 $table->text('description');
 $table->integer('montant_estime');
 $table->timestamps();

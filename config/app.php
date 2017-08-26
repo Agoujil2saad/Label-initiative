@@ -184,6 +184,7 @@ return [
 
         Overtrue\LaravelFollow\FollowServiceProvider::class
         ,
+        Orangehill\Iseed\IseedServiceProvider::class,
     ],
 
     /*

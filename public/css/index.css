@@ -57,13 +57,17 @@ body{
 
 #message_principale{
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.4em;
-    padding: .2em .6em;
-    margin-bottom: .4em;
+    font-size: 1.7em;
     display: block;
     text-align: center;
-    width: 100%;
+    position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
+canvas {
+  display: block;
+  vertical-align: bottom;
 }
 #centred_title{
     font-family: 'Oxygen', sans-serif;
@@ -137,4 +141,26 @@ body{
 }
 
 /*h*/
+.el-carousel__item img { 
+    width:200px; 
+    line-height: 200px;
+    margin: 0;
+  }
+
+  .el-carousel__item:nth-child(2n) {
+   
+  }
+
+  .el-carousel__item:nth-child(2n+1) {
+
+  }
+  .main-title{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.7em;
+    display: block;
+    text-align: center;
+  width: 100%;
+  height: 100%;
+  }
+
 

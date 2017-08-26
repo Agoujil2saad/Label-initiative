@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UploadProjetRequest;
 use App\Projet;
+use App\ProjetsPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ProjetController extends Controller
 {
@@ -16,7 +19,7 @@ class ProjetController extends Controller
 
     public function __construct()
     {
-      $this->middleware(['auth','clearance'])->except('index', 'show');
+      // $this->middleware(['auth','clearance'])->except('index', 'show');
     }
     public function index()
     {
@@ -41,19 +44,17 @@ class ProjetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UploadProjetRequest $request)
     {
-         $this->validate($request, [
-            'title'=>'required|max:100',
-            'description' =>'required',
-            'montant_estime'=>'required'
+      
+ $projet = Projet::create($request->all());
+  foreach ($request->photos as $photo) {
+            $filename = $photo->store('photos','public');
+            ProjetsPhoto::create([
+                'projet_id' => $projet->id,
+                'filename' => $filename
             ]);
- $projet = Projet::create([
-'user_id'=> auth()->id(),
-'title' => request('title'),
- 'description' => request('description'),
- 'montant_estime' =>  request('montant_estime')
- ]);
+        }
 //Display a successful message upon save
         return redirect()->route('projet.index')
             ->with('flash_message', 'Projet'.$projet->title.' created');
@@ -79,7 +80,8 @@ class ProjetController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {     $projet = Projet::findOrFail($id); //Find post of id = $id
+    {   
+      $projet = Projet::findOrFail($id); //Find post of id = $id
 
         return view ('projets.edit', compact('projet'));
     }
@@ -93,23 +95,22 @@ class ProjetController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $this->validate($request, [
-            'title'=>'required|max:100',
-            'description' =>'required',
-            'montant_estime'=>'required'
-            ]);
-
-
-$projet = Projet::findOrFail($id); //Find post of id = $id
-
-        $title = $request->input('title');
-        $description = $request->input('description');
-        $montant_estime = $request->input('montant_estime');
-
-        $projet->save();
+ $projet = Projet::findOrFail($id);
+$photos = $projet->photos;
+foreach ($photos as $photo) {
+    $file = storage_path('/app/public/').$photo->filename;
+  if ($file) {
+      if(File::isFile($file)){
+            \File::delete($file);
+        }
+  }
+}
+ $projet->delete();
+$this->store($request);
 //Display a successful message upon save
-        return redirect()->route('projet.show',$projet->id)
-            ->with('flash_message','Projet'.$projet->title.' updated');
+return redirect()->route('projet.index')
+->with('flash_message','Projet,
+'.$projet->title.'Updated');
     }
 
     /**
@@ -121,7 +122,16 @@ $projet = Projet::findOrFail($id); //Find post of id = $id
     public function destroy($id)
     {
         
-        $projet = Projet::findOrFail($id);
+   $projet = Projet::findOrFail($id);
+$photos = $projet->photos;
+foreach ($photos as $photo) {
+    $file = storage_path('/app/public/').$photo->filename;
+  if ($file) {
+      if(File::isFile($file)){
+            \File::delete($file);
+        }
+  }
+}
         $projet->delete();
 
         return redirect()->route('projet.index')

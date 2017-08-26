@@ -1,11 +1,22 @@
 @extends('layouts.master_1')
 @section('content')
-<div class="row">
-	
-	
-	<div class="ui very padded segment">
+<div class=" relaxed row">
+	<div class="nine wide column">
+     <div class="ui very padded fluid segment">
 <center> <h1>{{{$evenement->title}}}</h1></center>
-<p>{{$evenement->body}}</p>
+<p class="ui fluid segment">{{$evenement->body}}</p>
+
+<div id="photo_caroussel">
+<template>
+  <el-carousel :interval="4000" type="card" height="300px">
+@foreach($evenement->photos as $photo)
+    <el-carousel-item>
+      <img src="{{asset('storage/'.$photo->filename)}}">
+    </el-carousel-item>
+@endforeach
+  </el-carousel>
+</template>
+</div>
 
     {!! Form::open(['method' => 'DELETE', 'route' => ['evenement.destroy', $evenement->id] ]) !!}
 
@@ -21,7 +32,12 @@
     {!! Form::submit('Delete', ['class' => 'ui red button ']) !!}
 
     {!! Form::close() !!}
-	</div>
+    </div>
+
+
+    </div>
+	
+	
 
 </div>
 

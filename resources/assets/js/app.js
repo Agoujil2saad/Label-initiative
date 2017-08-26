@@ -7,6 +7,9 @@ Vue.use(VueFormWizard)
 Vue.use(VueFormGenerator)
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
+
 
 Vue.use(ElementUI)
 
@@ -14,6 +17,10 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 require('./bootstrap');
 
+new Vue({
+  el:'#message_principale'
+});
+new Vue().$mount('#photo_caroussel');    
 new Vue({
   el: '#app',
   data(){
@@ -134,4 +141,6 @@ return {
 
 
   }
-})     
+});
+
+
