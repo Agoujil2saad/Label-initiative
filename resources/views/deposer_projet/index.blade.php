@@ -74,13 +74,11 @@
 </el-form-item>
 
         <el-form-item label="*Nom du projet" prop="titre_projet">
-  <el-input v-model="formInline.titre_projet" placeholder="categorie_projet complet de projet" >
-  	
-  </el-input>
+  <el-input v-model="formInline.titre_projet" placeholder=" complet de projet" ></el-input>
        
           </el-form-item>
 
-  
+
    
 
  <el-form-item label="*Montant estimé en DH " prop="montant_projet">
@@ -100,6 +98,7 @@
 
         </el-form>
       </tab-content>
+      
       <tab-content title="Creer mon compte" icon="el-icon-check" :before-change="validateThirdStep">
 
   <el-form :model="formInline" :rules="rules2" ref="ruleForm2" label-width="120px" class="ui form segment">

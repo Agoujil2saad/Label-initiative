@@ -3,11 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
 
 class Projet extends Model
 {
+   use Searchable;
 	use CanBeLiked, CanBeFavorited;
 	
      protected $fillable = [
@@ -22,5 +24,10 @@ class Projet extends Model
    public function owner()
    {
    	return $this->hasOne('App\User','id','user_id');
+   }
+
+   public function nouvelles()
+   {
+     return $this->hasMany('App\ProjetNouvelle');
    }
 }

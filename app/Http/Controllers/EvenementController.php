@@ -13,6 +13,10 @@ class EvenementController extends Controller
 *
 * @return \Illuminate\Http\Response
 */
+public function __construct()
+{
+  $this->middleware(['auth','clearance'])->except('index','show');
+}
 public function index() {
 $evenements = Evenement::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
 

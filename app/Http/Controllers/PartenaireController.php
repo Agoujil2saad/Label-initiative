@@ -14,7 +14,7 @@ class PartenaireController extends Controller
 */
 public function __construct()
 {
-// $this->middleware(['auth','clearance'])->except('index','show');
+ $this->middleware(['auth','clearance'])->except('index','show');
 }
 public function index() {
 $partenaires = Partenaire::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
@@ -84,6 +84,7 @@ public function edit($id)
 $partenaire = Partenaire::findOrFail($id);
 return view('partenaires.edit', compact('partenaire'));
 }
+
 /**
 * Update the specified resource in storage.
 *
@@ -131,6 +132,7 @@ return redirect()->route('partenaire.show',$partenaire->id)
 * @param  int  $id
 * @return \Illuminate\Http\Response
 */
+
 public function destroy($id)
 {
 $partenaire = Partenaire::findOrFail($id);
@@ -139,4 +141,5 @@ return redirect()->route('partenaire.index')
 ->with('flash_message',
 'Partenaire successfully deleted');
 }
+
 }

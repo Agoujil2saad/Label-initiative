@@ -93,25 +93,48 @@ class ProjetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    public function updatephotos(UploadProjetRequest $request, $id)
     {
  $projet = Projet::findOrFail($id);
-$photos = $projet->photos;
-foreach ($photos as $photo) {
-    $file = storage_path('/app/public/').$photo->filename;
-  if ($file) {
-      if(File::isFile($file)){
-            \File::delete($file);
+
+foreach ($request->photos as $photo) {
+            $filename = $photo->store('photos','public');
+            ProjetsPhoto::create([
+                'projet_id' => $id,
+                'filename' => $filename
+            ]);
         }
-  }
-}
- $projet->delete();
-$this->store($request);
+
+//Display a successful message upon save
+return redirect()->route('projet.edit',$id)
+->with('flash_message','Projet Updated');
+    }
+
+      public function update(Request $request, $id)
+    {
+
+$this->validate($request,[
+            'title'=>'required|max:100',
+            'description' =>'required',
+            'montant_estime'=>'required',
+            'categorie' => 'required']);
+
+$projet = Projet::findOrFail($id);
+
+$projet->title = $request->input('title');
+$projet->description = $request->input('description');
+$projet->montant_estime = $request->input('montant_estime');
+$projet->categorie = $request->input('categorie');
+
+$projet->save();
+
 //Display a successful message upon save
 return redirect()->route('projet.index')
 ->with('flash_message','Projet,
 '.$projet->title.'Updated');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -138,4 +161,25 @@ foreach ($photos as $photo) {
             ->with('flash_message',
              ' Projet successfully deleted');  
               }
+
+public function destroyphoto($id)         
+{
+    
+    $photo = ProjetsPhoto::findOrFail($id);
+    $projet_id=$photo->projet->id;
+      $file = storage_path('/app/public/').$photo->filename;
+  if ($file) {
+      if(File::isFile($file)){
+            \File::delete($file);
+        }
+  }
+  $photo->delete();
+  return redirect()->route('projet.edit',$projet_id)
+->with('flash_message','photo Deleted');
+    }
 }
+
+            
+
+
+

@@ -1,6 +1,6 @@
 @extends('layouts.master_1')
 @section('content')
-<div class="ui internally celled grid" style="background-color: rgba(252,101,0,.1); border-top:2px solid red;">
+<div class="ui internally stackable celled grid" style="background-color: rgba(252,101,0,.1); border-top:2px solid red;">
 	<div class="row">
 		<div class="four wide column">
 			<div class="ui compact vertical labeled icon menu">

@@ -57,6 +57,7 @@ $user->assignRole($role_r);
 }
 //login the user
 Auth::guard()->login($user);
+//create the projet
 $projet = Projet::create([
 'user_id'=> auth()->id(),
 'title' => request('titre_projet'),
@@ -64,8 +65,6 @@ $projet = Projet::create([
 'montant_estime' =>  request('montant_projet'),
 'categorie' =>  request('categorie_projet')
 ]);
-// establish the relation one to one beteween (projet-user)
-auth()->projet()->save($projet);
 
 //redirect to the projetcs pages
 return ['redirect' => route('projet.index')];

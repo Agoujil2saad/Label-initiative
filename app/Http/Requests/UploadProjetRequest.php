@@ -23,12 +23,7 @@ class UploadProjetRequest extends FormRequest
      */
     public function rules()
     {
-    $rules =  [
-            'title'=>'required|max:100',
-            'description' =>'required',
-            'montant_estime'=>'required',
-            'categorie' => 'required'
-        ];
+ 
        $photos = count($this->input('photos'));
 
         foreach(range(0, $photos) as $index) {

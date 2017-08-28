@@ -20,10 +20,6 @@
                       <option value="type2">Alaska</option>
                     </select>
                   </div>
-                   <div class="field">
-                      <label>Photos descriptives</label>
-                        <input type="file" name="photos[]" multiple  required />
-                      </div>
                     </div>
                     <div class="eight wide column">
                       <div class="field">
@@ -40,6 +36,9 @@
                         <i class="idea icon orange"></i>
                         </div>
                       </div>
+
+
+
                     </div>
                    
                     </div>
@@ -56,6 +55,45 @@
                   <!-- <div class="ui fluid medium orange submit button">Suivant</div> -->
                 <p>Tout les champs avec * doivent être obligatoirement remplis</p>
                 </div>
+
+
                  {{ Form::close() }}
-            </div>
-        </div>
+                 <div class="ui segment form">
+{{ Form::model($projet, array('route' => array('updatephotos', $projet->id), 'method' => 'PUT','files' => true)) }}
+  <div class="field">
+    <label>Ajouter les photos de Votre projet ici</label>
+      <input type="file" name="photos[]" multiple  required />
+       {!! Form::submit('upload', ['class' => 'ui blue button ']) !!}
+  </div>
+</div>
+{{ Form::close() }}
+<div class=" field">
+<div class="ui segment">
+<h4>Photos de projet</h4>
+<div class="ui three cards">
+ @foreach($projet->photos as $photo)
+  <div class="card">
+    <div class="content">
+      {!! Form::open(['method' => 'DELETE', 'route' => ['deletephoto', $photo->id] ]) !!}
+  <img src="{{asset('storage/'.$photo->filename)}}" class="ui small image" >
+      
+    </div>
+    {!! Form::submit('
+      DELETE', ['class' => 'ui red button ']) !!}
+    
+    {!! Form::close() !!}
+  </div>
+ 
+
+
+  {!! Form::close() !!}
+  @endforeach
+  </div>
+
+</div>
+  </div>         
+  </div>
+
+
+
+</div>

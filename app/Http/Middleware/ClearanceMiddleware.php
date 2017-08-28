@@ -13,7 +13,9 @@ class ClearanceMiddleware {
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next) {        
+    public function handle($request, Closure $next) {
+          $url = $request->path();
+
         if (Auth::user()->hasPermissionTo('Administer roles & permissions')) //If user has this //permission
     {
             return $next($request);
@@ -21,7 +23,7 @@ class ClearanceMiddleware {
 
         if ($request->is('projets/create'))//If user is creating a projet
          {
-            if (!Auth::user()->hasPermissionTo('Create Projet'))
+            if (!Auth::user()->hasPermissionTo('Edit Projet'))
          {
                 abort('401');
             } 
@@ -29,6 +31,31 @@ class ClearanceMiddleware {
                 return $next($request);
             }
         }
+
+          
+
+          if (str_contains($url,'espace_porteur'))//If user is creating a projet
+         {
+            if (!Auth::user()->hasPermissionTo('Porteur De Projet Tools'))
+         {
+                abort('401');
+            } 
+         else {
+                return $next($request);
+            }
+        }
+        
+        if (str_contains($url,'evenement'))//If user is creating a projet
+         {
+            if (!Auth::user()->hasPermissionTo('Porteur De Projet Tools'))
+         {
+                abort('401');
+            } 
+         else {
+                return $next($request);
+            }
+        }
+
 
         if ($request->is('projet/*/edit')) //If user is editing a projet
          {
@@ -49,6 +76,7 @@ class ClearanceMiddleware {
                 return $next($request);
             }
         }
+
 
         return $next($request);
     }
