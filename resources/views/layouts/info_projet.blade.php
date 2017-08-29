@@ -1,9 +1,19 @@
 <div class="row">
     <div class="eight wide column">
         <div class="ui  segment">
-            
+                
             
             <div id="app">
+                       @if (Auth::check())
+                       @can('Like Projet')
+    <div class="inverted ui fluid button ">
+        <favorite
+            :projet={{ $projet->id }}
+            :favorited={{ Auth::user()->hasFavorited($projet) ? 'true' : 'false' }}
+        ></favorite>
+    </div>
+          @endcan
+@endif
                 <template>
                 <el-tabs type="border-card">
                 <el-tab-pane>
@@ -28,6 +38,7 @@
                 </el-carousel>
                 
                 @endif
+ 
                 <p class="ui sub header">
                 <i class="home icon"></i> A propos</p>
                <div id="message_principale" style="color:black; margin:20px; text-align:left; position:static;">

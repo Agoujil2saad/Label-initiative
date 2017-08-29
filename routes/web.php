@@ -31,6 +31,8 @@ Route::post('/espace_porteur','EspacePorteurProjetController@storeNouvelle')->na
 
 Route::Delete('/espace_porteur/photonouvelle/{id}','EspacePorteurProjetController@destroy')->name('deletephoto_nouvelle');
 //projet routing
+Route::post('favorite/{projet}', 'ProjetController@favoriteProjet');
+Route::post('unfavorite/{projet}', 'ProjetController@unFavoriteProjet');
 
 Route::put('/projet/{id}', 'ProjetController@updatephotos')->name
 ('updatephotos');

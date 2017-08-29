@@ -177,9 +177,19 @@ public function destroyphoto($id)
   return redirect()->route('projet.edit',$projet_id)
 ->with('flash_message','photo Deleted');
     }
+
+
+public function favoriteProjet(Projet $projet)
+{
+             Auth::user()->favorite($projet);
+              return back();
 }
+      public function unFavoriteProjet(Projet $projet)
+{
+    Auth::user()->unfavorite($projet);
 
-            
-
+    return back();
+}      
+}
 
 

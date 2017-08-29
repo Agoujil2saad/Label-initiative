@@ -2,7 +2,7 @@
   <div class="row">
 	<div class="twelve wide column">
 		<h1 id="centred_title">Page {{ $projets->currentPage() }} of {{ $projets->lastPage() }}</h1>
-	<div class="ui container doubling five cards">
+	<div class="ui doubling five cards">
 			@foreach($projets as $projet)
 			<div class="card">
 @if(count($projet->photos)>0)
@@ -14,18 +14,19 @@
       <span class="date">{{$projet->created_at->diffForHumans()}}</span>
     </div>
   </div>
-
   <div class=" extra content">
     <div class="header">
     <i class=" money orange icon"></i>
-{{$projet->montant_estime}}</div>
-    <div class=" large meta">
+{{$projet->montant_estime}}DH</div>
+    <div class="meta" id="#message_principale" style="position: static; color: black; font-size: 14px;">
 {{str_limit($projet->description,100)}}
     </div>
+    <i class=" red heart icon"></i>{{count($projet->favoriters)}}
   </div>
 </div>		
 			@endforeach
 		</div>
+    <div class="ui divider"></div>
 		{{$projets->links()}}
 	</div>
 </div>

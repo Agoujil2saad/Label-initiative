@@ -9,16 +9,15 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import VueParticles from 'vue-particles'
 import VueResource from 'vue-resource';
-
+import VueRouter from 'vue-router';
 Vue.use(VueResource);
 Vue.use(VueParticles)
-
-
 Vue.use(ElementUI)
-
-import VueRouter from 'vue-router';
 Vue.use(VueRouter);
+ 
 require('./bootstrap');
+
+Vue.component('favorite', require('./components/Favorite.vue'));
 
 new Vue({
   el:'#message_principale'
@@ -172,6 +171,8 @@ new Vue({
             // Clear the query.
             this.query = '';
         });
+        
     }
 }
 });
+

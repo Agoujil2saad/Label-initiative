@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <title>Label Initiative</title>
     <style>
@@ -62,17 +63,14 @@
     background: url("images/loader-128x/Preloader_3.gif") center no-repeat #fff;
     }
     </style> 
-      <link rel="shortcut icon" href="images/home.png" />
+      <link rel="shortcut icon" type="image/gif" href="images/home_iBI_icon.ico" />
 {{-- styles --}}
 
 
   <link rel="stylesheet" href="{{asset('modern-slide-in/css/sequence-theme.modern-slide-in.css')}}" />
       <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/rvslider.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
-    
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/rvslider.min.css') }}">  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
     <script>
@@ -254,20 +252,20 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
       <template>
       <vue-particles class="particles-background"
         color="#fff"
-        :particleOpacity="0.7"
-        :particlesNumber="80"
-        shapeType="edge"
-        :particleSize="4"
-        linesColor="#fff"
-        :linesWidth="1"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="150"
-        :moveSpeed="5"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push"
+        :particle-opacity="0.7"
+        :particles-Number="120"
+        shape-type="circle"
+        :particle-size="4"
+        lines-color="#fff"
+        :lines-width="1"
+        :line-linked="true"
+        :line-opacity="0.4"
+        :lines-distance="150"
+        :move-speed="2"
+        :hover-effect="true"
+        hover-mode="grab"
+        :click-effect="true"
+        click-mode="push"
       >   
 
       </vue-particles>
@@ -287,7 +285,7 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
       <!-- new row -->
       <div class="row">
         <h1 id="centred_title">DÉCOUVRIR LES PROJETS</h1>
-        <div class="ui three special container  cards">
+        <div class="ui three special container  doubling cards">
          @foreach($projets as $projet)
           <div class="card">
             <div class=" blurring dimmable image">
@@ -299,11 +297,11 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
                 </div>
               </div>
               <img src="images/5.jpg" alt="">
-              <div id="mask">{{$projet->title}}</div>
+              <div id="message_principale"
+              style="position: static; padding: 20px;">{{$projet->title}}</div>
             </div>
             <div class="extra">
-              Rating:
-              <div class="ui star rating" data-rating="4"></div>
+<i class=" red heart icon"></i>{{count($projet->favoriters)}}
             </div>
           </div>
           @endforeach
@@ -314,13 +312,13 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
       <div class="twelve wide column">
     <center><a class="ui orange large button" href="{{URL::to('projet')}}">Tous Les Projets</a></center>
         <h1 id="centred_title">LES CHIFFRES CLÉS</h1>
-        <div class="ui container four  statistics" id="numbers_1">
+        <div class="ui container four   statistics" id="numbers_1">
           <div class="statistic" >
             <div class="value" id="chiffre_cles">
               <p>{{count($projets)}}</p>
             </div>
             <div class="label">
-              <h2>Projets</h2>
+              <h3>Projets</h3>
             </div>
           </div>
           <div class="statistic" >
@@ -328,7 +326,7 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
               <p>400</p>
             </div>
             <div class="label">
-              <h2>Membres <br>actifs</h2>
+              <h3>Membres <br>actifs</h3>
             </div>
           </div>
           <div class="statistic" >
@@ -336,7 +334,7 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
               <p>80</p>
             </div>
             <div class="label">
-              <h2>Associations</h2>
+              <h3>Associations</h3>
             </div>
           </div>
           <div class="statistic" >
@@ -344,7 +342,7 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
               <p>{{count($partenaires)}}</p>
             </div>
             <div class="label">
-              <h2>Sponsors <br>Permanents</h2>
+              <h3>Sponsors <br>Permanents</h3>
             </div>
           </div>
         </div>
@@ -470,11 +468,8 @@ Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depui
     <script src="{{asset('modern-slide-in/scripts/sequence.min.js')}}"></script>
     <script src="{{asset('modern-slide-in/scripts/sequence-theme.modern-slide-in.js')}}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"></script>
     <script>
-    $('.rating')
-    .rating('disable')
-    ;
+ 
     $('.special.cards .image').dimmer({
     on: 'hover'
     });
