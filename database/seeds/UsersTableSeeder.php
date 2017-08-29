@@ -37,7 +37,7 @@ class UsersTableSeeder extends Seeder
                 'id' => 2,
                 'name' => 'hama',
                 'email' => 'sad',
-                'password' => '$2y$10$FauKjKmS3TaSDS1bBYEac.eWwjPsQas/koEENzgyRlioPLcha4iaq',
+                'password' => bcrypt('sad  ago'),
                 'address' => 'sad',
                 'categorie' => 'type2',
                 'fonction' => 'sadd',

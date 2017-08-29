@@ -66,6 +66,20 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2017-08-25 20:16:12',
                 'updated_at' => '2017-08-25 20:16:12',
             ),
+            7 => 
+            array (
+                'id' => 8,
+                'name' => 'Porteur De Projet Tools',
+                'created_at' => '2017-08-27 16:56:00',
+                'updated_at' => '2017-08-27 16:56:00',
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'name' => 'Like Projet',
+                'created_at' => '2017-08-29 07:57:14',
+                'updated_at' => '2017-08-29 07:57:14',
+            ),
         ));
         
         

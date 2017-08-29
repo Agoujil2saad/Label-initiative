@@ -31,6 +31,13 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2017-08-25 20:17:14',
                 'updated_at' => '2017-08-25 20:17:14',
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Partenaire Projet',
+                'created_at' => '2017-08-29 07:58:09',
+                'updated_at' => '2017-08-29 07:58:09',
+            ),
         ));
         
         
