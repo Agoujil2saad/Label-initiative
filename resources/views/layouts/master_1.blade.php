@@ -12,6 +12,10 @@
       type="text/css" href="{{ mix('css/app.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
+      <link href="/css/apptalk.css" rel="stylesheet">
+
+
+
       <style>
       /*sidebar*/
       #pusher{
@@ -232,6 +236,8 @@
       });
       }
       </script>
+      
+<script src="/js/apptalk.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="{{ asset('js/semantic.min.js') }}"></script>
         <script>

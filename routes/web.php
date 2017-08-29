@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/deposer', 'DeposerProjetController@index');
 Route::post('/deposer', 'DeposerProjetController@store');
 // espace porteur de projet routing
+Route::get('/espace_porteur/chat', 'EspacePorteurProjetController@chat');
 Route::get('/espace_porteur', 'EspacePorteurProjetController@index')->name('projet_news');
 
 Route::get('/espace_porteur/edit', 'EspacePorteurProjetController@edit');
@@ -49,3 +50,13 @@ Route::resource('permissions', 'PermissionController');
 Route::resource('projet', 'ProjetController');
 Route::resource('partenaire', 'PartenaireController');
 Route::resource('evenement', 'EvenementController');
+//talk routing
+
+
+Route::get('message/{id}', 'MessageController@chatHistory')->name('message.read');
+
+Route::group(['prefix'=>'ajax', 'as'=>'ajax::'], function() {
+   Route::post('message/send', 'MessageController@ajaxSendMessage')->name('message.new');
+   Route::delete('message/delete/{id}', 'MessageController@ajaxDeleteMessage')->name('message.delete');
+});
+

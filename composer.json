@@ -12,6 +12,7 @@
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
+        "nahid/talk": "^2.2",
         "orangehill/iseed": "dev-master",
         "overtrue/laravel-follow": "^1.1",
         "spatie/laravel-permission": "^1.12"

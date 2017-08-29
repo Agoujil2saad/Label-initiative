@@ -31,7 +31,7 @@
                 @foreach($projet->photos as $photo)
                 <el-carousel-item>
                 <center>
-                <img src="{{asset('storage/'.$photo->filename)}}" class="ui medium image" >
+                <img src="{{asset('storage/'.$photo->filename)}}" class="ui medium  image"  style="border: 2px solid orange;">
                 </center>
                 </el-carousel-item>
                 @endforeach

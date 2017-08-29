@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c7eecdb85891c411645de5e05476a3b",
+    "content-hash": "c19bb8e17f945b1c9a18939cfa7f0b64",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -849,6 +849,65 @@
             "time": "2017-01-23T04:29:33+00:00"
         },
         {
+            "name": "nahid/talk",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nahid/talk.git",
+                "reference": "337efab1f535710d34c458e5b9195df68e7c62ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nahid/talk/zipball/337efab1f535710d34c458e5b9195df68e7c62ce",
+                "reference": "337efab1f535710d34c458e5b9195df68e7c62ce",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.0.* || 5.1.* || 5.2.* || 5.3.* || 5.4.*",
+                "illuminate/support": "5.0.* || 5.1.* || 5.2.* || 5.3.* || 5.4.*",
+                "nesbot/carbon": "^1.21",
+                "php": ">=5.5.9",
+                "pusher/pusher-php-server": "^2.6",
+                "sebastian-berc/repositories": "^1.0"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nahid\\Talk\\": "src/"
+                },
+                "files": [
+                    "src/helpers/talk.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "CC(3.0)"
+            ],
+            "authors": [
+                {
+                    "name": "Nahid Bin Azhar",
+                    "email": "nahid.dns@gmail.com"
+                }
+            ],
+            "description": "Talk is a Laravel 5 based realtime messaging, chatting and conversation system. It helps to develop users messaging, chatting and conversations in easy way.",
+            "homepage": "https://github.com/nahid/talk",
+            "keywords": [
+                "chat",
+                "conversations",
+                "inbox",
+                "laravel",
+                "message",
+                "php",
+                "real-time",
+                "realtime"
+            ],
+            "time": "2017-05-23T09:37:57+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.22.1",
             "source": {
@@ -1221,6 +1280,50 @@
             "time": "2017-07-29T19:30:02+00:00"
         },
         {
+            "name": "pusher/pusher-php-server",
+            "version": "2.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pusher/pusher-http-php.git",
+                "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
+                "reference": "2cf2ba85e7ce3250468a1c42ab7c948a7d43839d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for interacting with the Pusher REST API",
+            "homepage": "https://github.com/pusher/pusher-php-server",
+            "keywords": [
+                "events",
+                "php-pusher-server",
+                "publish",
+                "pusher",
+                "realtime",
+                "rest",
+                "trigger"
+            ],
+            "time": "2017-06-06T16:41:17+00:00"
+        },
+        {
             "name": "ramsey/uuid",
             "version": "3.7.0",
             "source": {
@@ -1301,6 +1404,64 @@
                 "uuid"
             ],
             "time": "2017-08-04T13:39:04+00:00"
+        },
+        {
+            "name": "sebastian-berc/repositories",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SebastianBerc/Repositories.git",
+                "reference": "26e3041e4bdfabb22f2c46ee4362f152718eb444"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SebastianBerc/Repositories/zipball/26e3041e4bdfabb22f2c46ee4362f152718eb444",
+                "reference": "26e3041e4bdfabb22f2c46ee4362f152718eb444",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "~5.0|~5.1",
+                "illuminate/database": "~5.0|~5.1",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "^1.4",
+                "laracasts/testdummy": "^2.3",
+                "mockery/mockery": "^0.9.4",
+                "orchestra/testbench": "3.0.*",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SebastianBerc\\Repositories\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Berć",
+                    "email": "contact@sebastian-berc.pl",
+                    "homepage": "http://sebastian-berc.pl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Flexable Laravel ~5.0 Repository Library.",
+            "homepage": "https://github.com/SebastianBerc/Repositories",
+            "keywords": [
+                "league",
+                "repository"
+            ],
+            "time": "2015-10-09T22:53:54+00:00"
         },
         {
             "name": "spatie/laravel-permission",

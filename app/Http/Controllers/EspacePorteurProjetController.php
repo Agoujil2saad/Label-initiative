@@ -18,6 +18,11 @@ public function index()
     $projet= auth()->user()->projet;
     return view('espace_porteur.index',compact('projet'));
 }
+public function chat()
+{
+    $users = User::all();
+    return view('espace_porteur.chat',compact('users'));
+}
 public function edit()
 {
     $user = User::findOrFail(auth()->id());

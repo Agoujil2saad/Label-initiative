@@ -158,6 +158,7 @@ Overtrue\LaravelFollow\FollowServiceProvider::class
 ,
 Orangehill\Iseed\IseedServiceProvider::class,
 Laravel\Scout\ScoutServiceProvider::class,
+Nahid\Talk\TalkServiceProvider::class,
 ],
 /*
 |--------------------------------------------------------------------------
@@ -205,5 +206,6 @@ Laravel\Scout\ScoutServiceProvider::class,
 'View' => Illuminate\Support\Facades\View::class,
 'Form' => Collective\Html\FormFacade::class,
 'Html' => Collective\Html\HtmlFacade::class,
+'Talk'      => Nahid\Talk\Facades\Talk::class,
 ],
 ];
