@@ -19,19 +19,19 @@ class PartenairesTableSeeder extends Seeder
         \DB::table('partenaires')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'name' => 'rochdi',
-                'logo' => '1503692356.png',
-                'created_at' => '2017-08-25 20:19:16',
-                'updated_at' => '2017-08-25 20:19:16',
+                'id' => 3,
+                'name' => 'SENERGIE',
+                'logo' => '1504211695.png',
+                'created_at' => '2017-08-31 20:34:55',
+                'updated_at' => '2017-08-31 20:34:55',
             ),
             1 => 
             array (
-                'id' => 2,
-                'name' => 'hwaei',
-                'logo' => '1503692388.png',
-                'created_at' => '2017-08-25 20:19:48',
-                'updated_at' => '2017-08-25 20:19:48',
+                'id' => 4,
+                'name' => 'HUAWEI',
+                'logo' => '1504211947.jpg',
+                'created_at' => '2017-08-31 20:39:07',
+                'updated_at' => '2017-08-31 20:39:07',
             ),
         ));
         
