@@ -1,9 +1,9 @@
-   <div class="row" style="border-bottom: 5px solid orange;">
+   <div class="row" style="border-bottom: 5px solid orange; padding:0; margin: 0; ">
           <div class="three wide column middle aligned">
             <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui centered small image" id="logo_left">
 
             <div class="ui sidebar orange vertical menu" id="sidebar_navigation">
-              <a class="item">
+              <a class="item" href="/qui_sommes_nous">
                 Qui Sommes-nous?
               </a>
               <a class="item" href="{{URL::to('projet')}}">
@@ -57,7 +57,7 @@
 
           <div class="ten wide column middle aligned" id="navigation_menu">
             <div class="ui five stackable item secondary menu" >
-              <a href="" class="item"> <p class="ui orange small header">Qui Sommes-nous?</p></a>
+              <a href="/qui_sommes_nous" class="item"> <p class="ui orange small header">Qui Sommes-nous?</p></a>
               <a href="{{URL::to('projet')}}" class="item"><p class="ui orange small header">Nos Projets</p></a>
               <a href="{{URL::to('evenement')}}" class="item">
                 <p class="ui orange small header">Nos Événements</p></a>

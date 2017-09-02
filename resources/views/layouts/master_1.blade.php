@@ -18,6 +18,13 @@
 
       <style>
       /*sidebar*/
+           .initiative_list{
+      list-style-image: url('images/home_5Dx_icon.ico');
+  }
+  .initiative_list li{
+     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.7em;
+  }
       #pusher{
       visibility: visible;
       }
