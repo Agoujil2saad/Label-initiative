@@ -38,7 +38,6 @@ html,
   background-position: 0% 100%;
   background-size: cover;
   /* Dimensions */
-  height: 340px;
   width: 100%;
 
 
@@ -296,7 +295,7 @@ html,
     height: auto;
     height: 100%;
     max-height: 90vh;
-    min-height: 360px;
+   /* min-height: 360px;*/
     /* Move the background radial to the left */
     background-position: 50% 100%;
   }

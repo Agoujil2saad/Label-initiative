@@ -327,7 +327,7 @@
       </div>
       <!-- new row -->
       <h1 id="centred_title">VIDÉOTHÈQUE </h1>
-      <div class="rvs-container">
+      <div class="rvs-container" style="width: 100%">
         <div class="rvs-item-container">
           <div class="rvs-item-stage">
             <!-- The below is a single item, simply duplicate this layout for each item -->
