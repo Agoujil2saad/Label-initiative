@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="app">
     <div class="eight wide column">
         <div class="ui  segment">
                 
@@ -14,7 +14,7 @@
     </div>
           @endcan
 @endif
-                <template>
+              
                 <el-tabs type="border-card">
                 <el-tab-pane>
                 <span slot="label"><i class="announcement icon"></i> Accueil</span>
@@ -31,7 +31,7 @@
                 @foreach($projet->photos as $photo)
                 <el-carousel-item>
                 <center>
-                <img src="{{asset('storage/'.$photo->filename)}}" class="ui medium  image"  style="border: 2px solid orange;">
+                <img src="{{asset('storage/'.$photo->filename)}}" class="ui medium  image" >
                 </center>
                 </el-carousel-item>
                 @endforeach
@@ -83,7 +83,8 @@
 
                 </el-tab-pane>
                 </el-tabs>
-                </template>
+         
+
             </div>
         </div>
     </div>

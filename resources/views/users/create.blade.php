@@ -2,5 +2,5 @@
 @section('title','|Add User')
 @section('content')
 @include('layouts.errors')
-@include('layouts.create_user')
+@include('partials.create_user')
 @endsection

@@ -1,6 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/user-notifications.js": "/js/user-notifications.js",
+    "/js/search.js": "/js/search.js",
     "/css/semantic.min.css": "/css/semantic.min.css",
     "/js/semantic.min.js": "/js/semantic.min.js"
 }

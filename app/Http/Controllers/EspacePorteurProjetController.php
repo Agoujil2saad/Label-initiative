@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
+use App\Notifications\NewProjetPostNotification;
 use App\Projet;
-use App\User;
 use App\ProjetNouvelle;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 class EspacePorteurProjetController extends Controller
 {
@@ -54,6 +55,7 @@ $projet_nouvelle = ProjetNouvelle::create([
 ,'description'=>$description,
 'projet_id'=>auth()->user()->projet->id
 ]);
+
 if ($photo)
 {
 $input['imagename'] = time().'.'.$photo->getClientOriginalExtension();
@@ -62,10 +64,18 @@ $photo->move($destinationPath, $input['imagename']);
 $projet_nouvelle->photo = time().'.'.$photo->getClientOriginalExtension();
 $projet_nouvelle->save();
 }
+
+$projet= $projet_nouvelle->projet;
+
+$projet->owner->notify(new NewProjetPostNotification( $projet));
+
 return redirect()->route('projet_news')
 ->with('flash_message', 'la nouvelle,
 '. $projet_nouvelle->name.' created');
 }
+
+
+
 
 public function destroy($id)
 {

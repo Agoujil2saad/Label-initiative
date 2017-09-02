@@ -30,4 +30,9 @@ class Projet extends Model
    {
      return $this->hasMany('App\ProjetNouvelle');
    }
+   public function path(){
+    return '/projet/'.$this->id;
+   }
+
+
 }

@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/deposer', 'DeposerProjetController@index');
 Route::post('/deposer', 'DeposerProjetController@store');
 // espace porteur de projet routing
+
 Route::get('/espace_porteur/chat', 'EspacePorteurProjetController@chat');
 Route::get('/espace_porteur', 'EspacePorteurProjetController@index')->name('projet_news');
 
@@ -50,6 +51,11 @@ Route::resource('permissions', 'PermissionController');
 Route::resource('projet', 'ProjetController');
 Route::resource('partenaire', 'PartenaireController');
 Route::resource('evenement', 'EvenementController');
+//notification routing
+
+Route::get('/profiles/{user}/notifications', 'UserNotificationsController@index');
+Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotificationsController@destroy');
+
 //talk routing
 
 

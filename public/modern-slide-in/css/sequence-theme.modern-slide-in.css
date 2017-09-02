@@ -40,7 +40,7 @@ html,
   /* Dimensions */
   height: 340px;
   width: 100%;
-  max-width: 1280px;
+
 
   /* Hide anything that goes beyond the boundaries of the Sequence container */
   overflow: hidden;
@@ -221,13 +221,15 @@ html,
 
 .seq .seq-title h2,
 .seq .seq-title h3 {
+
   display: block;
   width: 98%;
   vertical-align: middle;
   text-align: center;
-  margin: 0;
+  margin-top: 200px;
   opacity: 0;
-  font-size: 8px;
+  display:none;
+  font-size: 14px;
   -webkit-transition-duration: .3s;
   transition-duration: .3s;
   -webkit-transition-properties: opacity;
@@ -361,7 +363,7 @@ html,
     margin: 0;
     opacity: 0;
     text-align: left;
-    font-size: 20px;
+    font-size: 1.1em;
     -webkit-transition-duration: .3s;
     transition-duration: .3s;
     -webkit-transition-properties: transform, opacity;

@@ -30,9 +30,11 @@
   "dependencies": {
     "chart.js": "^2.6.0",
     "element-ui": "^1.4.2",
+    "semantic-ui-vue2": "^2.4.2",
     "vee-validate": "^2.0.0-beta.17",
     "vue-form-generator": "^2.0.0",
     "vue-form-wizard": "^0.6.3",
-    "vue-resource": "^1.3.4"
+    "vue-resource": "^1.3.4",
+    "vuetify": "^0.15.0-beta.4"
   }
 }

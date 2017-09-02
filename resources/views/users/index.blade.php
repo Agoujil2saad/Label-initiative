@@ -1,5 +1,5 @@
 @extends('layouts.master_1')
 @section('title', '| Users')
 @section('content')
-@include('layouts.all_user')
+@include('partials.all_user')
 @endsection

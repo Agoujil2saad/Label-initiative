@@ -1,9 +1,13 @@
-	@include('layouts.search_project')
+	@include('partials.search_project')
   <div class="row">
 	<div class="twelve wide column">
-		<h1 id="centred_title">Page {{ $projets->currentPage() }} of {{ $projets->lastPage() }}</h1>
-	<div class="ui doubling five cards">
+   {{$projets->links()}}
+ <div class="ui divider"></div>
+   
+
+	<div class="ui doubling  cards">
 			@foreach($projets as $projet)
+      @if(count($projet->photos))
 			<div class="card">
 @if(count($projet->photos)>0)
     <img src="{{asset('storage/'.$projet->photos[0]->filename)}}" >
@@ -23,9 +27,11 @@
     </div>
     <i class=" red heart icon"></i>{{count($projet->favoriters)}}
   </div>
-</div>		
-			@endforeach
+</div>	
+@endif	
+@endforeach
 		</div>
+
     <div class="ui divider"></div>
 		{{$projets->links()}}
 	</div>
