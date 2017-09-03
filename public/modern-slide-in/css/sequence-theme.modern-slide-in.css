@@ -34,7 +34,7 @@ html,
 .seq {
   position: relative;
   background: #FF6600  url("../images/slider3.jpg") no-repeat;
-
+  height:90vh;
   background-position: 0% 100%;
   background-size: cover;
   /* Dimensions */
@@ -99,7 +99,7 @@ html,
 }
 
 .seq .seq-canvas {
-  max-width: 1280px;
+/*  max-width: 1280px;*/
   overflow: hidden;
   position: relative;
   display: block;

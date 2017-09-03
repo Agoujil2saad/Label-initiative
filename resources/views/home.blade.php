@@ -9,7 +9,7 @@
     <title>Label Initiative</title>
     <style>
     #my_step1{
-    background: #FF6600  url("images/slider1.jpg") no-repeat;
+    background: #FF6600  url("images/slider_1.jpg") no-repeat;
     background-size: cover;
     width: 100%;
     }
@@ -213,7 +213,7 @@
               <vue-particles class="particles-background"
               color="#fff"
               :particle-opacity="0.7"
-              :particles-Number="120"
+              :particles-Number="80"
               shape-type="circle"
               :particle-size="4"
               lines-color="#fff"
@@ -265,10 +265,10 @@
         </div>
         <!-- new row -->
         <div class="row">
-          <div class="nine wide column">
+          <div class="column">
             <center><a class="ui orange large button" href="{{URL::to('projet')}}">Tous Les Projets</a></center>
             <h1 id="centred_title">DES CHIFFRES CLÉS</h1>
-            <div class="ui  statistics" >
+            <div class="ui four statistics" >
               <div class="statistic">
                 <div class="value">
                   <i class="idea orange icon"></i><span class="timer count-title count-number" data-to="{{count($projets)}}" data-speed="3000"\> 
@@ -327,8 +327,8 @@
       </div>
       <!-- new row -->
       <h1 id="centred_title">VIDÉOTHÈQUE </h1>
-      <div class="rvs-container rvs-use-viewport rvs-light rvs-orange-highlight rvs-large-thumbs" >
-        <div class="rvs-item-container">
+      <div class="rvs-container rvs-horizontal rvs-light rvs-orange-highlight rvs-large-thumbs" style="max-width: 100%">
+        <div class="rvs-item-container" >
           <div class="rvs-item-stage">
             <!-- The below is a single item, simply duplicate this layout for each item -->
             <div class="rvs-item" style="background-image: url(https://img.youtube.com/vi/kiY79L_s1BU/maxresdefault.jpg)">
@@ -341,7 +341,7 @@
               <a href="https://www.youtube.com/embed/qh49jlLjQZ8" class="rvs-play-video"></a>
             </div>
             <!-- new item -->
-            <div class="rvs-item" style="background-image: url(https://img.youtube.com/vi/KpQYOVDFC7U/maxresdefault.jpg)">
+            <div class="rvs-item" style="background-image: url(http://img.youtube.com/vi/KpQYOVDFC7U/hqdefault.jpg)">
               <p class="rvs-item-text">Film sur les actions de la Fondation Village Durable Région de Casablanca. <small>LABEL-INITIATIVE</small></p>
               <a href="https://www.youtube.com/embed/KpQYOVDFC7U" class="rvs-play-video"></a>
             </div>
@@ -364,7 +364,7 @@
             </a>
             <!-- new item -->
             <a class="rvs-nav-item">
-              <span class="rvs-nav-item-thumb" style="background-image: url(https://img.youtube.com/vi/KpQYOVDFC7U/maxresdefault.jpg)"></span>
+              <span class="rvs-nav-item-thumb" style="background-image: url(https://img.youtube.com/vi/KpQYOVDFC7U/2.jpg)"></span>
               <h4 class="rvs-nav-item-title">Film sur les actions de la Fondation Village Durable Région de Casablanca.</h4>
               <small class="rvs-nav-item-credits">LABEL-INITIATIVE</small>
             </a>
@@ -380,7 +380,7 @@
             <div class="five wide column">
               <h4 class="ui orange header" id="footer_titles">LABEL-INITIATIVE</h4>
               <div class="ui inverted link list" id="footer_items">
-                <a href="#" class="item">Qui sommes-nous</a>
+                <a href="/qui_sommes_nous" class="item">Qui sommes-nous</a>
                 <a href="#" class="item">Espace Presse</a>
                 <a href="#" class="item">Contact</a>
                 <a href="#" class="item">Réclamation</a>
@@ -412,6 +412,7 @@
       </div>
     </div>
   </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="{{asset('js/rvslider.min.js')}}"></script>
   <script>
@@ -432,10 +433,12 @@
   $('.ui.sidebar').sidebar({
   context: $('.bottom.segment')
   })
+
   .sidebar('attach events', '.menu .item #menulancher');
   $('.special.cards .image').dimmer({
   on: 'hover'
   });
+  
   $('.ui.dropdown').dropdown();
 
 (function ($) {
