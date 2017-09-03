@@ -1,12 +1,5 @@
 <div class="row">
-
- <h1 class="ui center aligned icon header">
-    <i class="circular privacy icon"></i> 
-    gestion des utilisateurs <br>
-  <a href="{{route('roles.index')}}" class="ui green button"> gestion des Roles</a>
-  <a href="{{route('permissions.index')}}" class="ui blue button">gestion des Permissions</a>
-  </h1>
-  <table class="ui very padded unstackable celled table">
+  <table class="ui very padded unstackable celled table" style="height: 100vh; overflow: scroll">
     <thead>
       <tr>
         <th>Name</th>

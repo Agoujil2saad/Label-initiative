@@ -1,9 +1,22 @@
 @extends('layouts.master_1')
 @section('content')
-<div class="row" style="background-color: rgba(252,101,0,.1); border-top:2px solid red;">
+<div class="row" style="background-color:rgba(214, 212, 212,.2);">
   <div class="ui centered grid">
     @include('layouts.errors')
     <div class="row">
+
+      <div class="six wide column">
+         <center>
+    <h1 class="ui header">
+    <div class="content">
+        Devenir un Partenaire
+    </div>
+</h1>
+</center>
+<img src="{{asset('images/home_shadow.png')}}"  class="ui centred image" style="margin-bottom: 30px;">
+      </div>
+
+    <div class="nine wide  column">
       <form class="ui form segment" method="POST" action="{{ route('register') }}">
         {!! csrf_field() !!}
         <div class="field">
@@ -42,10 +55,14 @@
             <label>J'accepte les conditions générales d’utilisation de la plateforme</label>
           </div>
         </div>
-        <button class="ui orange button" type="submit">Déposer</button>
+        <button class="ui orange button" type="submit">S'inscrire</button>
         <p>Tout les champs avec * doivent être obligatoirement remplis</p>
       </form>
+      </div>
     </div>
+
+
+
   </div>
 </div>
 @endsection

@@ -3,10 +3,8 @@
 
 <div class="row" >
 <div class="eleven wide column">
-		<h1 id="centred_title">Page {{ $evenements->currentPage() }} of {{ $evenements->lastPage() }}</h1>
 		<div class="ui four cards">
 			@foreach($evenements as $evenement)
-
 			<div class="ui  card">
     <img src="{{asset('storage/'.$evenement->photos[0]->filename)}}" class="ui image" >
 
@@ -26,9 +24,9 @@
 
 </div>
 
-<div class="row">
-    <a class="fluid ui orange large button" href="{{URL::to('evenement\create')}}"> 
-<i class="handshake icon"></i>
-    Ajouter des Evenements</a>
-</div>
+@can('Create Evenement')
+    <a class="ui large button" href="{{URL::to('evenement\create')}}"> 
+<i class=" orange large plus icon"></i>Ajouter des Evenements</a>
+@endcan
+
 @endsection

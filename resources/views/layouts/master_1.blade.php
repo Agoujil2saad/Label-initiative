@@ -7,9 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
+      <link rel="shortcut icon" type="image/gif" href="images/home_iBI_icon.ico" />
     <!-- Styles -->
     <link rel="stylesheet"
       type="text/css" href="{{ mix('css/app.css') }}">
+
       <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
       {{-- <link href="/css/apptalk.css" rel="stylesheet"> --}}
@@ -62,9 +64,13 @@
     </head>
 
     <body>
-      <div class="ui centered grid">
+      <div class="ui  stackable centered grid">
         
           @include('partials.header_1')
+
+@role('Admin')
+@include('partials.admin_menu')
+@endrole
           @yield('content')
      
 
@@ -88,5 +94,14 @@
         </script>
         <script src="{{ mix('js/app.js') }}"></script>
          <script src="{{ mix('js/user-notifications.js') }}"></script>
+         <script type="text/javascript">
+           function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+         </script>
       </body>
     </html>

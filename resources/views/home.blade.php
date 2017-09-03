@@ -31,7 +31,7 @@
     {
     display: none;
     }
-    #hidden{
+    #hidden_mobile{
       display: none;
     }
     @media only screen and (min-width: 860px) {
@@ -39,7 +39,7 @@
     display: flex;
     visibility: visible;
     }
-      #hidden{
+      #hidden_mobile{
       display: flex;
     }
 
@@ -58,22 +58,22 @@
       <a class="item">
         <i class=" orange large sidebar icon" id="menulancher"></i>
       </a>
-      <a href="" class="item" style="padding: 0;" id="hidden">
+      <a href="/" class="item" style="padding: 0;" id="hidden_mobile">
         <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui centered small image">
       </a>
-      <a href="" class="item" id="hidden">
+      <a href="/qui_sommes_nous" class="item" id="hidden_mobile">
         <p class="ui orange small header">Qui Sommes-nous?</p>
       </a>
-      <a href="{{URL::to('projet')}}" class="item" id="hidden">
+      <a href="{{URL::to('projet')}}" class="item" id="hidden_mobile">
         <p class="ui orange small header">Nos Projets</p></a>
-        <a href="{{URL::to('evenement')}}" class="item" id="hidden">
+        <a href="{{URL::to('evenement')}}" class="item" id="hidden_mobile">
           <p class="ui orange small header">Nos Événements</p>
         </a>
         
-        <a href="{{URL::to('partenaire')}}" class="item" id="hidden"><p class="ui orange small header">Nos Partenaires</p>
+        <a href="{{URL::to('partenaire')}}" class="item" id="hidden_mobile"><p class="ui orange small header">Nos Partenaires</p>
       </a>
       {{-- condition --}}
-      <a class="item">
+      <a class="item" href="/login">
         @if(Auth::guest())
         <div class="ui orange button">Se connecter</div>
         @else
@@ -105,7 +105,7 @@
         </div>
         @endif
       </a>
-      <a href="" class="item right floated">
+      <a href="/" class="item right floated">
         <img src="images/test_modified.png" alt="" class="ui centered small image" id="logo_right">
       </a>
     </div>
@@ -162,18 +162,18 @@
               <ul class="seq-canvas">
                 <li id="my_step1">
                   <div class="seq-model">
-                    <a href=""><img data-seq src="images/rubrique.png" alt="" /></a>
+                    <a href="/register"><img data-seq src="images/rubrique.png" alt="" /></a>
                   </div>
                   <div class="seq-title">
                     <h2 data-seq>
                     Notre objectif est de vous accompagner <br>dans la réussite de votre projet  <br>
-                    <a href="">Découvrir Label Initiative ▶ </a>
+                    <a href="/qui_sommes_nous">Découvrir Label Initiative ▶ </a>
                     </h2>
                   </div>
                 </li>
                 <li  id="my_step2">
                   <div class="seq-model">
-                    <a href=""><img data-seq src="images/rubrique.png" alt="" /></a>
+                    <a href="/register"><img data-seq src="images/rubrique.png" alt="" /></a>
                     
                   </div>
                   <div class="seq-title">
@@ -186,14 +186,14 @@
                 </li>
                 <li id="my_step3">
                   <div class="seq-model">
-                    <img data-seq src="images/rubrique.png" alt="" />
+                    <a href="/register"><img data-seq src="images/rubrique.png" alt="" /></a>
                   </div>
                   <div class="seq-title">
                     <h2 data-seq>
                     Discours de S.M le Roi Mohammed VI, 30 juillet 2015 <br>
                     « En dépit des progrès réalisés par notre pays,<br> ce qui me désole, c’est cette situation de précarité que vivent <br>certains de nos concitoyens dans les régions éloignées et enclavées <br>, surtout sur les sommets de l’Atlas et du Rif,<br> les zones sahariennes arides et les oasis <br> ainsi que certains villages dans les plaines et sur les côtes. <br>
                     Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depuis des décennies <br> dans ces régions, malgré toutes les initiatives <br> et tous les efforts qui ont été déployés. »
-                    <a href="">savoir plus ▶</a>
+                    <a href="/qui_sommes_nous">savoir plus ▶</a>
                     </h2>
                   </div>
                 </li>
@@ -231,10 +231,10 @@
             </div>
             <p class="main-title">Vous êtes une association ou une coopérative de la province de <b style="color: black">KENITRA</b>,<br> vous cherchez des solutions à vos besoins,<br> vous souhaitez participer au développement de votre territoire,<br> trouver des partenaires et gagner en visibilité,<br>   <b style="color: black"> LABEL INITIATIVE</b> vous accompagne et facilite la réalisation de vos projets.
               <br>
-              <button class="ui inverted large  labeled icon button">
+              <a class="ui inverted large  labeled icon button" href="/deposer">
               <i class="idea icon"></i>
               Déposer mon projet
-              </button>
+              </a>
             </p>
           </div>
         </div>
@@ -327,7 +327,7 @@
       </div>
       <!-- new row -->
       <h1 id="centred_title">VIDÉOTHÈQUE </h1>
-      <div class="rvs-container" style="width: 100%">
+      <div class="rvs-container rvs-use-viewport rvs-light rvs-orange-highlight rvs-large-thumbs" >
         <div class="rvs-item-container">
           <div class="rvs-item-stage">
             <!-- The below is a single item, simply duplicate this layout for each item -->

@@ -1,6 +1,10 @@
    <div class="row" style="border-bottom: 5px solid orange; padding:0; margin: 0; ">
           <div class="three wide column middle aligned">
-            <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui centered small image" id="logo_left">
+           
+<a href="/">
+   <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui centered small image" id="logo_left">
+</a>
+           
 
             <div class="ui sidebar orange vertical menu" id="sidebar_navigation">
               <a class="item" href="/qui_sommes_nous">
@@ -99,18 +103,21 @@
 
               </div>
             </div>
-            
-            <div class="one wide column middle aligned " id="user_notifications">
+      
+      @if(Auth::check())      
+      <div class="one wide column middle aligned " id="user_notifications">
          
 
- <user-notifications></user-notifications> 
+     <user-notifications></user-notifications> 
 
 
      </div>
            
-
+@endif
             <div class="two wide column middle aligned">
               <img src="{{ asset("images/test_modified.png") }}" alt="" class="ui centered small image" id="logo_right">
+<a href=""></a>
+
             </div>
             
           </div>

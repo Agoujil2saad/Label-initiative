@@ -8,10 +8,10 @@
 
 <div id="photo_caroussel">
 <template>
-  <el-carousel :interval="4000" type="card" height="300px">
+  <el-carousel :interval="4000">
 @foreach($evenement->photos as $photo)
     <el-carousel-item>
-      <img src="{{asset('storage/'.$photo->filename)}}">
+      <img src="{{asset('storage/'.$photo->filename)}}" class="ui fluid image">
     </el-carousel-item>
 @endforeach
   </el-carousel>

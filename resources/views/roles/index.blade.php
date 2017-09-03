@@ -2,12 +2,7 @@
 @section('title', '| Roles')
 @section('content')
 <div class="row">
-  <h1 class="ui center aligned icon header">
-    <i class="circular privacy icon"></i> gestion des Roles <br>
-  <a href="{{route('users.index')}}" class="ui green button">gestion des Utilisateurs</a>
-  <a href="{{route('permissions.index')}}" class="ui blue button"> gestion des Permissions</a>
-  </h1>
-  <table class="ui unstackable very padded celled table">
+  <table class="ui unstackable very padded celled table" style="height: 100vh; overflow: scroll;">
     <thead>
       <tr>
         <th>Role</th>

@@ -2,12 +2,7 @@
 @section('title', '| Permissions')
 @section('content')
 <div class="row">
- <h1 class="ui center aligned icon header">
-    <i class="circular privacy icon"></i> gestion des Permissions <br>
-  <a href="{{route('roles.index')}}" class="ui green button"> gestion des Roles</a>
-  <a href="{{route('users.index')}}" class="ui blue button">gestion des Utilisateurs</a>
-  </h1>
-  <table class="ui unstackable very padded celled table">
+  <table class="ui unstackable very padded celled table" style="height: 100vh; overflow: scroll;">
     <thead>
       <tr>
         <th>Permissions</th>
@@ -35,5 +30,4 @@
   </div>
 </a>
 </div>
-
 @endsection
