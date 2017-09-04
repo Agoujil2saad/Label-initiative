@@ -18,6 +18,8 @@
 </template>
 </div>
 
+@role('Admin')
+
     {!! Form::open(['method' => 'DELETE', 'route' => ['evenement.destroy', $evenement->id] ]) !!}
 
     <a href="{{ url()->previous() }}" class="ui orange fluid  button"> 
@@ -32,6 +34,10 @@
     {!! Form::submit('Delete', ['class' => 'ui red button ']) !!}
 
     {!! Form::close() !!}
+
+
+@endrole
+
     </div>
 
 

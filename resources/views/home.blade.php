@@ -8,6 +8,14 @@
     <meta name="viewport" content="width=device-width" />
     <title>Label Initiative</title>
     <style>
+    html.ios {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+html.ios,
+html.ios body {
+  height: initial !important;
+}
     #my_step1{
     background: #FF6600  url("images/slider_1.jpg") no-repeat;
     background-size: cover;
@@ -110,7 +118,10 @@
       </a>
     </div>
   </div>
-  <div class="ui bottom attached segment">
+  <div class="ui bottom attached segment" style="height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;">
     <div class="ui sidebar orange vertical menu">
       <a class="item" href="/qui_sommes_nous">
         Qui Sommes-nous?
@@ -154,7 +165,13 @@
       </a>
       
     </div>
-    <div class="pusher">
+    <div class="pusher" style=" 
+        position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+    overflow-y: scroll;">
       <div class="ui centered stackable grid">
         <div class="row" >
           <div id="sequence" class="seq" style="border-top: 4px solid orange;">

@@ -12,7 +12,7 @@
 		</div>
 	</div>
     
-
+@role('Admin')
     {!! Form::open(['method' => 'DELETE', 'route' => ['partenaire.destroy', $partenaire->id] ]) !!}
 
     <a href="{{ url()->previous() }}" class="ui orange fluid  button"> 
@@ -27,6 +27,8 @@
     {!! Form::submit('Delete', ['class' => 'ui red button ']) !!}
     @endcan
     {!! Form::close() !!}
+@endrole
+
 	</div>
 
 </div>

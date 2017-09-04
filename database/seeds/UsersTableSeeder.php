@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
                 'fonction' => NULL,
                 'region' => NULL,
                 'tel' => NULL,
-                'remember_token' => 'vgQ7a0BaIIyQwC4Vfw3IbG9TCHApIm59sX0n6ohb6eqjmqsq0B1FF9BmXXtS',
+                'remember_token' => 'RsmOU50BGhEurVdlWQKk2tIIPgDE9aJdlHyZqnp4fbo84Zh6At99wA8JGD1l',
                 'created_at' => '2017-08-25 20:14:30',
                 'updated_at' => '2017-08-25 20:18:28',
             ),

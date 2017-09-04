@@ -80,6 +80,13 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2017-08-29 07:57:14',
                 'updated_at' => '2017-08-29 07:57:14',
             ),
+            9 => 
+            array (
+                'id' => 10,
+                'name' => 'Create Evenement',
+                'created_at' => '2017-09-03 13:45:26',
+                'updated_at' => '2017-09-03 13:45:26',
+            ),
         ));
         
         

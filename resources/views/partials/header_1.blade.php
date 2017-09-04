@@ -106,18 +106,15 @@
       
       @if(Auth::check())      
       <div class="one wide column middle aligned " id="user_notifications">
-         
-
      <user-notifications></user-notifications> 
-
-
      </div>
            
-@endif
-            <div class="two wide column middle aligned">
-              <img src="{{ asset("images/test_modified.png") }}" alt="" class="ui centered small image" id="logo_right">
-<a href=""></a>
+     @endif
 
+
+
+            <div class="two wide column middle aligned">         
+               <a href="/"><img src="{{ asset("images/test_modified.png") }}" alt="" class="ui centered small image" id="logo_right"></a>
             </div>
             
           </div>

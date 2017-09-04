@@ -9,12 +9,13 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
       <link rel="shortcut icon" type="image/gif" href="images/home_iBI_icon.ico" />
     <!-- Styles -->
+     <link href="/css/app_talk.css" rel="stylesheet">
     <link rel="stylesheet"
       type="text/css" href="{{ mix('css/app.css') }}">
 
       <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
-      {{-- <link href="/css/apptalk.css" rel="stylesheet"> --}}
+     
 
 
 
@@ -79,21 +80,21 @@
 
 
 
+     <script src="{{ mix('js/app.js') }}"></script>
+     <script src="{{ mix('js/user-notifications.js') }}"></script>
+         <script src="{{asset('js/app_talk.js')}}"></script>
      
-      
-{{-- <script src="/js/apptalk.js"></script> --}}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="{{ asset('js/semantic.min.js') }}"></script>
         <script>
-        $("#pusher").click(function(){
+           $('.ui.dropdown').dropdown();
+        $("#pusher").click(()=>{
         $('.ui.sidebar')
         .sidebar('toggle')
         ;
         });
-        $('.ui.dropdown').dropdown();
         </script>
-        <script src="{{ mix('js/app.js') }}"></script>
-         <script src="{{ mix('js/user-notifications.js') }}"></script>
+ 
          <script type="text/javascript">
            function copyToClipboard(element) {
   var $temp = $("<input>");
