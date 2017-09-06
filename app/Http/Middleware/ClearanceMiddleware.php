@@ -23,7 +23,7 @@ class ClearanceMiddleware {
 
         if ($request->is('projets/create'))//If user is creating a projet
          {
-            if (!Auth::user()->hasPermissionTo('Edit Projet'))
+            if (!Auth::user()->hasPermissionTo('Administer roles & permissions'))
          {
                 abort('401');
             } 
@@ -34,9 +34,21 @@ class ClearanceMiddleware {
 
           
 
-          if (str_contains($url,'espace_porteur'))//If user is creating a projet
+          if (str_contains($url,'espace_porteur'))//If porteur is visiting his dashbord
          {
-            if (!Auth::user()->hasPermissionTo('Porteur De Projet Tools'))
+            if (!Auth::user()->hasRole('Porteur de Projet'))
+         {
+                abort('401');
+            } 
+         else {
+                return $next($request);
+            }
+        }
+
+
+           if (str_contains($url,'espace_partenaire'))//If partenaire is visiting his dashbord
+         {
+            if (!Auth::user()->hasRole('Partenaire Projet'))
          {
                 abort('401');
             } 
@@ -45,16 +57,8 @@ class ClearanceMiddleware {
             }
         }
         
-        if (str_contains($url,'evenement'))//If user is creating a projet
-         {
-            if (!Auth::user()->hasPermissionTo('Porteur De Projet Tools'))
-         {
-                abort('401');
-            } 
-         else {
-                return $next($request);
-            }
-        }
+        
+       
 
 
         if ($request->is('projet/*/edit')) //If user is editing a projet

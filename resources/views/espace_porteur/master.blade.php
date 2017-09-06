@@ -1,40 +1,37 @@
 @extends('layouts.master_1')
 @section('content')
-<div class="ui internally stackable celled grid" style="background-color: rgba(252,101,0,.1); border-top:2px solid red;">
+<div class="ui  stackable celled grid" style="background-color: rgba(214, 212, 212,.2);padding:0;margin:0">
 	<div class="row">
 		<div class="four wide column">
 			<div class="ui compact vertical labeled icon menu">
-				<a class="item">
+				<a class="item" href="/espace_porteur/edit">
 					<i class="travel icon orange"></i>
 					Mon projet
 				</a>
-				<a class="item">
+				<a class="item" href="/espace_porteur/myaccount">
 					<i class="folder icon orange"></i>
 					Mon compte
 				</a>
-				<a class="item">
+				<a class="item" href="/espace_porteur">
 					<i class="newspaper icon orange"></i>
 					Actualité du projet
 				</a>
-				<a class="item">
-					<i class="users icon orange"></i>
-					Mes Partenaires
-				</a>
-				<a class="item">
+				<a class="item" href="/espace_porteur/chat">
 					<i class="mail outline icon orange"></i>
-					Messages Reçus
+					Chat Avec Mes partenaires
 				</a>
 			</div>
 		</div>
 		<div class="twelve wide column">
 			<div class="row" id="menu_bar">
-				<button class="ui orange button">
+				<a class="ui orange button" href="/espace_porteur/createnouvelle">
 				<i class="plus icon"></i>
 				Publier une nouvelle
-				</button>
+				</a>
 			</div>
 			
-			<div class="ui internally centered grid">
+
+			<div class="ui very padded centered grid" style="padding-right: 30px;">
 				@yield('espace_porteur')	
 			</div>
 		</div>

@@ -82,12 +82,13 @@
 
      <script src="{{ mix('js/app.js') }}"></script>
      <script src="{{ mix('js/user-notifications.js') }}"></script>
-         <script src="{{asset('js/app_talk.js')}}"></script>
+     <script src="{{asset('js/app_talk.js')}}"></script>
      
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="{{ asset('js/semantic.min.js') }}"></script>
         <script>
            $('.ui.dropdown').dropdown();
+           
         $("#pusher").click(()=>{
         $('.ui.sidebar')
         .sidebar('toggle')
@@ -95,14 +96,14 @@
         });
         </script>
  
-         <script type="text/javascript">
+  
+   <script type="text/javascript">
            function copyToClipboard(element) {
   var $temp = $("<input>");
   $("body").append($temp);
   $temp.val($(element).text()).select();
   document.execCommand("copy");
   $temp.remove();
-}
-         </script>
+}</script>
       </body>
     </html>

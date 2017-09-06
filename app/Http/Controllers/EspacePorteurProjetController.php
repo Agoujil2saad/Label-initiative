@@ -21,9 +21,10 @@ public function index()
 }
 public function chat()
 {
-    $users = User::all();
+    $users = auth()->user()->projet->favoriters;
     return view('espace_porteur.chat',compact('users'));
 }
+
 public function edit()
 {
     $user = User::findOrFail(auth()->id());
@@ -67,13 +68,32 @@ $projet_nouvelle->save();
 
 $projet= $projet_nouvelle->projet;
 
-$projet->owner->notify(new NewProjetPostNotification( $projet));
+
+
+foreach ($projet->favoriters as $user) {
+$user->notify(new NewProjetPostNotification( $projet));
+}
+
 
 return redirect()->route('projet_news')
 ->with('flash_message', 'la nouvelle,
 '. $projet_nouvelle->name.' created');
 }
 
+public function myaccount()
+{
+	$user = Auth::user();
+return view('espace_porteur.edit_account',compact('user'));
+}
+
+public function update_myaccount($id,Request $request)
+{
+	 $user = User::updateOrCreate(['id'=>$id],
+	 	$request->all());
+	return redirect()->route('projet_news')
+->with('flash_message',
+'Account successfully updated');
+}
 
 
 

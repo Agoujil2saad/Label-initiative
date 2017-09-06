@@ -1,10 +1,11 @@
 <div class="row">
-<div class="ui three cards">
+<div class="ui four cards">
 @foreach($projet->nouvelles as $nouvelle)
-<div class=" card">
+<div class="card">
 	<div class="image">
    <img src="{{asset('images/photo_nouvelles/'.$nouvelle->photo)}}">
   </div>
+
   <div class="content">
     <a class="header">{{$nouvelle->title}}</a>
     <div class="meta">
@@ -14,11 +15,10 @@
       {{$nouvelle->description}}
     </div>
   </div>
-     {!! Form::open(['method' => 'DELETE', 'route' => ['deletephoto_nouvelle', $nouvelle->id] ]) !!}
 
+     {!! Form::open(['method' => 'DELETE', 'route' => ['deletephoto_nouvelle', $nouvelle->id] ]) !!}
     {!! Form::submit('
-      DELETE', ['class' => 'ui red button ']) !!}
-    
+      DELETE', ['class' => 'ui red button ']) !!}  
     {!! Form::close() !!}
 </div>
 @endforeach

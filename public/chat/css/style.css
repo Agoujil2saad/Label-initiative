@@ -4,9 +4,8 @@
 }
 
 body {
-  background: #C5DDEB;
+  background: rgba(214,212,212,.1);
   font: 14px/20px "Lato", Arial, sans-serif;
-  padding: 40px 0;
   color: white;
 }
 
@@ -17,36 +16,15 @@ body {
 }
 
 .body {
-    background: #444753;
+    background: #ff6600;
     margin-top: 10px;
 }
 
-.header {
-    height: 40px;
-    padding-top:10px;
-    padding-bottom: 15px;
-    width:100%;
-    background-color: white;
-    top: 0;
-    margin-top: 0;
-    position: fixed;
-    z-index: 999;
-}
 
-.header-brand {
-    background-color: white;
-}
 
-.header-brand .brand {
-    color: #333333;
-    font-size: 18px;
-    text-decoration:none;
-    font-weight:400;
-
-}
 
 .people-list {
-    width: 260px;
+    width: 30%;
     float: left;
 }
 .people-list .search {
@@ -61,35 +39,13 @@ body {
   width: 90%;
   font-size: 14px;
 }
-.people-list .fa-search {
-  position: relative;
-  left: -25px;
-}
-.people-list ul {
-  padding: 20px;
-  height: 770px;
-}
-.people-list ul li {
-  padding-bottom: 20px;
-}
-.people-list img {
-  float: left;
-}
-.people-list .about {
-  float: left;
-  margin-top: 8px;
-}
-.people-list .about {
-  padding-left: 8px;
-}
-.people-list .status {
-  color: #92959E;
-}
+
+
 
 .chat {
-  width: 490px;
+  width: 300px;
   float: left;
-  background: #F2F5F8;
+  background: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   color: #434651;
@@ -112,12 +68,6 @@ body {
 }
 .chat .chat-header .chat-num-messages {
   color: #92959E;
-}
-.chat .chat-header .fa-star {
-  float: right;
-  color: #D8DADF;
-  font-size: 20px;
-  margin-top: 12px;
 }
 .chat .chat-history {
   padding: 30px 30px 20px;
@@ -170,8 +120,8 @@ body {
 }
 .chat .chat-message textarea {
   width: 100%;
-  border: none;
   padding: 10px 20px;
+  border:1px solid gray;
   font: 14px/22px "Lato", Arial, sans-serif;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -182,19 +132,7 @@ body {
   color: gray;
   cursor: pointer;
 }
-.chat .chat-message button {
-  float: right;
-  color: #94C2ED;
-  font-size: 16px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  background: #F2F5F8;
-}
-.chat .chat-message button:hover {
-  color: #75b1e8;
-}
+
 
 .online, .offline, .me {
   margin-right: 3px;

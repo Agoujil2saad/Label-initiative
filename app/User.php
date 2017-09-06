@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Cache;
 use Overtrue\LaravelFollow\Traits\CanFavorite;
 use Overtrue\LaravelFollow\Traits\CanFollow;
 use Overtrue\LaravelFollow\Traits\CanLike;
@@ -44,6 +45,10 @@ class User extends Authenticatable
     return $this->hasOne('App\Projet');
   }
 
+public function isOnline()
+{
+    return Cache::has('user-is-online-'.$this->id);
+}
  
 
 }

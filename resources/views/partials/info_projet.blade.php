@@ -125,7 +125,7 @@
             </div>
             <div class="extra content">
                 <center>
-                <button class="ui orange  button">Envoyer un message</button>
+                <a class="ui orange  button" href="{{route('message.read', ['id'=>$projet->owner->id])}}">Envoyer un message</a>
                 </center>
             </div>
         </div>

@@ -17,6 +17,7 @@ class CreateEvenementsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->text('url')->nullable();
             $table->timestamps();
         });
     }

@@ -8,16 +8,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>Label Initiative</title>
     <style>
-    html.ios {
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-html.ios,
-html.ios body {
-  height: initial !important;
-}
     #my_step1{
-    background: #FF6600  url("images/slider_1.jpg") no-repeat;
+    background: #FF6600  url("images/slider_4.jpg") no-repeat;
     background-size: cover;
     width: 100%;
     }
@@ -32,149 +24,46 @@ html.ios body {
     width: 100%;
     }
     /*sidebar*/
-    #pusher{
-    visibility: visible;
-    }
-    #logo_left
-    {
-    display: none;
-    }
-    #hidden_mobile{
+      #pusher{
+      visibility: visible;
+      }
+      #navigation_menu{
       display: none;
-    }
-    @media only screen and (min-width: 860px) {
-    #navigation_menu{
-    display: flex;
-    visibility: visible;
-    }
-      #hidden_mobile{
+      visibility: hidden;
+      }
+      #logo_left
+      {
+      display: none;
+      }
+      @media only screen and (min-width: 860px) {
+      #navigation_menu{
       display: flex;
-    }
-
-    }
+      visibility: visible;
+      }
+      #pusher{
+      display: none;
+      visibility:hidden;
+      }
+      #logo_left{
+      display: flex;
+      }
+    } 
     </style>
     <link rel="shortcut icon" type="image/gif" href="images/home_iBI_icon.ico" />
     {{-- styles --}}
-    <link rel="stylesheet" href="{{asset('modern-slide-in/css/sequence-theme.modern-slide-in.css')}}" />
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/rvslider.min.css') }}">
-    
+    <link rel="stylesheet" href="{{asset('modern-slide-in/css/sequence-theme.modern-slide-in.css')}}" />
+
   </head>
   <body>
-    <div class="ui top  attached compact  inverted secondary  menu" >
-      <a class="item">
-        <i class=" orange large sidebar icon" id="menulancher"></i>
-      </a>
-      <a href="/" class="item" style="padding: 0;" id="hidden_mobile">
-        <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui centered small image">
-      </a>
-      <a href="/qui_sommes_nous" class="item" id="hidden_mobile">
-        <p class="ui orange small header">Qui Sommes-nous?</p>
-      </a>
-      <a href="{{URL::to('projet')}}" class="item" id="hidden_mobile">
-        <p class="ui orange small header">Nos Projets</p></a>
-        <a href="{{URL::to('evenement')}}" class="item" id="hidden_mobile">
-          <p class="ui orange small header">Nos Événements</p>
-        </a>
-        
-        <a href="{{URL::to('partenaire')}}" class="item" id="hidden_mobile"><p class="ui orange small header">Nos Partenaires</p>
-      </a>
-      {{-- condition --}}
-      <a class="item" href="/login">
-        @if(Auth::guest())
-        <div class="ui orange button">Se connecter</div>
-        @else
-        <div class="ui inline compact selection orange dropdown " style="padding: 23px; border:0;  color:black">
-          <div class="  text">
-            <img class="ui avatar image" src="images/man.jpg" alt="" >
-            <p class="ui orange label">{{ Auth::user()->name }}</p>
-          </div>
-          <i class="orange dropdown icon"></i>
-          <div class="menu">
-            @role('Admin') {{-- Laravel-permission blade helper --}}
-            <a href="#"><i class="unlock alternate icon"></i>Admin</a>
-            @endrole
-            
-            <div class="item">
-              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <label class="ui red label">
-                  <i class="sign out icon"></i>
-                  Logout
-                </label>
-                
-              </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-              </form>
-            </div>
-            
-          </div>
-        </div>
-        @endif
-      </a>
-      <a href="/" class="item right floated">
-        <img src="images/test_modified.png" alt="" class="ui centered small image" id="logo_right">
-      </a>
-    </div>
-  </div>
-  <div class="ui bottom attached segment" style="height: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: relative;">
-    <div class="ui sidebar orange vertical menu">
-      <a class="item" href="/qui_sommes_nous">
-        Qui Sommes-nous?
-      </a>
-      <a class="item" href="{{URL::to('projet')}}">
-        Nos Projets
-      </a>
-      <a class="item" href="{{URL::to('partenaire')}}">
-        Nos Partenaires
-      </a>
-      <a class="item" href="{{URL::to('evenement')}}">
-        Nos Événements
-      </a>
-      <a class="item">
-        @if(Auth::guest())
-        <div class="ui orange button">Se connecter</div>
-        @else
-        <div class="ui dropdown">
-          <div class="text">
-            <img class="ui avatar image" src="images/man.jpg" alt="" >
-            {{ Auth::user()->name }}
-          </div>
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            @role('Admin') {{-- Laravel-permission blade helper --}}
-            <a href="#"><i class="unlock alternate icon"></i>Admin</a>
-            @endrole
-            
-            <div class="item">
-              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Logout
-              </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-              </form>
-            </div>
-            
-          </div>
-        </div>
-        @endif
-      </a>
-      
-    </div>
-    <div class="pusher" style=" 
-        position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
-    overflow-y: scroll;">
       <div class="ui centered stackable grid">
-        <div class="row" >
-          <div id="sequence" class="seq" style="border-top: 4px solid orange;">
+      @include('partials.header_1')
+      {{-- new row --}}
+        <div class="row"  style="padding-top:0; padding-bottom: 7em">
+          <div id="sequence" class="seq">
             <div class="seq-screen">
               <ul class="seq-canvas">
                 <li id="my_step1">
@@ -223,41 +112,39 @@ html.ios body {
           </div>
         </div>
         <!-- new row -->
-        <div class="orange  row">
-          <div class="sixteen wide column" id="app">
-            <div id="message_principale">
-              
-              <vue-particles class="particles-background"
-              color="#fff"
-              :particle-opacity="0.7"
-              :particles-Number="80"
-              shape-type="circle"
-              :particle-size="4"
-              lines-color="#fff"
-              :lines-width="1"
-              :line-linked="true"
-              :line-opacity="0.4"
-              :lines-distance="150"
-              :move-speed="2"
-              :hover-effect="true"
-              hover-mode="grab"
-              :click-effect="true"
-              click-mode="push"
-              >
-              </vue-particles>
-            </div>
-            <p class="main-title">Vous êtes une association ou une coopérative de la province de <b style="color: black">KENITRA</b>,<br> vous cherchez des solutions à vos besoins,<br> vous souhaitez participer au développement de votre territoire,<br> trouver des partenaires et gagner en visibilité,<br>   <b style="color: black"> LABEL INITIATIVE</b> vous accompagne et facilite la réalisation de vos projets.
+        <div class=" orange middle aligned  row" style="background-color: #ff6600">
+<div class=" three wide column">
+  <img src="{{asset('images/home_black_and_white.png')}}" class="ui centered bordered small image" style="box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.75);"> 
+</div>
+          <div class="ten wide column">
+            <p class="main-title">
+         Vous êtes une association ou une coopérative de la province de <b>KENITRA ?</b> <br>
+         
+              Vous cherchez des solutions à vos besoins ? <br>
+             Vous souhaitez participer au développement de votre territoire<br>
+          et trouver des partenaires et gagner en visibilité ? <br>
+    
+            </p>
+          </div>
+        </div>
+        <div class="row">    
+        <div class="eight wide column">
+        <p class="main-title" style="font-size: 1.9em; font-family: 'Open Sans Condensed';">
+            <b style="color:rgb(127,128,127) ; font-size:24px;"> LABEL INITIATIVE</b> 
+            <span style="color: #ff6600;">vous accompagne et facilite la réalisation de vos projets.</span>
               <br>
-              <a class="ui inverted large  labeled icon button" href="/deposer">
+              <a class="ui orange large  labeled icon button" href="/deposer" style="padding: 20px; margin-top: 20px; ">
               <i class="idea icon"></i>
               Déposer mon projet
               </a>
-            </p>
+              </p>
           </div>
         </div>
         <!-- new row -->
         <div class="row">
-          <h1 id="centred_title">DÉCOUVRIR LES PROJETS</h1>
+          <div class="ui horizontal large divider" id="centred_title">
+   <h2> <i class=" chevron down icon "></i> DÉCOUVRIR LES PROJETS</h2>
+   </div>
           <div class="ui three special container  doubling cards">
             @foreach($projets as $projet)
             <div class="card">
@@ -284,7 +171,10 @@ html.ios body {
         <div class="row">
           <div class="column">
             <center><a class="ui orange large button" href="{{URL::to('projet')}}">Tous Les Projets</a></center>
-            <h1 id="centred_title">DES CHIFFRES CLÉS</h1>
+                      <div class="ui horizontal divider" id="centred_title">
+                      <h2> <i class=" chevron down icon "></i>    DES CHIFFRES CLÉS</h2>
+
+   </div>
             <div class="ui four statistics" >
               <div class="statistic">
                 <div class="value">
@@ -324,9 +214,12 @@ html.ios body {
             </div>
           </div>
         </div>
+        {{-- new row --}}
         <div class="row">
+                         <div class="ui horizontal large divider" id="centred_title">
+   <h2> <i class=" chevron down icon "></i> PARTENAIRES OFFICIELS</h2>
+   </div>
           <div class=" six wide column">
-            <h1 id="centred_title">PARTENAIRES OFFICIELS</h1>
             <div id="photo_caroussel">
               <el-carousel :interval="4000" type="card" height="200px">
               @foreach($partenaires as $partenaire)
@@ -340,10 +233,13 @@ html.ios body {
               </el-carousel>
             </div>
           </div>
+    <div class="ui horizontal large divider" id="centred_title">
+   <h2> <i class=" chevron down icon "></i> VIDÉOTHÈQUE</h2>
+   </div>
         </div>
+
       </div>
       <!-- new row -->
-      <h1 id="centred_title">VIDÉOTHÈQUE </h1>
       <div class="rvs-container rvs-horizontal rvs-light rvs-orange-highlight rvs-large-thumbs" style="max-width: 100%">
         <div class="rvs-item-container" >
           <div class="rvs-item-stage">
@@ -391,46 +287,10 @@ html.ios body {
       </div>
       
       <!-- new row -->
-      <div class="ui orange vertical footer segment" id="footer">
-        <div class="ui center aligned container">
-          <div class="ui stackable grid">
-            <div class="five wide column">
-              <h4 class="ui orange header" id="footer_titles">LABEL-INITIATIVE</h4>
-              <div class="ui inverted link list" id="footer_items">
-                <a href="/qui_sommes_nous" class="item">Qui sommes-nous</a>
-                <a href="#" class="item">Espace Presse</a>
-                <a href="#" class="item">Contact</a>
-                <a href="#" class="item">Réclamation</a>
-              </div>
-            </div>
-            <div class="five wide column">
-              <h4 class="ui orange header" id="footer_titles">SAVOIR PLUS</h4>
-              <div class="ui inverted link list" id="footer_items">
-                <a href="#" class="item">Foire aux questions</a>
-                <a href="#" class="item">L'équipe</a>
-                <a href="#" class="item">Le guide du porteur de projet</a>
-                <a href="#" class="item">Investissement participatif</a>
-              </div>
-            </div>
-            <div class="six wide column">
-              <h4 class="ui orange header" id="footer_titles">SUIVEZ NOUS SUR</h4>
-              <ul class="footer_list">
-                <li>
-                  <a href="https://www.facebook.com" target="_blank"><img src="images/if_facebook_313103.png" alt="facebook" class="footer_img"></a>
-                  <a href="https://www.google.com" target="_blank"><img src="images/if_googleplus_313110.png" alt="google" class="footer_img"></a>
-                  <a href="https://www.youtube.com" target="_blank"><img src="images/if_youtube_313083.png" alt="youtube" class="footer_img"></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <hr>
-          <div id="copyright">Copyright © 2017 - Synergie pour le Développement des Territoires</div>
-        </div>
-      </div>
-    </div>
-  </div>
+ @include('partials.footer_1')
+     <script src="{{ mix('js/user-notifications.js') }}"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="{{asset('js/rvslider.min.js')}}"></script>
   <script>
   jQuery(function($){
@@ -438,127 +298,27 @@ html.ios body {
   });
   </script>
 
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{{ asset('js/semantic.min.js') }}"></script>
+        <script>
+           $('.ui.dropdown').dropdown();
+           
+        $("#pusher").click(()=>{
+        $('.ui.sidebar')
+        .sidebar('toggle')
+        ;
+        });
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-  <script src="{{asset('modern-slide-in/scripts/imagesloaded.pkgd.min.js')}}"></script>
+    $('.special.cards .image').dimmer({
+    on: 'hover'
+    });
+
+        </script>
+
+    <script src="{{asset('modern-slide-in/scripts/imagesloaded.pkgd.min.js')}}"></script>
   <script src="{{asset('modern-slide-in/scripts/hammer.min.js')}}"></script>
   <script src="{{asset('modern-slide-in/scripts/sequence.min.js')}}"></script>
   <script src="{{asset('modern-slide-in/scripts/sequence-theme.modern-slide-in.js')}}"></script>
-  <script src="{{ asset('js/semantic.min.js') }}"></script>
-  <script>
 
-  $('.ui.sidebar').sidebar({
-  context: $('.bottom.segment')
-  })
-
-  .sidebar('attach events', '.menu .item #menulancher');
-  $('.special.cards .image').dimmer({
-  on: 'hover'
-  });
-  
-  $('.ui.dropdown').dropdown();
-
-(function ($) {
-  $.fn.countTo = function (options) {
-    options = options || {};
-    
-    return $(this).each(function () {
-      // set options for current element
-      var settings = $.extend({}, $.fn.countTo.defaults, {
-        from:            $(this).data('from'),
-        to:              $(this).data('to'),
-        speed:           $(this).data('speed'),
-        refreshInterval: $(this).data('refresh-interval'),
-        decimals:        $(this).data('decimals')
-      }, options);
-      
-      // how many times to update the value, and how much to increment the value on each update
-      var loops = Math.ceil(settings.speed / settings.refreshInterval),
-        increment = (settings.to - settings.from) / loops;
-      
-      // references & variables that will change with each update
-      var self = this,
-        $self = $(this),
-        loopCount = 0,
-        value = settings.from,
-        data = $self.data('countTo') || {};
-      
-      $self.data('countTo', data);
-      
-      // if an existing interval can be found, clear it first
-      if (data.interval) {
-        clearInterval(data.interval);
-      }
-      data.interval = setInterval(updateTimer, settings.refreshInterval);
-      
-      // initialize the element with the starting value
-      render(value);
-      
-      function updateTimer() {
-        value += increment;
-        loopCount++;
-        
-        render(value);
-        
-        if (typeof(settings.onUpdate) == 'function') {
-          settings.onUpdate.call(self, value);
-        }
-        
-        if (loopCount >= loops) {
-          // remove the interval
-          $self.removeData('countTo');
-          clearInterval(data.interval);
-          value = settings.to;
-          
-          if (typeof(settings.onComplete) == 'function') {
-            settings.onComplete.call(self, value);
-          }
-        }
-      }
-      
-      function render(value) {
-        var formattedValue = settings.formatter.call(self, value, settings);
-        $self.html(formattedValue);
-      }
-    });
-  };
-  
-  $.fn.countTo.defaults = {
-    from: 0,               // the number the element should start at
-    to: 0,                 // the number the element should end at
-    speed: 1000,           // how long it should take to count between the target numbers
-    refreshInterval: 100,  // how often the element should be updated
-    decimals: 0,           // the number of decimal places to show
-    formatter: formatter,  // handler for formatting the value before rendering
-    onUpdate: null,        // callback method for every time the element is updated
-    onComplete: null       // callback method for when the element finishes updating
-  };
-  
-  function formatter(value, settings) {
-    return value.toFixed(settings.decimals);
-  }
-}(jQuery));
-
-jQuery(function ($) {
-  // custom formatting example
-  $('.count-number').data('countToOptions', {
-  formatter: function (value, options) {
-    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-  }
-  });
-  
-  // start all the timers
-  $('.timer').each(count);  
-  
-  function count(options) {
-  var $this = $(this);
-  options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-  $this.countTo(options);
-  }
-});
-
-  
-  </script>
-  <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

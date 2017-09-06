@@ -1,37 +1,30 @@
 @extends('layouts.master_1')
 @section('content')
-<div class="ui internally stackable celled grid" style="background-color: rgba(252,101,0,.1); border-top:2px solid red;">
+<div class="ui  stackable celled grid" style="background-color: rgba(214, 212, 212,.2);padding:0;margin:0">
 	<div class="row">
 		<div class="four wide column">
-			<div class="ui compact vertical labeled icon menu">
-				<a class="item">
-					<i class="home icon orange"></i>
-					Tous Les projets
-				</a>
-				<a class="item">
-					<i class="folder icon orange"></i>
-					Les projets suivies
-				</a>
-				<a class="item">
-					<i class="newspaper icon orange"></i>
-					Modifier Mon compte
-				</a>
-				<a class="item">
-					<i class="mail outline icon orange"></i>
-					Messages Reçus
-				</a>
-			</div>
+		              <div class="ui compact vertical labeled icon menu">
+                <a class="item" href="/espace_partenaire">
+                  <i class="home icon orange"></i>
+                  Tous les projets
+                </a>
+                <a class="item" href="/espace_partenaire/fav_projets">
+                  <i class="folder icon orange"></i>
+                  les projets suivis
+                </a>
+                <a class="item" href="/espace_partenaire/myaccount">
+                  <i class="configure icon orange"></i>
+                  Modifier mon compte
+                </a>
+                <a class="item" href="/espace_partenaire/chat">
+                  <i class="mail outline icon orange"></i>
+                  Chat Avec Mes Porteurs De Projet
+                </a>
+              </div>
 		</div>
-		<div class="twelve wide column">
-			<div class="row" id="menu_bar">
-				<button class="ui orange button">
-				<i class="plus icon"></i>
-				Publier une nouvelle
-				</button>
-			</div>
-			
-			<div class="ui internally centered grid">
-				@yield('espace_porteur')	
+		<div class="twelve wide column">		
+			<div class="ui very padded centered grid" style="padding-right: 30px;">
+				@yield('espace_partenaire')	
 			</div>
 		</div>
 

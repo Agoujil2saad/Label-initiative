@@ -16,7 +16,7 @@ $table->increments('id');
 $table->integer('projet_id')->unsigned();
 $table->foreign('projet_id')->references('id')->on('projets')->onDelete('cascade');
 $table->string('title');
-$table->string('description');
+$table->text('description');
 $table->string('photo')->default('default_photo.png');
 $table->timestamps();
 });

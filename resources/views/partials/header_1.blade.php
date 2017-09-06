@@ -1,4 +1,4 @@
-   <div class="row" style="border-bottom: 5px solid orange; padding:0; margin: 0; ">
+   <div class="row" style="border-bottom: 5px solid orange; padding:0; margin: 0;">
           <div class="three wide column middle aligned">
            
 <a href="/">
@@ -67,6 +67,7 @@
                 <p class="ui orange small header">Nos Événements</p></a>
                 
                 <a href="{{URL::to('partenaire')}}" class="item"><p class="ui orange small header">Nos Partenaires</p></a>
+
                 @if(Auth::guest())
                 <a class="item" href="{{URL::to('login')}}">
                   <div class="ui orange button">Se connecter</div>
@@ -85,11 +86,24 @@
                       @role('Admin') {{-- Laravel-permission blade helper --}}
                       <div  class="text" href="#"><i class="unlock alternate icon"></i>Admin</div>
                       @endrole
-                      
+                      @role('Porteur de Projet')
+                      <a class="item" href="/espace_porteur">
+                      <i class="home icon"></i>
+                        Mon espace
+                      </a>
+                      @endrole
+                      @role('Partenaire Projet')
+                       <a class="item" href="/espace_partenaire">
+                      <i class="home icon"></i>
+                        Mon espace
+                      </a>
+                      @endrole
+
                       <div class="item">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <div onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
+                         <i class="sign out icon"></i>
                           Logout
-                        </a>
+                        </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                           {{ csrf_field() }}
                         </form>

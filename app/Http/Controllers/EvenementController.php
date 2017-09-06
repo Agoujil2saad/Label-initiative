@@ -19,7 +19,6 @@ public function __construct()
 }
 public function index() {
 $evenements = Evenement::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
-
 return view('evenements.index', compact('evenements'));
 }
 /**
@@ -41,6 +40,7 @@ public function store(UploadEvenementRequest $request)
 {
 //
  $evenement = Evenement::create($request->all());
+ 
  foreach ($request->photos as $photo) {
             $filename = $photo->store('photos','public');
             EvenementsPhoto::create([

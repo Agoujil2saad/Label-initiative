@@ -1,10 +1,12 @@
 	@include('partials.search_project')
   <div class="row">
-	<div class="twelve wide column">
-   {{$projets->links()}}
- <div class="ui divider"></div>
-   
+   <div class="ui divider"></div>
+     {{--   {{$projets->links()}} --}}
 
+  </div>
+
+
+  <div class="row">
 	<div class="ui doubling  cards">
 			@foreach($projets as $projet)
       @if(count($projet->photos))
@@ -31,8 +33,10 @@
 @endif	
 @endforeach
 		</div>
+</div>
 
+<div class="row">
+  
     <div class="ui divider"></div>
-		{{$projets->links()}}
-	</div>
+{{--     {{$projets->links()}} --}}
 </div>

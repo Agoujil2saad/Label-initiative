@@ -3,8 +3,9 @@
 
 <div class="row">
 <h1 class="ui header">Nos Evenement</h1></div>
-<div class="row" >
-		<div class="ui four cards">
+<div class="  row" >
+
+		<div class="ui four container cards">
 			@foreach($evenements as $evenement)
 <div class="card">
     <img src="{{asset('storage/'.$evenement->photos[0]->filename)}}" class="ui  image" >
@@ -14,6 +15,12 @@
       <span class="date">{{$evenement->created_at->diffForHumans()}}</span>
     </div>
   </div>
+  @if($evenement->url)
+  <div class="extra content"> 
+  <i class="orange world icon"></i>
+  <a href="{{$evenement->url}}" target="_blank">S'inscrire dans l'evenement</a>
+  </div>
+  @endif
 </div>
 			@endforeach
 </div>

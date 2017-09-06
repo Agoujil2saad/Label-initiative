@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
       <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>Talk Message</title>
+    <title>LABEL INITIATIVE</title>
     
-    
+    <link rel="stylesheet" type="text/css" href="{{asset('css/semantic.min.css')}}">
     <link rel="stylesheet" href="{{asset('chat/css/reset.css')}}">
 
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
@@ -18,18 +18,26 @@
   </head>
 
   <body>
-<div class="header">
-    <div class="container header-brand">
-        <a href="{{url('/home')}}" class="brand">Talk Message</a>
+
+  <div class="ui centered grid">
+    <div class="row">
+      <div class="three wide column">
+        <a href="{{url('/')}}">
+        <img src="{{asset('images/test_modified.png')}}" class="ui small image"></a>
+      </div>
     </div>
-</div>
-      <div class="container clearfix body">
-   @include('partials.peoplelist')
-    
+    <div class="row">
+  <div class="ui very padded segment">
+       @include('partials.peoplelist')
+
+
+
+
+
     <div class="chat">
       <div class="chat-header clearfix">
         @if(isset($user))
-            <img src="{{@$user->avatar}}" alt="avatar" />
+            <img src="{{asset('images/man.jpg')}}" alt="avatar" class="ui avatar image" />
         @endif
         <div class="chat-about">
             @if(isset($user))
@@ -38,24 +46,26 @@
                 <div class="chat-with">No Thread Selected</div>
             @endif
         </div>
-        <i class="fa fa-star"></i>
       </div> <!-- end chat-header -->
       
       @yield('content')
       
       <div class="chat-message clearfix">
       <form action="" method="post" id="talkSendMessage">
-            <textarea name="message-data" id="message-data" placeholder ="Type your message" rows="3"></textarea>
+            <textarea name="message-data" id="message-data" placeholder ="Type your message" rows="3" class="ui textarea"></textarea>
             <input type="hidden" name="_id" value="{{@request()->route('id')}}">
-            <button type="submit">Send</button>
+            <button type="submit" class="ui orange button"> <i class="send icon"></i>Send</button>
       </form>
 
       </div> <!-- end chat-message -->
       
     </div> <!-- end chat -->
-    
   </div> <!-- end container -->
+    </div>
+  </div>
 
+  
+ 
 
       <script>
           var __baseUrl = "{{url('/')}}"
