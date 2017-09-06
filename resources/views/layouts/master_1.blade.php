@@ -87,8 +87,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="{{ asset('js/semantic.min.js') }}"></script>
         <script>
+
+           $( ".ui.checkbox" ).checkbox();
            $('.ui.dropdown').dropdown();
-           
+
         $("#pusher").click(()=>{
         $('.ui.sidebar')
         .sidebar('toggle')

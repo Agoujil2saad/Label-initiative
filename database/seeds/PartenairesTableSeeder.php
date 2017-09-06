@@ -19,7 +19,6 @@ class PartenairesTableSeeder extends Seeder
         \DB::table('partenaires')->insert(array (
             0 => 
             array (
-                'id' => 3,
                 'name' => 'SENERGIE',
                 'logo' => '1504211695.png',
                 'created_at' => '2017-08-31 20:34:55',
@@ -27,7 +26,6 @@ class PartenairesTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 4,
                 'name' => 'HUAWEI',
                 'logo' => '1504211947.jpg',
                 'created_at' => '2017-08-31 20:39:07',

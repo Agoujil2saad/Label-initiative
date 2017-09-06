@@ -19,7 +19,6 @@ class UsersTableSeeder extends Seeder
         \DB::table('users')->insert(array (
             0 => 
             array (
-                'id' => 1,
                 'name' => 'Admin agoujil',
                 'email' => 'agoujilsaad@gmail.com',
                 'password' => '$2y$10$vgIGBw.xLPXbnTi3FaGJ8uXjLmgKTdEUocBtwOX/c1zseJCnUFKHq',
@@ -34,7 +33,6 @@ class UsersTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 2,
                 'name' => 'hama',
                 'email' => 'sad',
                 'password' => '$2y$10$FauKjKmS3TaSDS1bBYEac.eWwjPsQas/koEENzgyRlioPLcha4iaq',
@@ -49,7 +47,6 @@ class UsersTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => 3,
                 'name' => 'sad',
                 'email' => 'dkjankj',
                 'password' => '$2y$10$k.aIcBqB6YAzcx2dFOYUmOL7TKvuls7BljaHbZFElRAlktPCFuF4q',
@@ -64,7 +61,6 @@ class UsersTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 4,
                 'name' => 'sad',
                 'email' => 'kfjna',
                 'password' => '$2y$10$4duImLB71d.NdaEV8/54EuyOsXTrl37viH.U7NHBq2UjLuOur7ohO',
@@ -79,7 +75,6 @@ class UsersTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => 5,
                 'name' => 'sad',
                 'email' => 'faq',
                 'password' => '$2y$10$ecxCfwcSpuvqdSRAzcu8V.UxDDVOvp1jZBzcHT5yJ9l9opoTYMg2C',
@@ -94,7 +89,6 @@ class UsersTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 6,
                 'name' => 'sad',
                 'email' => 'test@domain.tld',
                 'password' => '$2y$10$w4SlqakfNytuWICmlQ7XcehOEWRGjc8jGB1wI6FQnxkjF.F.6sEp6',
@@ -109,7 +103,6 @@ class UsersTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => 7,
                 'name' => 'dood',
                 'email' => 'test@domain.tld2',
                 'password' => '$2y$10$rIWA8Y9ZY6fpM.tABAfhne7WxXBzRL3cO3Bi35j9zIrZ17ilXkWSC',
@@ -124,7 +117,6 @@ class UsersTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'id' => 8,
                 'name' => 'koka',
                 'email' => 'test@domain.tld3',
                 'password' => '$2y$10$3/QRr3/vKMUz4uAoG5PwZu.ca4rxduXKh69yNpUp02YirE3sGYX7m',
@@ -139,7 +131,6 @@ class UsersTableSeeder extends Seeder
             ),
             8 => 
             array (
-                'id' => 10,
                 'name' => 'sad',
                 'email' => 'test@domain.tld12',
                 'password' => '$2y$10$grtrD.tGSW2HfACR3PUKy.pjAdzvnV46DaZroSmE782.ZGA8IekeG',

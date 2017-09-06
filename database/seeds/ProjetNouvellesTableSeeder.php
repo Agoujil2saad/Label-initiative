@@ -19,7 +19,6 @@ class ProjetNouvellesTableSeeder extends Seeder
         \DB::table('projet_nouvelles')->insert(array (
             0 => 
             array (
-                'id' => 1,
                 'projet_id' => 4,
                 'title' => 'nouvelle',
                 'description' => 'sada',
@@ -29,7 +28,6 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 3,
                 'projet_id' => 4,
                 'title' => 'la vie est belle',
                 'description' => 'Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros.',
@@ -39,7 +37,6 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => 4,
                 'projet_id' => 6,
                 'title' => 'hada 5abar',
                 'description' => 'Proin magna. Quisque id odio. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc.',
@@ -49,7 +46,6 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 5,
                 'projet_id' => 6,
                 'title' => 'ta hada 5abar',
                 'description' => 'Sed hendrerit. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor.',
@@ -59,7 +55,6 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => 6,
                 'projet_id' => 6,
                 'title' => 'hada 5abar 5abar',
                 'description' => 'Cras varius. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Ut id nisl quis enim dignissim sagittis.',
@@ -69,7 +64,6 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 42,
                 'projet_id' => 7,
                 'title' => 'sad',
                 'description' => 'dasad',
@@ -79,7 +73,6 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => 43,
                 'projet_id' => 7,
                 'title' => 'sad',
                 'description' => 'sadadas',
@@ -89,7 +82,6 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'id' => 44,
                 'projet_id' => 7,
                 'title' => 'sad',
                 'description' => 'sad',
