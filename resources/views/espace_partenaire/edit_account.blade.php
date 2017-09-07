@@ -2,7 +2,7 @@
 @section('espace_partenaire')
 <div class="row">
 	<div class="nine wide column">
-		 {{ Form::model($user, array('route' => array('update_myaccount_partenaire', $user->id), 'method' => 'PUT')) }}{{-- Form model binding to automatically populate our fields with user data --}}
+		 {{ Form::model($user, array('route' => array('update_myaccount_partenaire', $user->id), 'method' => 'PUT')) }}
 		<div class="ui form segment">
 		<h1 class="ui header">Edit {{$user->name}}</h1>
 			<div class="ui centered grid">

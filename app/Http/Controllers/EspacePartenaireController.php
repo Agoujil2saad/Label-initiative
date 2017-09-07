@@ -11,9 +11,12 @@ use Spatie\Permission\Models\Role;
 
 class EspacePartenaireController extends Controller
 {
+    protected $user;
+
     public function __construct()
     {
         $this->middleware(['auth','clearance']);
+        $user = Auth::user();
     }
 
     public function index()
@@ -34,19 +37,18 @@ class EspacePartenaireController extends Controller
 
     public function fav_projets()
     {
-        $projets = Auth::user()->favorites(Projet::class)->get();
+        $projets = $user->favorites(Projet::class)->get();
         return view('espace_partenaire.index',compact('projets'));
     }
 
     public function chat()
     {
-        $projets = Auth::user()->favorites(Projet::class)->get();
+        $projets = $user->favorites(Projet::class)->get();
         return view('espace_partenaire.chat',compact('projets'));
     }
 
     public function myaccount()
     {
-        $user = Auth::user();
         return view('espace_partenaire.edit_account',compact('user'));
     }
 

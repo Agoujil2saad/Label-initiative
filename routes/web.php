@@ -25,21 +25,17 @@ Route::get('/espace_porteur/edit','EspacePorteurProjetController@edit');
 Route::get('/espace_porteur/createnouvelle','EspacePorteurProjetController@createNouvelle');
 Route::post('/espace_porteur','EspacePorteurProjetController@storeNouvelle')->name('store_nouvelle');
 Route::Delete('/espace_porteur/photonouvelle/{id}','EspacePorteurProjetController@destroy')->name('deletephoto_nouvelle');
+
 //projet routing
 Route::post('favorite/{projet}','ProjetController@favoriteProjet');
 Route::post('unfavorite/{projet}','ProjetController@unFavoriteProjet');
-
 Route::put('/projet/{id}','ProjetController@updatephotos')->name('updatephotos');
-
 Route::Delete('/projet/photo/{id}','ProjetController@destroyphoto')->name('deletephoto');
+Route::resource('projet','ProjetController');
 
 Route::resource('users', 'UserController');
-
 Route::resource('roles', 'RoleController');
-
 Route::resource('permissions', 'PermissionController');
-
-Route::resource('projet', 'ProjetController');
 Route::resource('partenaire', 'PartenaireController');
 Route::resource('evenement', 'EvenementController');
 
@@ -49,7 +45,6 @@ Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotification
 
 //talk routing
 Route::get('message/{id}', 'MessageController@chatHistory')->name('message.read');
-
 Route::group(['prefix'=>'ajax', 'as'=>'ajax::'], function() {
    Route::post('message/send', 'MessageController@ajaxSendMessage')->name('message.new');
    Route::delete('message/delete/{id}', 'MessageController@ajaxDeleteMessage')->name('message.delete');

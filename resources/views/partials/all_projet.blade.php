@@ -4,8 +4,6 @@
      {{--   {{$projets->links()}} --}}
 
   </div>
-
-
   <div class="row">
 	<div class="ui doubling  cards">
 			@foreach($projets as $projet)
