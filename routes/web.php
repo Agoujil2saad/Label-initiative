@@ -4,7 +4,7 @@ Auth::routes();
 //static pages routing
 Route::get('/qui_sommes_nous', 'StaticPagesController@qui_sommes_nous');
 // home page and deposer projet routing 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/','HomeController@index')->name('home');
 Route::get('/deposer', 'DeposerProjetController@index');
 Route::post('/deposer', 'DeposerProjetController@store');
 //espace Partenaires
