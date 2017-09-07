@@ -1,23 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
-
-
 //static pages routing
 Route::get('/qui_sommes_nous', 'StaticPagesController@qui_sommes_nous');
 // home page and deposer projet routing 
