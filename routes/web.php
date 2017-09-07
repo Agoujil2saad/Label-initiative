@@ -9,27 +9,21 @@ Route::get('/','HomeController@index')->name('home');
 Route::get('/deposer','DeposerProjetController@index');
 Route::post('/deposer','DeposerProjetController@store');
 //espace Partenaires
-Route::get('/espace_partenaire/myaccount', 'EspacePartenaireController@myaccount');
-Route::put('/espace_partenaire/myaccount/{id}', 'EspacePartenaireController@update_myaccount')->name('update_myaccount_partenaire');
-
-Route::get('/espace_partenaire/chat', 'EspacePartenaireController@chat');
-Route::get('/espace_partenaire', 'EspacePartenaireController@index')->name('all_projet_partenaire');
-Route::get('/espace_partenaire/fav_projets', 'EspacePartenaireController@fav_projets');
-Route::get('/espace_partenaire/projets/{categorie_name}', 'EspacePartenaireController@categorie');
+Route::get('/espace_partenaire/myaccount','EspacePartenaireController@myaccount');
+Route::put('/espace_partenaire/myaccount/{id}','EspacePartenaireController@update_myaccount')->name('update_myaccount_partenaire');
+Route::get('/espace_partenaire/chat','EspacePartenaireController@chat');
+Route::get('/espace_partenaire','EspacePartenaireController@index')->name('all_projet_partenaire');
+Route::get('/espace_partenaire/fav_projets','EspacePartenaireController@fav_projets');
+Route::get('/espace_partenaire/projets/{categorie_name}','EspacePartenaireController@categorie');
 
 // espace porteur de projet routing
 Route::get('/espace_porteur/myaccount','EspacePorteurProjetController@myaccount');
 Route::put('/espace_porteur/myaccount/{id}','EspacePorteurProjetController@update_myaccount')->name('update_myaccount_porteur');
-
 Route::get('/espace_porteur/chat','EspacePorteurProjetController@chat');
 Route::get('/espace_porteur','EspacePorteurProjetController@index')->name('projet_news');
-
 Route::get('/espace_porteur/edit','EspacePorteurProjetController@edit');
-
 Route::get('/espace_porteur/createnouvelle','EspacePorteurProjetController@createNouvelle');
-
 Route::post('/espace_porteur','EspacePorteurProjetController@storeNouvelle')->name('store_nouvelle');
-
 Route::Delete('/espace_porteur/photonouvelle/{id}','EspacePorteurProjetController@destroy')->name('deletephoto_nouvelle');
 //projet routing
 Route::post('favorite/{projet}','ProjetController@favoriteProjet');

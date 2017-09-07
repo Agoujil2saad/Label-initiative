@@ -69,7 +69,7 @@ class ProjetsTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'user_id' => 10,
+                'user_id' => 9,
                 'title' => 'ygeq',
                 'categorie' => 'type1',
                 'description' => 'ebqy',

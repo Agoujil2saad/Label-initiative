@@ -14,37 +14,22 @@ use Session;
 class RoleController extends Controller {
 
     public function __construct() {
-        $this->middleware(['auth','isAdmin']);//isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->middleware(['auth','isAdmin']);
+        //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index() {
         $roles = Role::all();//Get all roles
 
         return view('roles.index')->with('roles', $roles);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create() {
         $permissions = Permission::all();//Get all permissions
 
         return view('roles.create', ['permissions'=>$permissions]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request) {
     //Validate name and permissions field
         $this->validate($request, [
@@ -73,22 +58,10 @@ class RoleController extends Controller {
              'Role'. $role->name.' added!'); 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id) {
         return redirect('roles');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id) {
         $role = Role::findOrFail($id);
         $permissions = Permission::all();
@@ -96,17 +69,10 @@ class RoleController extends Controller {
         return view('roles.edit', compact('role', 'permissions'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id) {
 
         $role = Role::findOrFail($id);//Get role with the given id
-    //Validate name and permission fields
+        //Validate name and permission fields
         $this->validate($request, [
             'name'=>'required|max:50|unique:roles,name,'.$id,
             'permissions' =>'required',

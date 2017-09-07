@@ -4,16 +4,8 @@ use Illuminate\Database\Seeder;
 
 class ProjetNouvellesTableSeeder extends Seeder
 {
-
-    /**
-     * Auto generated seed file
-     *
-     * @return void
-     */
     public function run()
     {
-        
-
         \DB::table('projet_nouvelles')->delete();
         
         \DB::table('projet_nouvelles')->insert(array (

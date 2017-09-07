@@ -4,16 +4,8 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-
-    /**
-     * Auto generated seed file
-     *
-     * @return void
-     */
     public function run()
     {
-        
-
         \DB::table('users')->delete();
         
         \DB::table('users')->insert(array (
@@ -21,7 +13,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'Admin agoujil',
                 'email' => 'agoujilsaad@gmail.com',
-                'password' => '$2y$10$vgIGBw.xLPXbnTi3FaGJ8uXjLmgKTdEUocBtwOX/c1zseJCnUFKHq',
+                'password' => bcrypt('123456'),
                 'address' => NULL,
                 'categorie' => NULL,
                 'fonction' => NULL,
@@ -35,7 +27,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'hama',
                 'email' => 'sad',
-                'password' => '$2y$10$FauKjKmS3TaSDS1bBYEac.eWwjPsQas/koEENzgyRlioPLcha4iaq',
+                'password' => bcrypt('123456'),
                 'address' => 'sad',
                 'categorie' => 'type2',
                 'fonction' => 'sadd',
@@ -49,7 +41,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'sad',
                 'email' => 'dkjankj',
-                'password' => '$2y$10$k.aIcBqB6YAzcx2dFOYUmOL7TKvuls7BljaHbZFElRAlktPCFuF4q',
+                'password' => bcrypt('123456'),
                 'address' => 'njfkankj',
                 'categorie' => 'type1',
                 'fonction' => 'sss',
@@ -63,7 +55,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'sad',
                 'email' => 'kfjna',
-                'password' => '$2y$10$4duImLB71d.NdaEV8/54EuyOsXTrl37viH.U7NHBq2UjLuOur7ohO',
+                'password' => bcrypt('123456'),
                 'address' => 'toi',
                 'categorie' => 'type2',
                 'fonction' => 'sad',
@@ -77,7 +69,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'sad',
                 'email' => 'faq',
-                'password' => '$2y$10$ecxCfwcSpuvqdSRAzcu8V.UxDDVOvp1jZBzcHT5yJ9l9opoTYMg2C',
+                'password' => bcrypt('123456'),
                 'address' => 'asffq',
                 'categorie' => 'type1',
                 'fonction' => 'fas',
@@ -91,7 +83,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'sad',
                 'email' => 'test@domain.tld',
-                'password' => '$2y$10$w4SlqakfNytuWICmlQ7XcehOEWRGjc8jGB1wI6FQnxkjF.F.6sEp6',
+                'password' => bcrypt('123456'),
                 'address' => 'Aenea',
                 'categorie' => 'type2',
                 'fonction' => 'Nunc nec',
@@ -105,7 +97,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'dood',
                 'email' => 'test@domain.tld2',
-                'password' => '$2y$10$rIWA8Y9ZY6fpM.tABAfhne7WxXBzRL3cO3Bi35j9zIrZ17ilXkWSC',
+                'password' => bcrypt('123456'),
                 'address' => 'jnf',
                 'categorie' => 'type1',
                 'fonction' => 'jo',
@@ -119,7 +111,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'koka',
                 'email' => 'test@domain.tld3',
-                'password' => '$2y$10$3/QRr3/vKMUz4uAoG5PwZu.ca4rxduXKh69yNpUp02YirE3sGYX7m',
+                'password' => bcrypt('123456'),
                 'address' => 'adf',
                 'categorie' => 'type1',
                 'fonction' => 'fun',
@@ -133,7 +125,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'name' => 'sad',
                 'email' => 'test@domain.tld12',
-                'password' => '$2y$10$grtrD.tGSW2HfACR3PUKy.pjAdzvnV46DaZroSmE782.ZGA8IekeG',
+                'password' => bcrypt('123456'),
                 'address' => 'asd',
                 'categorie' => 'type2',
                 'fonction' => 'sjd',

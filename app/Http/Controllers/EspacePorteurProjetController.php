@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+
 use App\Notifications\NewProjetPostNotification;
 use App\Projet;
 use App\ProjetNouvelle;
@@ -7,103 +8,89 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
+
 class EspacePorteurProjetController extends Controller
 {
+    protected $user;
+    protected $projet;
 	public function __construct()
-{
- $this->middleware(['auth','clearance']);
-}
+    {
+        $this->middleware(['auth','clearance']);
+        $user = Auth::user();
+        $projet = $user->projet;
+    }
 
-public function index()
-{
-    $projet= auth()->user()->projet;
-    return view('espace_porteur.index',compact('projet'));
-}
-public function chat()
-{
-    $users = auth()->user()->projet->favoriters;
-    return view('espace_porteur.chat',compact('users'));
-}
+    public function index()
+    {
+        return view('espace_porteur.index',compact('projet'));
+    }
 
-public function edit()
-{
-    $user = User::findOrFail(auth()->id());
-    $projet = $user->projet;
-// $projet = Projet::findOrFail($id);
-//Find post of id = $id
+    public function chat()
+    {
+        $favoriters = $projet->favoriters;
+        return view('espace_porteur.chat',compact('favoriters'));
+    }
+
+    public function edit()
+    {
         return view('espace_porteur.edit_projet_espace',compact('projet'));
-}
+    }
 
-public function createNouvelle()
-{
-return view('espace_porteur.create_nouvelle');
-}
+    public function createNouvelle()
+    {
+        return view('espace_porteur.create_nouvelle');
+    }
 
+    public function storeNouvelle(Request $request)
+    {
+        $this->validate($request,[
+            'title'=>'required',
+            'description'=>'required',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
 
-public function storeNouvelle(Request $request)
-{
-$this->validate($request,
-[
-'title'=>'required',
-'description'=>'required',
-'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-]);
-$photo = $request->file('photo');
-$title = $request['title'];
-$description = $request['description'];
-$projet_nouvelle = ProjetNouvelle::create([
-'title' => $title
-,'description'=>$description,
-'projet_id'=>auth()->user()->projet->id
-]);
+        $photo = $request->file('photo');
+        $title = $request['title'];
+        $description = $request['description'];
+        $projet_nouvelle = ProjetNouvelle::create([
+        'title' => $title,
+        'description'=>$description,
+        'projet_id'=> auth()->user()->projet->id
+        ]);
 
-if ($photo)
-{
-$input['imagename'] = time().'.'.$photo->getClientOriginalExtension();
-$destinationPath = public_path('/images/photo_nouvelles');
-$photo->move($destinationPath, $input['imagename']);
-$projet_nouvelle->photo = time().'.'.$photo->getClientOriginalExtension();
-$projet_nouvelle->save();
-}
+        if ($photo)
+        {
+            $input['imagename'] = time().'.'.$photo->getClientOriginalExtension();
+            $destinationPath = public_path('/images/photo_nouvelles');
+            $photo->move($destinationPath, $input['imagename']);
+            $projet_nouvelle->photo = time().'.'.$photo->getClientOriginalExtension();
+            $projet_nouvelle->save();
+        }
 
-$projet= $projet_nouvelle->projet;
+        $projet= $projet_nouvelle->projet;
 
+        foreach ($projet->favoriters as $user) {
+        $user->notify(new NewProjetPostNotification( $projet));
+        }
 
+        return redirect()->route('projet_news')->with('flash_message', 'la nouvelle,'. $projet_nouvelle->name.' created');
+    }
 
-foreach ($projet->favoriters as $user) {
-$user->notify(new NewProjetPostNotification( $projet));
-}
+    public function myaccount()
+    {
+        return view('espace_porteur.edit_account',compact('user'));
+    }
 
+    public function update_myaccount($id,Request $request)
+    {
+    	$user = User::updateOrCreate(['id'=>$id],$request->all());
+    	return redirect()->route('projet_news')->with('flash_message','Account successfully updated');
+    }
 
-return redirect()->route('projet_news')
-->with('flash_message', 'la nouvelle,
-'. $projet_nouvelle->name.' created');
-}
-
-public function myaccount()
-{
-	$user = Auth::user();
-return view('espace_porteur.edit_account',compact('user'));
-}
-
-public function update_myaccount($id,Request $request)
-{
-	 $user = User::updateOrCreate(['id'=>$id],
-	 	$request->all());
-	return redirect()->route('projet_news')
-->with('flash_message',
-'Account successfully updated');
-}
-
-
-
-public function destroy($id)
-{
-$projet_nouvelle = ProjetNouvelle::findOrFail($id);
-$projet_nouvelle->delete();
-return redirect()->route('projet_news')
-->with('flash_message',
-'ProjetNouvelle successfully deleted');
-}
-
+    public function destroy($id)
+    {
+        $projet_nouvelle = ProjetNouvelle::findOrFail($id);
+        $projet_nouvelle->delete();
+        return redirect()->route('projet_news')->with('flash_message','ProjetNouvelle successfully deleted');
+    }
 }
