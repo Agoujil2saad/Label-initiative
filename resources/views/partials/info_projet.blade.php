@@ -1,20 +1,18 @@
 <div class="row" id="app">
     <div class="eight wide column">
         <div class="ui  segment">
-                
-            
             <div id="app">
-                       @if (Auth::check())
-                       @can('Like Projet')
-    <div class="inverted ui fluid button ">
-        <favorite
-            :projet={{ $projet->id }}
-            :favorited={{ Auth::user()->hasFavorited($projet) ? 'true' : 'false' }}
-        ></favorite>
-    </div>
-          @endcan
-@endif
-              
+                @if (Auth::check())
+                @can('Like Projet')
+                <div class="inverted ui fluid button ">
+                    <favorite
+                    :projet={{ $projet->id }}
+                    :favorited={{ Auth::user()->hasFavorited($projet) ? 'true' : 'false' }}
+                    ></favorite>
+                </div>
+                @endcan
+                @endif
+                
                 <el-tabs type="border-card">
                 <el-tab-pane>
                 <span slot="label"><i class="announcement icon"></i> Accueil</span>
@@ -38,14 +36,13 @@
                 </el-carousel>
                 
                 @endif
- 
+                
                 <p class="ui sub header">
                 <i class="home icon"></i> A propos</p>
-               <div id="message_principale" style="color:black; margin:20px; text-align:left; position:static;">
-     {{$projet->description}} 
-          </div>
-               
-
+                <div id="message_principale" style="color:black; margin:20px; text-align:left; position:static;">
+                    {{$projet->description}}
+                </div>
+                
                 {!! Form::open(['method' => 'DELETE', 'route' => ['projet.destroy', $projet->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="ui orange button">
                 <i class="backward icon"></i>Back</a>
@@ -61,30 +58,23 @@
                 </el-tab-pane>
                 <el-tab-pane>
                 <span slot="label"><i class="newspaper icon "></i> News</span>
-
-@foreach($projet->nouvelles as $nouvelle)
-
-    <div class="image">
-   <img src="{{asset('images/photo_nouvelles/'.$nouvelle->photo)}}">
-  </div>
-  <div class="content">
-    <a class="header">{{$nouvelle->title}}</a>
-    <div class="meta">
-      <span class="date">Joined in 2013</span>
-    </div>
-    <div class="description">
-      {{$nouvelle->description}}
-    </div>
-  </div>
-<div class="ui divider"></div>
-@endforeach
-
-
-
+                @foreach($projet->nouvelles as $nouvelle)
+                <div class="image">
+                    <img src="{{asset('images/photo_nouvelles/'.$nouvelle->photo)}}">
+                </div>
+                <div class="content">
+                    <a class="header">{{$nouvelle->title}}</a>
+                    <div class="meta">
+                        <span class="date">Joined in 2013</span>
+                    </div>
+                    <div class="description">
+                        {{$nouvelle->description}}
+                    </div>
+                </div>
+                <div class="ui divider"></div>
+                @endforeach
                 </el-tab-pane>
                 </el-tabs>
-         
-
             </div>
         </div>
     </div>
@@ -120,7 +110,6 @@
                             </center>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <div class="extra content">

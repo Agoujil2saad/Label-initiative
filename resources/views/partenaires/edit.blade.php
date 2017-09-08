@@ -3,12 +3,11 @@
 @section('content')
 <div class="row">
 	<div class="nine wide column">
-<h2 class="ui header">
+		<h2 class="ui header">
 		<img src="{{asset('images/partners/'.$partenaire->logo)}}" class="ui circular  image">
-	Modification du Partenaires:{{$partenaire->name}}
-</h2>
+		Modification du Partenaires:{{$partenaire->name}}
+		</h2>
 		@include('layouts.errors')
-		{{-- Using the Laravel HTML Form Collective to create our form --}}
 		{!! Form::model($partenaire, ['method' => 'PATCH', 'action' =>  ['PartenaireController@update', $partenaire->id], 'files' => true]) !!}
 		<div class="ui form segment">
 			<div class="ui centered grid">
@@ -28,12 +27,9 @@
 						</div>
 					</div>
 				</div>
-				
 			</div>
-			
 			<div class="ui one column stackable center aligned page grid">
 				<div class="column twelve wide">
-					<!-- <button class="ui orange button">Suivant</button> -->
 					<button class="ui orange right labeled icon button" type="submit">
 					ajouter un partenaire
 					<i class="right chevron icon"></i>

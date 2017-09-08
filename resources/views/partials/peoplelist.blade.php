@@ -5,30 +5,28 @@
     </div>
     <div class="ui vertical fluid  very padded menu" style="height:100vh; overflow: scroll; border:0;">
         @foreach($threads as $inbox)
-            @if(!is_null($inbox->thread))
+        @if(!is_null($inbox->thread))
         <li class=" item">
             <a href="{{route('message.read', ['id'=>$inbox->withUser->id])}}">
-            <img src="{{asset('images/man.jpg')}}" alt="avatar" class="ui avatar image" />
+                <img src="{{asset('images/man.jpg')}}" alt="avatar" class="ui avatar image" />
                 @if($inbox->withUser->isOnline())
-<i class="green circle icon"></i>
-@else
-<i class="red circle icon"></i>
-    @endif
+                <i class="green circle icon"></i>
+                @else
+                <i class="red circle icon"></i>
+                @endif
                 <p>
                 <i class="user icon"></i>{{$inbox->withUser->name}}</p>
                 <div class="ui tag label">
                     @if(auth()->user()->id == $inbox->thread->sender->id)
-                        <span class="orange star icon"></span>
+                    <span class="orange star icon"></span>
                     @endif
                     <span>
-<i class="ui orange talk icon"></i>
-
+                        <i class="ui orange talk icon"></i>
                     {{substr($inbox->thread->message, 0, 20)}}</span>
-           </div> 
+                </div>
             </a>
         </li>
-            @endif
+        @endif
         @endforeach
-
     </div>
 </div>

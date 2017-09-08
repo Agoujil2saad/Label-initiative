@@ -3,10 +3,9 @@
 @section('content')
 <div class="row">
 	<div class="nine wide column">
-	<h1 class="ui header">Edit Role:{{$role->name}}</h1>
-		{{-- Using the Laravel HTML Form Collective to create our form --}}
-		 {{ Form::model($role, array('route' => array('roles.update', $role->id), 'method' => 'PUT')) }}
-		 		<div class="ui form segment">
+		<h1 class="ui header">Edit Role:{{$role->name}}</h1>
+		{{ Form::model($role, array('route' => array('roles.update', $role->id), 'method' => 'PUT')) }}
+		<div class="ui form segment">
 			<div class="ui centered grid">
 				<div class="eight wide column">
 					<div class="field">
@@ -29,21 +28,16 @@
 						</div>
 						@endforeach
 					</div>
-
 				</div>
-				
 			</div>
-			
 			<div class="ui one column stackable center aligned page grid">
 				<div class="column twelve wide">
-					<!-- <button class="ui orange button">Suivant</button> -->
 					<button class="ui orange right labeled icon button" type="submit">
 					Edit
 					<i class="plus icon"></i>
 					</button>
 				</div>
 			</div>
-			<!-- <div class="ui fluid medium orange submit button">Suivant</div> -->
 			<p>Tout les champs avec * doivent être obligatoirement remplis</p>
 		</div>
 		{{ Form::close() }}

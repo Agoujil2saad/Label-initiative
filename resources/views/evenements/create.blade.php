@@ -4,7 +4,6 @@
 <div class="row" id="evenement_create">
 	@include('layouts.errors')
 	<div class="nine wide column">
-		{{-- Using the Laravel HTML Form Collective to create our form --}}
 		{{ Form::open(array('route' => 'evenement.store','files' => true)) }}
 		<div class="ui form segment">
 			<div class="ui centered grid">
@@ -21,16 +20,13 @@
 						<label>Description de l'evenement</label>
 						<textarea name="body" required></textarea>
 					</div>
-
 					<div class="field">
 						<input type="file" name="photos[]" multiple />
 					</div>
-
 					<div class="ui left icon input">
 						<input type="text" name="url" placeholder="url vers l'evenement ">
 						<i class="world icon"></i>
 					</div>
-
 				</div>
 				
 			</div>
@@ -39,16 +35,16 @@
 				<div class="column twelve wide">
 					
 					<div class="ui small buttons">
-					<button class="ui orange right labeled icon button" type="submit">
-					Ajouter un evenement
-					<i class="right chevron icon"></i>
-					</button>
-					<div class="or"></div>
-					<a class="ui red right labeled icon button"  href="{{ url()->previous() }}">
-					Annuler
-					<i class="undo icon"></i>
-					</a>
-				</div>
+						<button class="ui orange right labeled icon button" type="submit">
+						Ajouter un evenement
+						<i class="right chevron icon"></i>
+						</button>
+						<div class="or"></div>
+						<a class="ui red right labeled icon button" href="{{ url()->previous() }}">
+							Annuler
+							<i class="undo icon"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 			<p>Tout les champs avec * doivent être obligatoirement remplis</p>
