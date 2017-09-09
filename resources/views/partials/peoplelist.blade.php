@@ -1,32 +1,26 @@
 <div class="people-list" id="people-list">
-    <div class="ui inverted  orange segment">
-        <a href="{{url('/')}}" class="ui label">
-        <i class="inverted circular user icon"></i> {{auth()->user()->name}}</a>
+    <div class="search" style="text-align: center">
+        <a href="{{url('/home')}}" style="font-size:16px; text-decoration:none; color: white;"><i class="fa fa-user"></i> {{auth()->user()->name}}</a>
     </div>
-    <div class="ui vertical fluid  very padded menu" style="height:100vh; overflow: scroll; border:0;">
+    <ul class="list">
         @foreach($threads as $inbox)
-        @if(!is_null($inbox->thread))
-        <li class=" item">
+            @if(!is_null($inbox->thread))
+        <li class="clearfix">
             <a href="{{route('message.read', ['id'=>$inbox->withUser->id])}}">
-                <img src="{{asset('images/man.jpg')}}" alt="avatar" class="ui avatar image" />
-                @if($inbox->withUser->isOnline())
-                <i class="green circle icon"></i>
-                @else
-                <i class="red circle icon"></i>
-                @endif
-                <p>
-                <i class="user icon"></i>{{$inbox->withUser->name}}</p>
-                <div class="ui tag label">
+            
+            <img src="{{asset('images/icons/man64.png')}}" alt="avatar" />
+            <div class="about">
+                <div class="name">{{$inbox->withUser->name}}</div>
+                <div class="status">
                     @if(auth()->user()->id == $inbox->thread->sender->id)
-                    <span class="orange star icon"></span>
+                        <span class="fa fa-reply"></span>
                     @endif
-                    <span>
-                        <i class="ui orange talk icon"></i>
-                    {{substr($inbox->thread->message, 0, 20)}}</span>
+                    <span>{{substr($inbox->thread->message, 0, 20)}}</span>
                 </div>
+            </div>
             </a>
         </li>
-        @endif
+            @endif
         @endforeach
-    </div>
+    </ul>
 </div>

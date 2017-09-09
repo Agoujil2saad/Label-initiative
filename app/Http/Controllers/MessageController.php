@@ -11,6 +11,7 @@ use View;
 class MessageController extends Controller
 {
     protected $authUser;
+    
     public function __construct()
     {
         $this->middleware('auth');

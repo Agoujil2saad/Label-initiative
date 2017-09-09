@@ -21,7 +21,7 @@
         <h2 class="ui header">
         <div class="content">
             <img src="{{asset("images/logo_modified.png")}}" alt="Label Initiative logo" class="ui centered small image">
-            Présentation de Label Initiative
+            Présentation de Label Initiative.
         </div>
         </h2>
         <div class="ui very padded segment">
@@ -40,7 +40,7 @@
         <h2 class="ui header">
         <div class="content">
             <img src="{{asset("images/help_people.jpg")}}" alt="help_people.jpg" class="ui centered small image">
-            Les 7 objectifs de Label Initiative
+            Les 7 objectifs de Label Initiative.
         </div>
         </h2>
         <div class="ui very padded segment">
