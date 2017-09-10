@@ -22,6 +22,16 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+
+    protected function registered(Request $request, $user)
+    {
+       $user->assignRole('Partenaire Projet');
+     
+          if ($user->hasRole('Partenaire Projet')) 
+           {
+            return redirect()->route('all_projet_partenaire');
+           }
+    }
     /**
      * Where to redirect users after registration.
      *

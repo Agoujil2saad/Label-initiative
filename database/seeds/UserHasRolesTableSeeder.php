@@ -60,8 +60,9 @@ class UserHasRolesTableSeeder extends Seeder
             8 => 
             array (
                 'role_id' => 2,
-                'user_id' => 10,
+                'user_id' => 9,
             ),
+
         ));
         
         

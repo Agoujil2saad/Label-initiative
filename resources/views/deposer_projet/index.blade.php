@@ -11,7 +11,7 @@
         >
         <tab-content title="information personelle" icon="el-icon-edit" :before-change="validateFirstStep">
         <el-form  label-width="120px"   :model="formInline" class="ui form segment" :rules="rules" ref="ruleForm">
-        <el-form-item label="*Type de l'association" prop="categorie">
+        <el-form-item label="Type de l'association" prop="categorie">
         <el-select v-model="formInline.categorie" placeholder="Type de l'association" icon="el-icon-edit">
         <el-option label="type 1" value="type1"></el-option>
         <el-option label="type 2" value="type2"></el-option>
@@ -19,25 +19,25 @@
         <el-option label="type 4" value="type4"></el-option>
         </el-select>
         </el-form-item>
-        <el-form-item label="*Region" prop="region">
+        <el-form-item label="Region" prop="region">
         <el-select v-model="formInline.region" placeholder="Region">
         <el-option label="reg1" value="reg1"></el-option>
         <el-option label="reg2" value="reg2"></el-option>
         </el-select>
         </el-form-item>
-        <el-form-item label="*Nom Complet" prop="name">
+        <el-form-item label="Nom Complet" prop="name">
         <el-input v-model="formInline.name" placeholder="Nom complet" icon="name"  ></el-input>
         </el-form-item>
-        <el-form-item label="*Fonction" prop="fonction">
+        <el-form-item label="Fonction" prop="fonction">
         <el-input v-model="formInline.fonction" placeholder="fonction"></el-input>
         </el-form-item>
-        <el-form-item label="*Email" prop="email">
+        <el-form-item label="Email" prop="email">
         <el-input v-model="formInline.email" placeholder="email"></el-input>
         </el-form-item>
-        <el-form-item label="*Adresse" prop="address">
+        <el-form-item label="Adresse" prop="address">
         <el-input v-model="formInline.address" placeholder="adress"></el-input>
         </el-form-item>
-        <el-form-item label="*Telephone" prop="tel">
+        <el-form-item label="Telephone" prop="tel">
         <el-input v-model="formInline.tel" placeholder="Telephone"></el-input>
         </el-form-item>
         </el-form>
@@ -45,7 +45,7 @@
         <tab-content title="Mon projet" icon="el-icon-setting"
         :before-change="validateSecondStep">
         <el-form  label-width="120px"   :model="formInline" class="ui form segment" :rules="rules1" ref="ruleForm1">
-        <el-form-item label="*Type de projet" prop="categorie_projet">
+        <el-form-item label="Type de projet" prop="categorie_projet">
         <el-select v-model="formInline.categorie_projet" placeholder="categorie de projet" icon="el-icon-edit">
         <el-option label="type 1" value="type1"></el-option>
         <el-option label="type 2" value="type2"></el-option>
@@ -53,13 +53,13 @@
         <el-option label="type 4" value="type4"></el-option>
         </el-select>
         </el-form-item>
-        <el-form-item label="*Nom du projet" prop="titre_projet">
+        <el-form-item label="Nom du projet" prop="titre_projet">
         <el-input v-model="formInline.titre_projet" placeholder=" complet de projet" ></el-input>
         </el-form-item>
-        <el-form-item label="*Montant estimé en DH " prop="montant_projet">
+        <el-form-item label="Montant estimé en DH " prop="montant_projet">
         <el-input-number v-model="formInline.montant_projet"  :min="2000" :max="70000"></el-input-number>
         </el-form-item>
-        <el-form-item label="*Description_projet" prop="description_projet">
+        <el-form-item label="Description_projet" prop="description_projet">
         <el-input
         type="textarea"
         :rows="2"

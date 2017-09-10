@@ -11,28 +11,27 @@ use Spatie\Permission\Models\Role;
 
 class EspacePorteurProjetController extends Controller
 {
-    protected $user;
-    protected $projet;
 	public function __construct()
-    {
-        $this->middleware(['auth','clearance']);
-        $user = Auth::user();
-        $projet = $user->projet;
+    {  
+      $this->middleware(['auth','clearance']);
     }
 
     public function index()
     {
+        $projet= auth()->user()->projet;
         return view('espace_porteur.index',compact('projet'));
     }
 
     public function chat()
     {
+        $projet= auth()->user()->projet;
         $favoriters = $projet->favoriters;
         return view('espace_porteur.chat',compact('favoriters'));
     }
 
     public function edit()
     {
+        $projet= auth()->user()->projet;
         return view('espace_porteur.edit_projet_espace',compact('projet'));
     }
 

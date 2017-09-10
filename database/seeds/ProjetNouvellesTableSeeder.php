@@ -56,7 +56,7 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'projet_id' => 7,
+                'projet_id' => 2,
                 'title' => 'sad',
                 'description' => 'dasad',
                 'photo' => '1504121600.png',
@@ -65,7 +65,7 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'projet_id' => 7,
+                'projet_id' => 3,
                 'title' => 'sad',
                 'description' => 'sadadas',
                 'photo' => '1504128142.png',
@@ -74,7 +74,7 @@ class ProjetNouvellesTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'projet_id' => 7,
+                'projet_id' => 3,
                 'title' => 'sad',
                 'description' => 'sad',
                 'photo' => '1504173003.jpg',

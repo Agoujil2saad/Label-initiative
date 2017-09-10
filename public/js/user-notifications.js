@@ -91213,7 +91213,7 @@ var Component = __webpack_require__(140)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/agoujilsaad/Documents/label_initiavtive/resources/assets/js/components/UserNotifications.vue"
+Component.options.__file = "/Users/agoujilsaad/Documents/Label-initiative/resources/assets/js/components/UserNotifications.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] UserNotifications.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91224,9 +91224,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7616c75e", Component.options)
+    hotAPI.createRecord("data-v-679e4d98", Component.options)
   } else {
-    hotAPI.reload("data-v-7616c75e", Component.options)
+    hotAPI.reload("data-v-679e4d98", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -91356,7 +91356,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7616c75e", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-679e4d98", module.exports)
   }
 }
 

@@ -91184,15 +91184,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_
 
 
 
-
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_7_vue_particles__["a" /* default */]);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_element_ui___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_9_vue_router__["a" /* default */]);
 
 __webpack_require__(100);
-
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('favorite', __webpack_require__(155));
-
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a().$mount('#photo_caroussel');
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
@@ -91201,7 +91198,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
     var validatePass = function validatePass(rule, value, callback) {
       if (value === '') {
-        callback(new Error('Please input the password'));
+        callback(new Error('Veuillez entrer le mot de passe'));
       } else {
         if (_this.formInline.checkPass !== '') {
           _this.$refs.ruleForm2.validateField('checkPass');
@@ -91211,15 +91208,14 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     };
     var validatePass2 = function validatePass2(rule, value, callback) {
       if (value === '') {
-        callback(new Error('Please input the password again'));
+        callback(new Error('Veuillez saisir à nouveau le mot de passe'));
       } else if (value !== _this.formInline.pass) {
-        callback(new Error('Two inputs don\'t match!'));
+        callback(new Error('Deux entrées ne correspondent pas!'));
       } else {
         callback();
       }
     };
     return {
-
       formInline: {
         name: '',
         region: '',
@@ -91238,36 +91234,69 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
       rules: {
         name: [{
           required: true,
-          message: 'Please input complet name',
+          message: 'Veuillez entrer le nom complet de L\'association',
           trigger: 'blur'
         }, {
-          min: 3,
-          max: 5,
-          message: 'Length should be 3 to 5',
+          min: 2,
+          max: 200,
+          message: 'La longueur doit être de 2 à 50',
           trigger: 'blur'
         }],
         region: [{
           required: true,
-          message: 'Please select Activity zone',
+          message: 'Sélectionnez la region d\'activité',
           trigger: 'change'
+        }],
+        fonction: [{
+          required: true,
+          message: 'Veuillez entrer votre fonction',
+          trigger: 'change'
+        }],
+        address: [{
+          required: true,
+          message: 'Veuillez entrer l\'adresse',
+          trigger: 'blur'
+        }, {
+          min: 2,
+          max: 200,
+          message: 'La longueur doit être de 2 à 50',
+          trigger: 'blur'
+        }],
+        email: [{
+          type: 'email',
+          message: 'Veuillez entrer l\'adresse email correcte',
+          trigger: 'blur,change'
+        }, {
+          required: true,
+          message: 'Veuillez entrer l\'adresse email',
+          trigger: 'change'
+        }],
+        tel: [{
+          required: true,
+          message: 'Veuillez entrer un numero de telephone',
+          trigger: 'blur,change'
         }]
       },
-
       rules1: {
         description_projet: [{
           required: true,
-          message: 'Please input description_projet ',
+          message: 'Veuillez entrer la description du projet ',
           trigger: 'blur'
         }, {
-          min: 3,
-          max: 5,
-          message: 'Length should be 3 to 5',
+          min: 10,
+          max: 1000,
+          message: 'La longueur doit être de 10 à 1000',
           trigger: 'blur'
         }],
         categorie_projet: [{
           required: true,
-          message: 'Please select Activity zone',
+          message: 'Sélectionnez la categorie du projet',
           trigger: 'change'
+        }],
+        titre_projet: [{
+          required: true,
+          message: 'Veuillez entrer le nom du projet ',
+          trigger: 'blur'
         }]
       },
       rules2: {
@@ -91461,7 +91490,7 @@ var Component = __webpack_require__(140)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/agoujilsaad/Documents/label_initiavtive/node_modules/vue-particles/src/vue-particles/vue-particles.vue"
+Component.options.__file = "/Users/agoujilsaad/Documents/Label-initiative/node_modules/vue-particles/src/vue-particles/vue-particles.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] vue-particles.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -91472,9 +91501,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-124f1ecc", Component.options)
+    hotAPI.createRecord("data-v-c902a220", Component.options)
   } else {
-    hotAPI.reload("data-v-124f1ecc", Component.options)
+    hotAPI.reload("data-v-c902a220", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -93257,7 +93286,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-124f1ecc", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-c902a220", module.exports)
   }
 }
 
@@ -95790,7 +95819,7 @@ var Component = __webpack_require__(140)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/agoujilsaad/Documents/label_initiavtive/resources/assets/js/components/Favorite.vue"
+Component.options.__file = "/Users/agoujilsaad/Documents/Label-initiative/resources/assets/js/components/Favorite.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Favorite.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -95801,9 +95830,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-569c53ab", Component.options)
+    hotAPI.createRecord("data-v-0e8cb915", Component.options)
   } else {
-    hotAPI.reload("data-v-569c53ab", Component.options)
+    hotAPI.reload("data-v-0e8cb915", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -95908,7 +95937,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-569c53ab", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-0e8cb915", module.exports)
   }
 }
 

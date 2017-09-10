@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -20,6 +21,26 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+
+
+   protected function authenticated(Request $request, $user)
+    {
+            if ($user->hasRole('Admin')) 
+            {
+                return redirect()->route('roles.index');
+            }
+
+            if ($user->hasRole('Porteur de Projet')) 
+            {
+                 return redirect()->route('projet_news');
+            }
+
+            if ($user->hasRole('Partenaire Projet')) 
+            {
+                return redirect()->route('all_projet_partenaire');
+            }
+    }
+    
     /**
      * Where to redirect users after login.
      *
