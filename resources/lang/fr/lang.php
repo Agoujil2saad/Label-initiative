@@ -27,6 +27,15 @@
         'spons' =>'SPONSORS PERMANENTS',
         'video_l' => 'VIDÉOTHÈQUE',
         'all_projets'=> 'Tous Les Projets',
+        'header_us' =>'Qui Sommes-nous?',
+        'header_projets' => 'Nos Projets',
+        'header_partners' => 'Nos Partenaires',
+        'header_events' => 'Nos Événements',
+        'header_connect' => 'Se connecter',
+        'header_admin' => 'Admin',
+        'header_logout' => 'Se deconnecter',
+        'header_myspace' => 'Mon espace',
+
 
 
    ];
