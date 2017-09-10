@@ -55,7 +55,6 @@
     </head>
     <body>
       <div class="ui  stackable centered grid">
-        
         @include('partials.header_1')
         @role('Admin')
         @include('partials.admin_menu')

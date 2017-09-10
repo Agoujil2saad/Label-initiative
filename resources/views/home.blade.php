@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="seq-title">
                                     <h2 data-seq>
-                                    Notre objectif est de vous accompagner <br>dans la réussite de votre projet  <br>
+                                    @lang('lang.slider_one_message')
                                     <a href="/qui_sommes_nous">Découvrir Label Initiative ▶ </a>
                                     </h2>
                                 </div>

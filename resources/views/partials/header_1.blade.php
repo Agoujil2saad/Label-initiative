@@ -109,11 +109,29 @@
         @if(Auth::check())
         <div class="one wide column middle aligned " id="user_notifications">
             <user-notifications></user-notifications>
-        </div>
-        
+        </div>        
         @endif
+
         <div class="two wide column middle aligned">
-            <a href="/"><img src="{{ asset("images/test_modified.png") }}" alt="" class="ui centered small image" id="logo_right"></a>
+               <span class="text">{{session('locale')}}</span>
+        <div class="ui floating dropdown labeled search icon button">
+  <i class="world icon"></i>
+  <span class="text"><i class=" {{App::getLocale()}} flag"></i>{{App::getLocale()}}</span>       
+            <div class="menu">
+                        
+                            @foreach ( config('app.languages') as $user)
+                                @if($user !== config('app.locale'))
+                                    <div class="item">
+                                        <a href="{!! url('language') !!}/{{ $user }}">
+                                        <i class=" {{$user}} flag"></i>
+                                        </a>
+                                   </div>
+                                @endif
+                            @endforeach
+                      
+            </div>
+        </div>
+         {{--  <a href="/"><img src="{{ asset("images/test_modified.png") }}" alt="" class="ui centered small image" id="logo_right"></a> --}}
         </div>
         
     </div>
