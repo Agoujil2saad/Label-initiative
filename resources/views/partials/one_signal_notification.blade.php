@@ -5,7 +5,7 @@ var OneSignal = window.OneSignal || [];
 OneSignal.push(["init", 
 						{
 							appId: "fde5427c-6447-4dc6-ae18-528489e21018",
-							autoRegister: true,
+							autoRegister: false,
 							notifyButton: 
 							{
 								enable: true /* Set to false to hide */
@@ -72,7 +72,7 @@ OneSignal.push(["init",
 <script data-cfasync="false">
 	window.OneSignal = window.OneSignal || [];
 		/* In milliseconds, time to wait before prompting user. This time is relative to right after the user presses <ENTER> on the address barand navigates to your page */
-		var notificationPromptDelay = 30000;
+		var notificationPromptDelay = 20000;
 		/* Why use .push? See: http://stackoverflow.com/a/38466780/555547 */
 
 	window.OneSignal.push(function() 
