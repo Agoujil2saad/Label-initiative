@@ -86,7 +86,7 @@
       document.execCommand("copy");
       $temp.remove();
       }
-      @include('partials.tawk_to')
       </script>
+      @include('partials.tawk_to')
     </body>
   </html>
