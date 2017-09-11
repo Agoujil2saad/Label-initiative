@@ -6,7 +6,6 @@ OneSignal.push(["init",
 						{
 							appId: "fde5427c-6447-4dc6-ae18-528489e21018",
 							autoRegister: false,
-							,
 							welcomeNotification: 
 							{
 								"title": "Label initiative",
