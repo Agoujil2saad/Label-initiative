@@ -2,6 +2,8 @@
 Auth::routes();
 //static pages routing
 Route::get('/qui_sommes_nous','StaticPagesController@qui_sommes_nous');
+Route::get('/contact','StaticPagesController@contact');
+Route::get('/team','StaticPagesController@team');
 // home page and deposer projet routing
 Route::get('/','HomeController@index')->name('home');
 Route::get('language/{lang}', 'HomeController@language')->where('lang', '[A-Za-z_-]+');

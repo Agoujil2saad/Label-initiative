@@ -158,7 +158,11 @@
     </div>
 
     <div class="two wide column middle aligned">
+        @if(App::getLocale()=="ar")
+        <a href="/"><img src="{{ asset("images/logo(arabic).png") }}" alt="" class="ui  right floating small image" id="logo_right"></a>
+        @else
           <a href="/"><img src="{{ asset("images/test_modified.png") }}" alt="" class="ui  right floating small image" id="logo_right"></a>
+        @endif
     </div>
         
 </div>

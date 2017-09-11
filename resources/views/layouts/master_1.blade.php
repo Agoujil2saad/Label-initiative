@@ -78,7 +78,6 @@
       ;
       });
       </script>
-      
       <script type="text/javascript">
       function copyToClipboard(element) {
       var $temp = $("<input>");
@@ -86,6 +85,8 @@
       $temp.val($(element).text()).select();
       document.execCommand("copy");
       $temp.remove();
-      }</script>
+      }
+      @include('partials.tawk_to')
+      </script>
     </body>
   </html>
