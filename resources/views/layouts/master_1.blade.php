@@ -78,6 +78,7 @@
       ;
       });
       </script>
+
       <script type="text/javascript">
       function copyToClipboard(element) {
       var $temp = $("<input>");

@@ -398,5 +398,6 @@
         <script src="{{asset('modern-slide-in/scripts/sequence.min.js')}}"></script>
         <script src="{{asset('modern-slide-in/scripts/sequence-theme.modern-slide-in.js')}}"></script>
         @include('partials.one_signal_notification')
+        @include('partials.tawk_to')
     </body>
 </html>
