@@ -5,7 +5,7 @@ var OneSignal = window.OneSignal || [];
 OneSignal.push(["init", 
 						{
 							appId: "fde5427c-6447-4dc6-ae18-528489e21018",
-							autoRegister: false,
+							autoRegister: true,
 							notifyButton: 
 							{
 								enable: true /* Set to false to hide */
@@ -24,12 +24,23 @@ OneSignal.push(["init",
 								acceptButtonText: "AUTORISER",
 								/* cancelButtonText limited to 15 characters */
 								cancelButtonText: "NON MERCI"
-							}
+							},
 							notifyButton:
 								{
         							enable: true, /* Required to use the notify button */
+        							colors: { // Customize the colors of the main button and dialog popup button
+      											'circle.background': 'rgb(255,47,36)',
+      											'circle.foreground': 'white',
+      											'badge.background': 'rgb(255,47,36)',
+      											'badge.foreground': 'white',
+      											'badge.bordercolor': 'white',
+      											'pulse.color': 'white',
+      											'dialog.button.background.hovering': 'rgb(77, 101, 113)',
+      											'dialog.button.background.active': 'rgb(70, 92, 103)',
+      											'dialog.button.background': 'rgb(255,47,36)',
+      											'dialog.button.foreground': 'white'
+    										},
         							size: 'medium', /* One of 'small', 'medium', or 'large' */
-        							theme: 'inverse', /* One of 'default' (red-white) or 'inverse" (white-red) */
         							position: 'bottom-left', /* Either 'bottom-left' or 'bottom-right' */
         							offset: 
         								{
