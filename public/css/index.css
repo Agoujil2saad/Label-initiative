@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:700|Source+Sans+Pro:300);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Amiri|Cairo|Rakkas|Scheherazade');
 body{
     margin: 0;
     padding: 0;
@@ -121,6 +122,7 @@ canvas {
     background: url("../images/footer_background.png")  no-repeat ;
     background-size:cover;
     width:100%;
+    padding:2em 0;
 }
 .footer_list{
     list-style: none;
@@ -164,3 +166,54 @@ canvas {
   height: 100%;
   }
 
+
+b{
+    color:#660099;
+}
+a:lang(ar){
+        font-family: 'Cairo', "Tamil MN", serif;
+        font-size: 120%;
+        font-weight: 600;
+}
+.ui.orange.button:lang(ar){
+        font-family: 'Cairo', "Tamil MN", serif;
+}
+p:lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+    color:black;
+}
+.seq .seq-title h2:lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+    font-size: 1.4em;
+}
+b:lang(ar){
+     font-family: 'Cairo', "Tamil MN", serif;
+     font-size: 120%;
+     color:#660099;
+     
+}
+h2{
+    font-family: 'Cairo', "Tamil MN", serif;
+    font-size: 1.4em; 
+    color:#660099;
+}
+.ui.orange.header:lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+     font-size: 120%;
+     color:#660099;
+}
+ul li:lang(ar){
+       font-family: 'Cairo', "Tamil MN", serif;
+       font-size: 110%;
+       text-align: right;
+}
+h2.ui.header :lang(ar){
+    font-family: 'Cairo', "Tamil MN", serif;
+    font-size: 110%;
+    text-align: right;
+}
+h1.ui.header{
+    font-family: 'Cairo', "Tamil MN", serif;
+    text-align: center;
+    padding:20px;
+}

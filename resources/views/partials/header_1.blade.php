@@ -1,4 +1,4 @@
-<div class="row" style="border-bottom: 5px solid orange; padding:0; margin: 0;">
+<div class="row" style="border-bottom: 5px solid orange; padding:1em 0; margin: 0;">
     <div class="two wide column middle aligned">
         <a href="/">
             <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui left floating small image" id="logo_left">
@@ -59,29 +59,26 @@
     <div class="nine wide column middle aligned" id="navigation_menu">
         <div class="ui five stackable item secondary menu">
             <a href="/qui_sommes_nous" class="item"> 
-                <p class="ui orange small header">
+              
                     @lang('lang.header_us')
-                </p>
             </a>
             <a href="{{URL::to('projet')}}" class="item">
-                <p class="ui orange small header">
+                
                     @lang('lang.header_projets')
-                </p>
+                
             </a>
             <a href="{{URL::to('evenement')}}" class="item">
-                <p class="ui orange small header">
                     @lang('lang.header_events')
-                </p>
+                
             </a>
             
             <a href="{{URL::to('partenaire')}}" class="item">
-                <p class="ui orange small header">
                     @lang('lang.header_partners')
-                </p>
+                
             </a>
 
             @if(Auth::guest())
-                <a class="item" href="{{URL::to('login')}}">
+                <a class="item"  href="{{URL::to('login')}}">
                     <div class="ui orange button">
                         @lang('lang.header_connect')
                     </div>
@@ -138,7 +135,7 @@
     @endif
 
     <div class="two wide middle aligned column">
-        <div class="ui dropdown labeled icon button">
+        <div class="ui dropdown">
             <i class="world icon"></i>
             <span class="text">
                 <i class=" {{App::getLocale()}} flag"></i>

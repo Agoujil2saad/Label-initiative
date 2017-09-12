@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,11 +65,10 @@
         </style>
         <link rel="shortcut icon" type="image/gif" href="images/home_iBI_icon.ico" />
         {{-- styles --}}
-    
         <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/rvslider.min.css') }}">
         <link rel="stylesheet" href="{{asset('modern-slide-in/css/sequence-theme.modern-slide-in.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
     </head>
 
     <body>
@@ -160,7 +159,7 @@
             <div class="row">    
                 <div class="eight wide column">
                     <p class="main-title" style="font-size: 1.9em; font-family: 'Open Sans Condensed';">
-                        <b style="color:rgb(127,128,127) ; font-size:24px;">@lang('lang.name_of_app')</b> 
+                        <b>@lang('lang.name_of_app')</b> 
                         <span style="color: #ff6600;"> @lang('lang.support_message')</span>
                         <br>
                         <a class="ui orange large  labeled icon button" href="/deposer" style="padding: 20px; margin-top: 20px; ">

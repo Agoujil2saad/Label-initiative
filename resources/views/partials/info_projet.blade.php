@@ -9,7 +9,8 @@
                     :projet={{ $projet->id }}
                     :favorited={{ Auth::user()->hasFavorited($projet) ? 'true' : 'false' }}
                     ></favorite>
-                </div>
+                </div> 
+                @lang('lang.like_message')
                 @endcan
                 @endif
                 

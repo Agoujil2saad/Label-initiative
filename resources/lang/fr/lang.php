@@ -53,7 +53,7 @@
         'password_repeat' => 'Confirmation de mot de passe',
         'remember_me' => 'Se souvenir de moi',
         'forgot_pwd' => 'Vous avez oublié votre mot de passe?',
-        'register_message' => 'v\'avez pas encore de compte, créez-en un maintenant pour démarrer votre projet ou pour aider les autres et partager vos connaissances pour élever le pays tout entier.',
+        'register_message' => 'vous n\'avez pas encore de compte, créez-en un maintenant pour démarrer votre projet ou pour aider les autres et partager vos connaissances pour élever le pays tout entier.',
         'devenir_part' => 'devenir partenaire',
         'devenir_port' => 'devenir porteur de projet',
         'name' => 'votre nom',
@@ -70,6 +70,9 @@
         'footer_guide' => 'Guide De Porteur De Projet',
         'footer_invi_particip' => 'Investissement Participatif',
         'follow_us' => 'SUIVEZ NOUS SUR',
+        'access_denied' => 'ACCÈS REFUSÉ',
+        'like_message' => 'En cliquant sur le cœur avant tout, vous recevrez les nouvelles liées à ce projet et sera en mesure de chater avec le propriétaire du projet à partir de votre espace ',
+
 
    ];
 ?>

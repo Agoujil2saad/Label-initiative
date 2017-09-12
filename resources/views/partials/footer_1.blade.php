@@ -4,16 +4,16 @@
             <div class="five wide column">
                 <h4 class="ui orange header" id="footer_titles">@lang('lang.name_of_app')</h4>
                 <div class="ui inverted link list" id="footer_items">
-                    <a href="#" class="item">@lang('lang.header_us')</a>
+                    <a href="/qui_sommes_nous" class="item">@lang('lang.header_us')</a>
                     <a href="#" class="item">@lang('lang.footer_presse_space')</a>
-                    <a href="#" class="item">@lang('lang.footer_contact')</a>
-                    <a href="#" class="item">@lang('lang.footer_reclamation')</a>
+                    <a href="/contact" class="item">@lang('lang.footer_contact')</a>
+                    <a href="" class="item">@lang('lang.footer_reclamation')</a>
                 </div>
             </div>
             <div class="five wide column">
                 <h4 class="ui orange header" id="footer_titles">@lang('lang.learn_more')</h4>
                 <div class="ui inverted link list" id="footer_items">
-                    <a href="#" class="item">@lang('lang.footer_team')</a>
+                    <a href="/team" class="item">@lang('lang.footer_team')</a>
                     <a href="#" class="item">@lang('lang.footer_guide')</a>
                     <a href="#" class="item">@lang('lang.footer_invi_particip')</a>
                 </div>

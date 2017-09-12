@@ -1,6 +1,6 @@
 @extends('layouts.master_1')
 @section('content')
-<div class="row" style="background-color:rgba(214, 212, 212,.2);">
+<div class="row" style="background-color:rgba(214, 212, 212,.2); padding:6em 0;">
     <div class=" six wide column">
         <center>
         <h1 class="ui header">
@@ -34,7 +34,7 @@
             </div>
             <div class="field">
                 <button type="submit" class="ui orange button">
-                @lang('lamg.header_connect')
+                @lang('lang.header_connect')
                 </button>
                 <a class="ui label" href="{{ route('password.request') }}">
                     @lang('lang.forgot_pwd')
