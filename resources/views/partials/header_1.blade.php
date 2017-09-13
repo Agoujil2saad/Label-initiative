@@ -57,24 +57,27 @@
     </div>
 
     <div class="nine wide column middle aligned" id="navigation_menu">
-        <div class="ui five stackable item secondary menu">
+        <div class="ui five orange item secondary menu">
             <a href="/qui_sommes_nous" class="item"> 
-              
-                    @lang('lang.header_us')
+              <p class="ui small orange header">
+                   @lang('lang.header_us')
+              </p>      
             </a>
-            <a href="{{URL::to('projet')}}" class="item">
-                
+            <a href="{{URL::to('projet')}}" class=" item">
+                <p class=" ui small orange header">
                     @lang('lang.header_projets')
-                
+                </p> 
             </a>
             <a href="{{URL::to('evenement')}}" class="item">
-                    @lang('lang.header_events')
-                
+                   <p class=" ui small orange header">
+                       @lang('lang.header_events')
+                   </p>  
             </a>
             
             <a href="{{URL::to('partenaire')}}" class="item">
-                    @lang('lang.header_partners')
-                
+                   <p class=" ui small orange header">
+                        @lang('lang.header_partners')
+                   </p>
             </a>
 
             @if(Auth::guest())

@@ -40,7 +40,7 @@
         'my_pr' => 'Mon Projet',
         'my_acc' => 'Mon Compte',
         'projet_news' => 'Actualité du projet',
-        'chat_with_parteners' => 'Chat Avec Mes partenaires',
+        'chat_with_partners' => 'Chat Avec Mes partenaires',
         // espace partenaire
         'add_news' => 'ajouter des  Nouvelles sur le projet',
         'projet_followed' => 'les projets suivis',

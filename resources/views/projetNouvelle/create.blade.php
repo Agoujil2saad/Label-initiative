@@ -30,7 +30,7 @@
 				<div class="column twelve wide">
 					
 					<button class="ui orange right labeled icon button" type="submit">
-					@lang('lang')
+					@lang('lang.add_news')
 					<i class="right chevron icon"></i>
 					</button>
 				</div>

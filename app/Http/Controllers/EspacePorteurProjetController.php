@@ -77,6 +77,7 @@ class EspacePorteurProjetController extends Controller
 
     public function myaccount()
     {
+        $user= auth()->user();   
         return view('espace_porteur.edit_account',compact('user'));
     }
 

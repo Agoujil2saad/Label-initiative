@@ -6,7 +6,7 @@
         <div class="ui compact vertical labeled icon menu">
           <a class="item" href="/espace_partenaire">
             <i class="home icon orange"></i>
-            @lang('lang.all_projet')
+            @lang('lang.all_projets')
           </a>
           <a class="item" href="/espace_partenaire/fav_projets">
             <i class="folder icon orange"></i>

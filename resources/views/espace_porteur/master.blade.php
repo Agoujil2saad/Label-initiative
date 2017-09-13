@@ -18,7 +18,7 @@
 				</a>
 				<a class="item" href="/espace_porteur/chat">
 					<i class="mail outline icon orange"></i>
-					@lang('lang.chat_with_parteners')
+					@lang('lang.chat_with_partners')
 				</a>
 			</div>
 		</div>
@@ -26,7 +26,7 @@
 			<div class="row" id="menu_bar">
 				<a class="ui orange button" href="/espace_porteur/createnouvelle">
 				<i class="plus icon"></i>
-				@lang('lang.publish_news')
+				@lang('lang.add_news')
 				</a>
 			</div>
 			

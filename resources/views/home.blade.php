@@ -69,13 +69,20 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/rvslider.min.css') }}">
         <link rel="stylesheet" href="{{asset('modern-slide-in/css/sequence-theme.modern-slide-in.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
+        <script>
+            window.App = {!! json_encode([
+            'csrfToken' => csrf_token(),
+            'user' => Auth::user(),
+            'signedIn' => Auth::check()
+      ]) !!};
+      </script>
     </head>
 
     <body>
-        <div class="ui centered stackable grid">
+        <div class="ui centered stackable grid" id="app">
             @include('partials.header_1')
             {{-- new row --}}
-            <div class="row"  style="padding-top:0; padding-bottom: 7em">
+            <div class="row"  style="padding-top:0; padding-bottom: 0em">
                 <div id="sequence" class="seq">
                     <div class="seq-screen">
                         <ul class="seq-canvas">
@@ -92,7 +99,6 @@
                                 <div class="seq-title">
                                     <h2 data-seq>
                                         @lang('lang.slider_one_message')
-                                        <a href="/qui_sommes_nous">Découvrir Label Initiative ▶ </a>
                                     </h2>
                                 </div>
                             </li>
@@ -110,7 +116,6 @@
                                 <div class="seq-title">
                                     <h2 data-seq>
                                         @lang('lang.slider_two_message')
-                                        <a href="">SAVOIR PLUS ▶</a>
                                     </h2>
                                 </div>
                             </li>
@@ -128,7 +133,6 @@
                                 <div class="seq-title">
                                     <h2 data-seq>
                                         @lang('lang.slider_three_message')
-                                        <a href="/qui_sommes_nous">savoir plus ▶</a>
                                     </h2>
                                 </div>
                             </li>
@@ -157,12 +161,12 @@
             {{-- new row --}}
     
             <div class="row">    
-                <div class="eight wide column">
-                    <p class="main-title" style="font-size: 1.9em; font-family: 'Open Sans Condensed';">
+                <div class="ten wide column">
+                    <p class="main-title" style="font-size: 2.7em; font-family: 'Open Sans Condensed';">
                         <b>@lang('lang.name_of_app')</b> 
                         <span style="color: #ff6600;"> @lang('lang.support_message')</span>
                         <br>
-                        <a class="ui orange large  labeled icon button" href="/deposer" style="padding: 20px; margin-top: 20px; ">
+                        <a class="ui orange large  labeled icon button" href="/deposer" style="padding: 2em; margin-top: 2em; ">
                             <i class="idea icon"></i>
                             @lang('lang.deposer_projet')
                         </a>
@@ -174,7 +178,10 @@
     
             <div class="row">
                 <div class="ui horizontal large divider" id="centred_title">
-                    <h2> <i class=" chevron down icon "></i> @lang('lang.decouvrir_projet')</h2>
+                    <h2> 
+                        <i class=" chevron down icon "></i>
+                         @lang('lang.decouvrir_projet')
+                    </h2>
                 </div>
     
                 <div class="ui three special container  doubling cards">
@@ -189,11 +196,12 @@
                                     </div>
                                 </div>
                                 <img src="images/5.jpg" alt="">
-                                <div id="message_principale" style="position: static; padding: 20px;">{{$projet->title}}</div>
+                                <div id="message_principale" style="position: static; padding: 1.2em;">{{$projet->title}}</div>
                             </div>
     
                             <div class="extra">
-                             <i class=" red heart icon"></i>{{count($projet->favoriters)}}
+                                <i class=" red heart icon"></i>
+                                {{count($projet->favoriters)}}
                             </div>
                         </div>
                      @endforeach
@@ -205,7 +213,7 @@
             <div class="row">
                 <div class="column">
                     <center>
-                        <a class="ui orange large button" href="{{URL::to('projet')}}">
+                        <a class="ui orange large button" href="{{URL::to('projet')}}" style="padding: 1.5em; margin: 1.5em">
                             @lang('lang.all_projets')
                         </a>
                     </center>
@@ -272,7 +280,7 @@
                 </div>
     
                 <div class=" six wide column">
-                    <div id="photo_caroussel">
+                    
                         <el-carousel :interval="4000" type="card" height="200px">
                             @foreach($partenaires as $partenaire)
                                 <el-carousel-item>
@@ -282,8 +290,8 @@
                                 </el-carousel-item>
                             @endforeach
                         </el-carousel>
-                    </div>
                 </div>
+               
     
                 <div class="ui horizontal large divider" id="centred_title">
                     <h2>

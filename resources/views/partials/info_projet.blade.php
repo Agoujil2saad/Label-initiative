@@ -1,7 +1,7 @@
-<div class="row" id="app">
+<div class="row">
     <div class="eight wide column">
         <div class="ui  segment">
-            <div id="app">
+            <div>
                 @if (Auth::check())
                 @can('Like Projet')
                 <div class="inverted ui fluid button ">
@@ -119,6 +119,5 @@
                 </center>
             </div>
         </div>
-    </div>
-    
+    </div> 
 </div>
