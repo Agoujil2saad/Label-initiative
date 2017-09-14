@@ -10,7 +10,9 @@
         <el-carousel :interval="4000">
         @foreach($evenement->photos as $photo)
         <el-carousel-item>
-        <img src="{{asset('storage/'.$photo->filename)}}" class="ui fluid image">
+          <center>
+            <img src="{{Cloudder::show($photo->filename)}}">
+          </center>
         </el-carousel-item>
         @endforeach
         </el-carousel>

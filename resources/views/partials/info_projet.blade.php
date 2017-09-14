@@ -30,7 +30,7 @@
                 @foreach($projet->photos as $photo)
                 <el-carousel-item>
                 <center>
-                <img src="{{asset('storage/'.$photo->filename)}}" class="ui medium  image" >
+               <img src="{{Cloudder::show($photo->filename)}}">
                 </center>
                 </el-carousel-item>
                 @endforeach

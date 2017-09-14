@@ -84,7 +84,7 @@ class EspacePorteurProjetController extends Controller
     public function update_myaccount($id,Request $request)
     {
     	$user = User::updateOrCreate(['id'=>$id],$request->all());
-    	return redirect()->route('projet_news')->with('flash_message','Account successfully updated');
+        return back();
     }
 
     public function destroy($id)
