@@ -1,6 +1,6 @@
 <div class="row"  style="background-color: rgba(214, 212, 212,.2);padding:0;margin:0">
   <ais-index app-id="{{ config('scout.algolia.id') }}"
-  api-key="{{ config('scout.algolia.secret') }}"
+  api-key=" 3bf968b6dede57854e7be40d9d90d76"
   :query-parameters="{'page': page}">
   <div class="ui stackable celled grid">
     <div class="row">
