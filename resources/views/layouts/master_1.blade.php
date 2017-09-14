@@ -64,8 +64,7 @@
         @include('partials.footer_1')
       </div>
        {{-- <script src="{{ mix('js/user-notifications.js') }}"></script> --}}
-   <script src="{{ mix('js/app.js') }}"></script>
-     
+      <script src="{{ mix('js/app.js') }}"></script>
       <script src="{{asset('js/app_talk.js')}}"></script>
       
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
