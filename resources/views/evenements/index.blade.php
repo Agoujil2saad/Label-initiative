@@ -1,7 +1,10 @@
 @extends('layouts.master_1')
 @section('content')
 <div class="row" style="background-color:rgba(214, 212, 212,.2);padding:6em 0; ">
-  <h1 class="ui header">Nos Evenement</h1>
+
+  <h1 class="ui orange header" style="font-size:3em; display: block;">Nos Evenement</h1>
+
+
   <div class="ui four container cards">
     @foreach($evenements as $evenement)
     <div class="card" style="max-width: 400px;">

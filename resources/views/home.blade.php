@@ -82,7 +82,7 @@
         <div class="ui centered stackable grid" id="app">
             @include('partials.header_1')
             {{-- new row --}}
-            <div class="row"  style="padding-top:0; padding-bottom: 0em">
+            <div class="row"  style="padding-top:0; padding-bottom: 1em">
                 <div id="sequence" class="seq">
                     <div class="seq-screen">
                         <ul class="seq-canvas">
@@ -147,7 +147,11 @@
     
             <!-- new row -->
     
-            <div class=" orange middle aligned  row" style="background-color: #ff6600">
+            <div class="  middle aligned  row" style="background-color: #ff6600;
+background-image: linear-gradient(225deg, #ff6600 7%, #ffffff 95%);
+
+
+">
                 <div class=" three wide column">
                     <img src="{{asset('images/home_black_and_white.png')}}" class="ui centered bordered small image" style="box-shadow: 1px 1px  2px 1px rgba(0,0,0,0.75);"> 
                 </div>
@@ -162,7 +166,7 @@
     
             <div class="row">    
                 <div class="ten wide column">
-                    <p class="main-title" style="font-size: 2.7em; font-family: 'Open Sans Condensed';">
+                    <p class="main-title" style="font-size: 2.4em; font-family: 'Lato';">
                         <b>@lang('lang.name_of_app')</b> 
                         <span style="color: #ff6600;"> @lang('lang.support_message')</span>
                         <br>
@@ -179,7 +183,7 @@
             <div class="row">
                 <div class="ui horizontal large divider" id="centred_title">
                     <h2> 
-                        <i class=" chevron down icon "></i>
+                        <i class="chevron down icon" style="position:relative; top: 2px;"></i>
                          @lang('lang.decouvrir_projet')
                     </h2>
                 </div>
@@ -220,12 +224,15 @@
     
                     <div class="ui horizontal divider" id="centred_title">
                         <h2> 
-                            <i class=" chevron down icon "></i>
+                            <i class="chevron down icon" style="position:relative; bottom: 2px;"></i>
                             @lang('lang.chiffre_cle')
                         </h2>
                     </div>
     
-                    <div class="ui four statistics" >
+                    <div class="ui four statistics" style="background-color: #fd9b5b;
+background-image: linear-gradient(225deg, #fd9b5b 7%, #ffffff 95%);
+padding: 2em 0;
+">
                         <div class="statistic">
                             <div class="value">
                                 <i class="idea orange icon"></i>
@@ -236,20 +243,20 @@
                             </div>
                         </div>
     
-                        <div class="statistic" >
+                        <div class="statistic">
                             <div class="value">
-                             <i class="users orange  icon"></i>
-                              300
+                                300
+                             <i class="address card orange  icon"></i>
                             </div>
                             <div class="label">
                             @lang('lang.membres_actifs')
                             </div>
                         </div>
     
-                        <div class="statistic" >
+                        <div class="statistic">
                             <div class="value">
-                                <i class="id orange badge icon"></i>  
                                 300
+                                <i class="users orange  icon"></i>
                             </div>
                             <div class="label">
                                 @lang('lang.assoc')
@@ -274,7 +281,7 @@
             <div class="row">
                 <div class="ui horizontal large divider" id="centred_title">
                     <h2>
-                        <i class=" chevron down icon "></i>
+                        <i class="chevron down icon" style="position:relative; top: 2px;"></i>
                         @lang('lang.spons')
                     </h2>
                 </div>
@@ -295,7 +302,7 @@
     
                 <div class="ui horizontal large divider" id="centred_title">
                     <h2>
-                        <i class=" chevron down icon "></i> 
+                        <i class="chevron down icon" style="position:relative; top: 2px;"></i> 
                         @lang('lang.video_l')
                     </h2>
                 </div>
@@ -368,6 +375,7 @@
                 <a class="rvs-nav-next"></a>
             </div>
         </div>
+        <div class="ui divider"></div>
           
           <!-- new row out grid -->
         @include('partials.footer_1')

@@ -1,4 +1,4 @@
-<div class="ui orange vertical footer segment" id="footer">
+<div class="ui orange vertical footer segment" id="footer" >
     <div class="ui center aligned container">
         <div class="ui stackable grid">
             <div class="five wide column">

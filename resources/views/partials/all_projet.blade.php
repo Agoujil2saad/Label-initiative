@@ -11,14 +11,14 @@
           'ais-tree-menu__list': 'list-unstyled',
           'ais-tree-menu__count': 'badge'
         }">
-        <h3 slot="header">projets suivant les categories</h3>
+        <h3 slot="header">Projets selon la catégorie</h3>
       </ais-tree-menu>
     </div>
     <div class="ui segment">
       <ais-price-range attribute-name="montant_estime" currency="DH" currency-placement="right" :class-names="{
       'ais-price-range__input': ''
     }">
-    <h3 slot="header">projet suivant le Budjet</h3>
+    <h3 slot="header">Projets selon le budget</h3>
     <p slot="default"></p>
   </ais-price-range>
 </div>
@@ -73,9 +73,8 @@
 <div class="row">
   <div class="ui four cards">
     <ais-results :stack="true">
-      
       <template scope="{ result }">
-        <div class="ui card" style="float: left; display: inline;margin-left: 20px;">
+        <div class="ui card" style="float: left;margin: 1em .5em; max-width: 400px; display: flex;">
           <img src="{{asset('images/home_green_projet.png')}}">
           <div class="content">
             <a class="" :href="'projet/'+result.id" >
@@ -92,9 +91,11 @@
     </ais-results>
   </div>
   <ais-no-results></ais-no-results>
-  
+  </div>
+
   <div v-observe-visibility="loadMore">Loading more...</div>
-</div>
+
+
 </div>
 </div>
 

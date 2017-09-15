@@ -27,7 +27,13 @@ $(document).ready(function () {
         });
 
     });
-
+    
+     $("#message-data").on("keydown", function(e){
+            if(e.which == 13){
+                $('#talkSendMessage').submit();
+                return false;
+            }
+        });
 
     $('body').on('click', '.talkDeleteMessage', function (e) {
         e.preventDefault();

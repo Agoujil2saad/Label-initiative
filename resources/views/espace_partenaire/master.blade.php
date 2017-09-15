@@ -18,7 +18,7 @@
           </a>
           <a class="item" href="/espace_partenaire/chat">
             <i class="mail outline icon orange"></i>
-             @lang('lang.chat_with_porteur')
+             @lang('lang.chat_with_partners')
           </a>
         </div>
       </div>

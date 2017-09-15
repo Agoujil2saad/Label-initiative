@@ -115163,156 +115163,155 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		var _this = this;
+    data: function data() {
+        var _this = this;
 
-		var validatePass = function validatePass(rule, value, callback) {
-			if (value === '') {
-				callback(new Error('Veuillez entrer le mot de passe'));
-			} else {
-				if (_this.formInline.checkPass !== '') {
-					_this.$refs.ruleForm2.validateField('checkPass');
-				}
-				callback();
-			}
-		};
-		var validatePass2 = function validatePass2(rule, value, callback) {
-			if (value === '') {
-				callback(new Error('Veuillez saisir à nouveau le mot de passe'));
-			} else if (value !== _this.formInline.pass) {
-				callback(new Error('Deux entrées ne correspondent pas!'));
-			} else {
-				callback();
-			}
-		};
-		return {
-			formInline: {
-				name: '',
-				region: '',
-				categorie: '',
-				fonction: '',
-				email: '',
-				address: '',
-				tel: '',
-				description_projet: '',
-				titre_projet: '',
-				montant_projet: '',
-				categorie_projet: '',
-				pass: '',
-				checkPass: ''
-			},
-			rules: {
-				name: [{
-					required: true,
-					message: 'Veuillez entrer le nom complet de L\'association',
-					trigger: 'blur'
-				}, {
-					min: 2,
-					max: 200,
-					message: 'La longueur doit être de 2 à 50',
-					trigger: 'blur'
-				}],
-				region: [{
-					required: true,
-					message: 'Sélectionnez la region d\'activité',
-					trigger: 'change'
-				}],
-				fonction: [{
-					required: true,
-					message: 'Veuillez entrer votre fonction',
-					trigger: 'change'
-				}],
-				address: [{
-					required: true,
-					message: 'Veuillez entrer l\'adresse',
-					trigger: 'blur'
-				}, {
-					min: 2,
-					max: 200,
-					message: 'La longueur doit être de 2 à 50',
-					trigger: 'blur'
-				}],
-				email: [{
-					type: 'email',
-					message: 'Veuillez entrer l\'adresse email correcte',
-					trigger: 'blur,change'
-				}, {
-					required: true,
-					message: 'Veuillez entrer l\'adresse email',
-					trigger: 'change'
-				}],
-				tel: [{
-					required: true,
-					message: 'Veuillez entrer un numero de telephone',
-					trigger: 'blur,change'
-				}]
-			},
-			rules1: {
-				description_projet: [{
-					required: true,
-					message: 'Veuillez entrer la description du projet ',
-					trigger: 'blur'
-				}, {
-					min: 10,
-					max: 1000,
-					message: 'La longueur doit être de 10 à 1000',
-					trigger: 'blur'
-				}],
-				categorie_projet: [{
-					required: true,
-					message: 'Sélectionnez la categorie du projet',
-					trigger: 'change'
-				}],
-				titre_projet: [{
-					required: true,
-					message: 'Veuillez entrer le nom du projet ',
-					trigger: 'blur'
-				}]
-			},
-			rules2: {
-				pass: [{ validator: validatePass, trigger: 'blur' }],
-				checkPass: [{ validator: validatePass2, trigger: 'blur' }]
-			}
-		};
-	},
+        var validatePass = function validatePass(rule, value, callback) {
+            if (value === '') {
+                callback(new Error('Veuillez entrer le mot de passe'));
+            } else {
+                if (_this.formInline.checkPass !== '') {
+                    _this.$refs.ruleForm2.validateField('checkPass');
+                }
+                callback();
+            }
+        };
+        var validatePass2 = function validatePass2(rule, value, callback) {
+            if (value === '') {
+                callback(new Error('Veuillez saisir à nouveau le mot de passe'));
+            } else if (value !== _this.formInline.pass) {
+                callback(new Error('Deux entrées ne correspondent pas!'));
+            } else {
+                callback();
+            }
+        };
+        return {
+            formInline: {
+                name: '',
+                region: '',
+                categorie: '',
+                fonction: '',
+                email: '',
+                address: '',
+                tel: '',
+                description_projet: '',
+                titre_projet: '',
+                montant_projet: '',
+                categorie_projet: '',
+                pass: '',
+                checkPass: ''
+            },
+            rules: {
+                name: [{
+                    required: true,
+                    message: 'Veuillez entrer le nom complet de L\'association',
+                    trigger: 'blur'
+                }, {
+                    min: 2,
+                    max: 200,
+                    message: 'La longueur doit être de 2 à 200',
+                    trigger: 'blur'
+                }],
+                region: [{
+                    required: true,
+                    message: 'Sélectionnez la region d\'activité',
+                    trigger: 'change'
+                }],
+                fonction: [{
+                    required: true,
+                    message: 'Veuillez entrer votre fonction',
+                    trigger: 'change'
+                }],
+                address: [{
+                    required: true,
+                    message: 'Veuillez entrer l\'adresse',
+                    trigger: 'blur'
+                }, {
+                    min: 2,
+                    max: 200,
+                    message: 'La longueur doit être de 2 à 200',
+                    trigger: 'blur'
+                }],
+                email: [{
+                    type: 'email',
+                    message: 'Veuillez entrer l\'adresse email correcte',
+                    trigger: 'blur,change'
+                }, {
+                    required: true,
+                    message: 'Veuillez entrer l\'adresse email',
+                    trigger: 'change'
+                }]
+            },
+            rules1: {
+                description_projet: [{
+                    required: true,
+                    message: 'Veuillez entrer la description du projet ',
+                    trigger: 'blur'
+                }, {
+                    min: 10,
+                    max: 1000,
+                    message: 'La longueur doit être de 10 à 1000',
+                    trigger: 'blur'
+                }],
+                categorie_projet: [{
+                    required: true,
+                    message: 'Sélectionnez la categorie du projet',
+                    trigger: 'change'
+                }],
+                titre_projet: [{
+                    required: true,
+                    message: 'Veuillez entrer le nom du projet ',
+                    trigger: 'blur'
+                }]
+            },
+            rules2: {
+                pass: [{ validator: validatePass, trigger: 'blur' }],
+                checkPass: [{ validator: validatePass2, trigger: 'blur' }]
+            }
+        };
+    },
 
-	methods: {
-		onComplete: function onComplete() {
-			axios.post('/deposer', this.$data.formInline).then(function (response) {
-				window.location = response.data.redirect;
-			});
-		},
-		validateFirstStep: function validateFirstStep() {
-			var _this2 = this;
+    methods: {
+        onComplete: function onComplete() {
+            axios.post('/deposer', this.$data.formInline).then(function (response) {
+                window.location = response.data.redirect;
+            });
+        },
+        validateFirstStep: function validateFirstStep() {
+            var _this2 = this;
 
-			return new Promise(function (resolve, reject) {
-				_this2.$refs.ruleForm.validate(function (valid) {
-					resolve(valid);
-				});
-			});
-		},
-		validateSecondStep: function validateSecondStep() {
-			var _this3 = this;
+            return new Promise(function (resolve, reject) {
+                _this2.$refs.ruleForm.validate(function (valid) {
+                    resolve(valid);
+                });
+            });
+        },
+        validateSecondStep: function validateSecondStep() {
+            var _this3 = this;
 
-			return new Promise(function (resolve, reject) {
-				_this3.$refs.ruleForm1.validate(function (valid) {
-					resolve(valid);
-				});
-			});
-		},
-		validateThirdStep: function validateThirdStep() {
-			var _this4 = this;
+            return new Promise(function (resolve, reject) {
+                _this3.$refs.ruleForm1.validate(function (valid) {
+                    resolve(valid);
+                });
+            });
+        },
+        validateThirdStep: function validateThirdStep() {
+            var _this4 = this;
 
-			return new Promise(function (resolve, reject) {
-				_this4.$refs.ruleForm2.validate(function (valid) {
-					resolve(valid);
-				});
-			});
-		}
-	}
+            return new Promise(function (resolve, reject) {
+                _this4.$refs.ruleForm2.validate(function (valid) {
+                    resolve(valid);
+                });
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -115349,7 +115348,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('el-form-item', {
     attrs: {
-      "label": "Type de l'association",
+      "label": "catégorie de l'association",
       "prop": "categorie"
     }
   }, [_c('el-select', {
@@ -115417,8 +115416,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('el-input', {
     attrs: {
-      "placeholder": "Nom complet",
-      "icon": "name"
+      "placeholder": "Nom complet"
     },
     model: {
       value: (_vm.formInline.name),
@@ -115466,7 +115464,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('el-input', {
     attrs: {
-      "placeholder": "adress"
+      "type": "textarea",
+      "rows": 2,
+      "placeholder": "adresse"
     },
     model: {
       value: (_vm.formInline.address),
@@ -115549,7 +115549,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('el-input', {
     attrs: {
-      "placeholder": " complet de projet"
+      "placeholder": "Nom du projet"
     },
     model: {
       value: (_vm.formInline.titre_projet),
@@ -115560,13 +115560,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('el-form-item', {
     attrs: {
-      "label": "Montant estimé en DH ",
+      "label": "budget estimé en Dirham ",
       "prop": "montant_projet"
     }
   }, [_c('el-input-number', {
     attrs: {
       "min": 2000,
-      "max": 70000
+      "max": 70000,
+      "step": 1000
     },
     model: {
       value: (_vm.formInline.montant_projet),
@@ -115577,7 +115578,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('el-form-item', {
     attrs: {
-      "label": "Description_projet",
+      "label": "Description de projet",
       "prop": "description_projet"
     }
   }, [_c('el-input', {
@@ -115645,7 +115646,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "primary"
     },
     slot: "prev"
-  }, [_vm._v("\n        Precedent\n        "), _c('i', {
+  }, [_vm._v("\n    Precedent\n    "), _c('i', {
     staticClass: "left chevron icon"
   })]), _vm._v(" "), _c('button', {
     staticClass: "ui orange right labeled icon button",
@@ -115653,7 +115654,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "primary"
     },
     slot: "next"
-  }, [_vm._v("\n        Suivant\n        "), _c('i', {
+  }, [_vm._v("\n    Suivant\n    "), _c('i', {
     staticClass: "right chevron icon"
   })]), _vm._v(" "), _c('button', {
     staticClass: "ui orange right labeled icon button",
@@ -115661,7 +115662,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "primary"
     },
     slot: "finish"
-  }, [_vm._v("\n        Créer mon compte"), _c('i', {
+  }, [_vm._v("\n    Créer mon compte"), _c('i', {
     staticClass: "idea icon"
   })])], 1)], 1)
 },staticRenderFns: []}
