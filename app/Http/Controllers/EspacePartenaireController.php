@@ -38,7 +38,7 @@ class EspacePartenaireController extends Controller
     {
         $user = Auth::user();
         $projets = $user->favorites(Projet::class)->get();
-        return view('espace_partenaire.index',compact('projets'));
+        return view('espace_partenaire.projets_suivis',compact('projets'));
     }
 
     public function chat()

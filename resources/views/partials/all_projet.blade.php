@@ -11,14 +11,14 @@
           'ais-tree-menu__list': 'list-unstyled',
           'ais-tree-menu__count': 'badge'
         }">
-        <h3 slot="header">Projets selon la catégorie</h3>
+        <h3 slot="header">@lang('lang.projet_on_type')</h3>
       </ais-tree-menu>
     </div>
     <div class="ui segment">
       <ais-price-range attribute-name="montant_estime" currency="DH" currency-placement="right" :class-names="{
       'ais-price-range__input': ''
     }">
-    <h3 slot="header">Projets selon le budget</h3>
+    <h3 slot="header">@lang('lang.projet_on_budjet')</h3>
     <p slot="default"></p>
   </ais-price-range>
 </div>

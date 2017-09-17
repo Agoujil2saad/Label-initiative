@@ -16,4 +16,8 @@ class StaticPagesController extends Controller
 	{
 		return view('static_pages.equipe');
 	}
+	public function guide_porteur()
+	{
+		return view('static_pages.guide_porteur');
+	}
 }

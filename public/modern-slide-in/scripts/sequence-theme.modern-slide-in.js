@@ -24,9 +24,12 @@ var sequenceElement = document.getElementById("sequence");
 // Place your Sequence options here to override defaults
 // See: http://sequencejs.com/documentation/#options
 var options = {
-  animateCanvas: false,
-  phaseThreshold: false,
+  animateCanvas: true,
+  phaseThreshold: true,
   preloader: true,
+  autoPlay: true,
+  autoPlayInterval: 1500,
+  cycle:true,
   reverseWhenNavigatingBackwards: true
 }
 

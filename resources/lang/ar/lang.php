@@ -39,7 +39,7 @@ return [
 	'chat_with_partners' => 'ﺩﺭﺩﺷﺔ ﻣﻊ ﺷﺮﻛﺎﺋﻲ',
 	'publish_news' => 'ﻧﺸﺮ ﺟﺪﻳﺪ',
 // espace partenaires
-	'projet followed nsa' => 'ﻣﺸﺎﺭﻳﻊ اﻟﻤﺘﺎﺑﻌﺔ ',
+	'projet_followed' => 'اﻟﻤﺸﺎﺭﻳﻊ اﻟﻤﺘﺎﺑﻌﺔ ',
 	'edit_my_acc' => 'ﺗﻌﺪﻳﻞ ﺣﺴﺎﺑﻲ',
 	'chat with porteur' => 'اﻟﺪﺭﺩﺷﺔ ﻣﻊ ﺣﺎﻣﻠﻲ اﻟﻤﺸﺎﺭﻳﻊ',
 //
@@ -75,7 +75,7 @@ return [
 
 //formulaire projet items
 	'decriver_projet' => 'وصف المشروع بالتفصيل',
-	'monntant_estime' => 'الميزانية التقديرية بالدرهم',
+	'montant_estime' => 'الميزانية التقديرية بالدرهم',
 	'titre_projet' => 'عنوان المشروع',
 	'projet_type' => 'نوع المشروع',
 	'add_photos_here' => 'أضف صور لمشروعك هنا',
@@ -90,6 +90,13 @@ return [
 	'region' => 'الإقليم',
 	'update' => 'تحديث',
 	'edit' => 'تعديل',
+	'delete' => 'حدف',
+	'upload' => 'رفع',
+// all projet search 
+	'projet_on_budjet' => 'المشاريع حسب الميزانية',
+	'projet_on_type' => 'المشاريع حسب الفئة',
+
+
 	
 
 

@@ -26,7 +26,7 @@ return [
                 </ul>',
     'contenu3' => '<ul class="initiative_list">
                 <li> Créer une dynamique de développement territorial en encourageant l\'esprit d\'initiatives et en valorisant les actions entreprises par les acteurs locaux</li>
-                <li> Freiner l\’exode rural en préconisant territorial et la solidarité Urbain-Rural </li>
+                <li> Freiner l\'exode rural en préconisant la cohésion territoriale et la solidarité Urbain-Rural </li>
                 <li> Diffuser les pratiques de développement durable auprès des acteurs locaux</li>
                 <li> Faciliter les partenariats et prôner pour la bonne gouvernance des territoires</li>
                 <li> Promouvoir l\'innovation, les savoir-faire locaux et l\'utilisation des ressources locales</li>

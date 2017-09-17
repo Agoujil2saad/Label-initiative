@@ -153,7 +153,7 @@ html,
 }
 
 .seq .seq-next {
-  right: 20px;
+  right: 2%;
   background: url("../images/bt-next.png");
 }
 
@@ -165,7 +165,7 @@ html,
 }
 
 .seq .seq-prev {
-  left: 20px;
+  left: 2%;
   background: url("../images/bt-prev.png");
 }
 

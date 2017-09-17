@@ -8,8 +8,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="shortcut icon" type="image/gif" href="images/home_iBI_icon.ico" />
     <link href="/css/app_talk.css" rel="stylesheet">
-    <link rel="stylesheet"
-      type="text/css" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
       <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
       <style>
@@ -17,9 +17,9 @@
       list-style-image: url('images/home_5Dx_icon.ico');
       }
       .initiative_list li{
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 1.7em;
-      }
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2em;
+      }p
       #pusher{
       visibility: visible;
       }
@@ -89,5 +89,6 @@
       }
       </script>
       @include('partials.tawk_to')
+      @yield('scripts')
     </body>
   </html>

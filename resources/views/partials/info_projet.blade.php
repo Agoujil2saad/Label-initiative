@@ -58,14 +58,9 @@
 								</el-tab-pane>
 								<el-tab-pane>
 									<span slot="label"><i class="newspaper icon "></i> News</span>
-									@if($projet->nouvelles)
-									<center>
-									<img class="ui medium image" src="{{asset('images/home_orange_projet.png')}}" alt="">
-									<p>Il n' y a pas encore de news relatives à ce projet</p>
-									</center>
-									@else
 
-										@foreach($projet->nouvelles as $nouvelle)
+									@if(count($projet->nouvelles))
+									@foreach($projet->nouvelles as $nouvelle)
 									<div class="image">
 										<img src="{{asset('images/photo_nouvelles/'.$nouvelle->photo)}}">
 									</div>
@@ -81,6 +76,13 @@
 									<div class="ui divider"></div>
 									@endforeach
 
+									@else
+
+									<center>
+
+										<img class="ui medium image" src="{{asset('images/home_orange_projet.png')}}" alt="">
+										<p style="font-size: 1.2em; color: #666666;">Il n' y a pas encore de news relatives à ce projet</p>
+									</center>
 									@endif
 								</el-tab-pane>
 							</el-tabs>

@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Oxygen:700|Source+Sans+Pro:300);
-@import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Anton');
 @import url('https://fonts.googleapis.com/css?family=Amiri|Cairo|Rakkas|Scheherazade');
 body{
     margin: 0;
@@ -32,18 +31,6 @@ body{
     background-color: rgba(0, 0, 0, 0.7);
 
 }
-/*.slider_description{
-    font-size: 1.2rem;
-    position: absolute;
-    top:5em;
-    left: 3em;
-    width: 40%;   
-    z-index: 1;
-    color: #FFF;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-
-}*/
 
 #rubrique_pc{
     width: 300px;
@@ -159,17 +146,22 @@ canvas {
   }
   .main-title{
     font-family:'Lato', sans-serif;
-    font-size: 1.7em;
+    font-size: 1.5em;
     padding:1em;
-    font-weight: 700;
+    color:white;
+    font-weight: 900;
     text-align: center;
+    letter-spacing: .1em;
     width: 100%;
     height: 100%;
-  }
-
+}
 
 b{
     color:#000;
+}
+
+.main-title:lang(ar){
+  letter-spacing: 0;
 }
 a:lang(ar){
         font-family: 'Cairo', "Tamil MN", serif;
@@ -219,6 +211,13 @@ h1.ui.header{
     text-align: center;
     padding:20px;
 }
+/*qui somme nous page*/
+ .initiative_list:lang(ar)
+      {
+      list-style: none;
+      }
+
+/* styling search algolia */
 .el-dropdown-menu__item {
     width:100% !important;
     }
@@ -310,4 +309,8 @@ border-radius:4px;
 }
 .ais-results{
   display: block;
+}
+
+.ui.statistics>.statistic {
+flex:1 1 auto;
 }

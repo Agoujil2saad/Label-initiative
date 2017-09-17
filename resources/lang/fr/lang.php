@@ -11,12 +11,12 @@ return [
   Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depuis des décennies <br> dans ces régions, malgré toutes les initiatives <br> et tous les efforts qui ont été déployés. »',
 
   'message_principale' => ' Vous êtes une association ou une coopérative de la province de <b>KENITRA ?</b> <br>
-  Vous cherchez des solutions à vos besoins ? <br>
+  Vous portez un projet répondant á un besoin ?<br>
   Vous souhaitez participer au développement de votre territoire<br>
-  trouver des partenaires et gagner en visibilité ? <br>',
+  trouver des partenaires et gagner en visibilité ?<br>',
 
   'name_of_app' => 'LABEL INITIATIVE',
-  'support_message' => 'vous accompagne et facilite la réalisation de vos projets.',
+  'support_message' => 'vous accompagne <br>et facilite la réalisation de vos projets.',
   'deposer_projet' => 'Déposer mon projet',
   'decouvrir_projet' => 'DÉCOUVRIR LES PROJETS',
   'chiffre_cle' => 'DES CHIFFRES CLÉS',
@@ -42,7 +42,7 @@ return [
   'projet_news' => 'Actualité du projet',
   'chat_with_partners' => 'Contacter mes partenaires',
         // espace partenaire
-  'add_news' => 'ajouter des  Nouvelles sur le projet',
+  'add_news' => 'Ajouter une nouvelle sur le projet',
   'projet_followed' => 'les projets suivis',
   'edit_my_acc' => 'Modifier mon compte',
         // 
@@ -73,7 +73,7 @@ return [
   'like_message' => 'En cliquant sur le cœur avant tout, vous recevrez les nouvelles liées à ce projet et sera en mesure de chater avec le propriétaire du projet à partir de votre espace ',
         //formularie projet items
   'decriver_projet' => 'Décrivez-nous en détail votre projet',
-  'monntant_estime' => 'budget estimé en Dirham',
+  'montant_estime' => 'budget estimé en Dirham',
   'titre_projet' => 'Titre du projet',
   'projet_type' => 'Type du projet',
   'add_photos_here' => 'Ajouter les photos de Votre projet ici',
@@ -87,7 +87,13 @@ return [
   'func' => 'Fonction',
   'region' => 'Region',
   'update' => 'mise à jour',
+  'edit' => 'Modifier',
+  'delete' => 'Supprimer',
+  'upload' => 'télécharger',
 
+// all projet search 
+  'projet_on_budjet' => 'Projets selon le budget',
+  'projet_on_type' => 'Projets selon la catégorie',
 
 
 
