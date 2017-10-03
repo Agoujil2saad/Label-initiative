@@ -27,6 +27,6 @@
             </div>
         </div>
         <hr>
-        <div id="copyright">Copyright © 2017 - Synergie pour le Développement des Territoires</div>
+        <div id="copyright">Copyright © 2017 - MD SYNERGY</div>
     </div>
 </div>

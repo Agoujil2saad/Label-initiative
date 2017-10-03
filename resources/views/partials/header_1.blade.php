@@ -3,11 +3,13 @@
         <a href="/">
             <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui left floating small image" id="logo_left">
         </a>
-        <div class="ui sidebar orange vertical menu" id="sidebar_navigation">
-            <a class="item" href="/qui_sommes_nous">
-                @lang('lang.header_us')
-            </a>
-            <a class="item" href="{{URL::to('projet')}}">
+        <div class="ui sidebar  compact orange vertical menu" id="sidebar_navigation">
+          <a href="/guide_porteur" class="item">
+            <h3 class="ui orange small header">
+              @lang('lang.footer_guide')
+            </h3>
+          </a>
+          <a class="item" href="{{URL::to('projet')}}">
              @lang('lang.header_projets')
          </a>
          <a class="item" href="{{URL::to('partenaire')}}">
@@ -57,27 +59,27 @@
 </div>
 
 <div class="nine wide column middle aligned" id="navigation_menu">
-    <div class="ui five orange item secondary menu">
-        <a href="/qui_sommes_nous" class="item"> 
-          <p class="ui small orange header">
-           @lang('lang.header_us')
-       </p>      
+    <div class="ui five orange compact item secondary menu">
+      <a href="/guide_porteur" class="item">
+          <h3 class="ui orange small header">
+              @lang('lang.footer_guide')
+            </h3>
+      </a>
+      <a href="{{URL::to('projet')}}" class=" item">
+        <p class=" ui small orange header">
+            @lang('lang.header_projets')
+        </p> 
+    </a>
+    <a href="{{URL::to('evenement')}}" class="item">
+       <p class=" ui small orange header">
+           @lang('lang.header_events')
+       </p>  
    </a>
-   <a href="{{URL::to('projet')}}" class=" item">
-    <p class=" ui small orange header">
-        @lang('lang.header_projets')
-    </p> 
-</a>
-<a href="{{URL::to('evenement')}}" class="item">
-   <p class=" ui small orange header">
-       @lang('lang.header_events')
-   </p>  
-</a>
 
-<a href="{{URL::to('partenaire')}}" class="item">
-   <p class=" ui small orange header">
-    @lang('lang.header_partners')
-</p>
+   <a href="{{URL::to('partenaire')}}" class="item">
+       <p class=" ui small orange header">
+        @lang('lang.header_partners')
+    </p>
 </a>
 
 @if(Auth::guest())
@@ -142,11 +144,11 @@
         <i class="world icon"></i>
         <span class="text">
             @if(App::getLocale()=="ar")
-                    <i class="ma flag"></i>
-                    العربية
+            <i class="ma flag"></i>
+            العربية
             @else
-                    <i class="{{App::getLocale()}} flag"></i>
-                    Francais
+            <i class="{{App::getLocale()}} flag"></i>
+            Francais
             @endif
 
         </span>       
@@ -171,11 +173,10 @@
 </div>
 
 <div class="two wide column middle aligned">
-    @if(App::getLocale()=="ar")
-    <a href="/"><img src="{{ asset("images/logo(arabic).png") }}" alt="" class="ui  right floating small image" id="logo_right"></a>
-    @else
+  <center>
     <a href="/"><img src="{{ asset("images/test_modified.png") }}" alt="" class="ui  right floating small image" id="logo_right"></a>
-    @endif
+</center>
+
 </div>
 
 </div>

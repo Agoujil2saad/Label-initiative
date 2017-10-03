@@ -10,13 +10,16 @@ return [
   « En dépit des progrès réalisés par notre pays,<br> ce qui me désole, c’est cette situation de précarité que vivent <br>certains de nos concitoyens dans les régions éloignées et enclavées <br>, surtout sur les sommets de l’Atlas et du Rif,<br> les zones sahariennes arides et les oasis <br> ainsi que certains villages dans les plaines et sur les côtes. <br>
   Nous avons conscience de l’ampleur <br>du déficit qui s’est accumulé depuis des décennies <br> dans ces régions, malgré toutes les initiatives <br> et tous les efforts qui ont été déployés. »',
 
-  'message_principale' => ' Vous êtes une association ou une coopérative de la province de <b>KENITRA ?</b> <br>
-  Vous portez un projet répondant á un besoin ?<br>
-  Vous souhaitez participer au développement de votre territoire<br>
-  trouver des partenaires et gagner en visibilité ?<br>',
+  'message_principale' => ' 
+Vous êtes une association, une coopérative, une entreprise citoyenne de la Province de <br>
+ <b>KENITRA ?</b> 
+Vous portez un projet à valeur ajoutée?<br>
+Vous souhaitez participer au développement de votre territoire, <br>
+ trouver des partenaires et gagner en visibilité ? <br>',
 
   'name_of_app' => 'LABEL INITIATIVE',
-  'support_message' => 'vous accompagne <br>et facilite la réalisation de vos projets.',
+  'support_message' => ' vous accompagne <br> 
+  durablement et facilite la réalisation de vos projets.',
   'deposer_projet' => 'Déposer mon projet',
   'decouvrir_projet' => 'DÉCOUVRIR LES PROJETS',
   'chiffre_cle' => 'DES CHIFFRES CLÉS',
@@ -66,7 +69,7 @@ return [
   'footer_presse_space' => 'Espace de presse',
   'footer_reclamation' => 'Réclamation',
   'footer_team' => 'L\'équipe',
-  'footer_guide' => 'Guide De Porteur De Projet',
+  'footer_guide' => 'Guide Porteur ',
   'footer_invi_particip' => 'Investissement Participatif',
   'follow_us' => 'SUIVEZ NOUS SUR',
   'access_denied' => 'ACCÈS REFUSÉ',

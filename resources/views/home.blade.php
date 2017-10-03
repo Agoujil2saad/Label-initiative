@@ -381,7 +381,6 @@ background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 
 
 <script src="{{ mix('js/app.js') }}"></script>
-<script src="{{ mix('js/user-notifications.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{asset('js/rvslider.min.js')}}"></script>
 <script>
