@@ -69,7 +69,7 @@ Vous souhaitez participer au développement de votre territoire, <br>
   'footer_presse_space' => 'Espace de presse',
   'footer_reclamation' => 'Réclamation',
   'footer_team' => 'L\'équipe',
-  'footer_guide' => 'Guide Porteur ',
+  'footer_guide' => ' À propos ',
   'footer_invi_particip' => 'Investissement Participatif',
   'follow_us' => 'SUIVEZ NOUS SUR',
   'access_denied' => 'ACCÈS REFUSÉ',
