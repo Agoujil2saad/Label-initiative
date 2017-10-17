@@ -1,52 +1,54 @@
 <div class="row" style="border-bottom: 5px solid orange; padding:1em 0; margin: 0;">
-    <div class="two wide column middle aligned">
-        <a href="/">
-            <img src="{{asset("images/synergie.png")}}" alt="images/synergie.png" class="ui left floating small image" id="logo_left">
-        </a>
-        <div class="ui sidebar  compact orange vertical menu" id="sidebar_navigation">
-          <a href="/guide_porteur" class="item">
-            <h3 class="ui orange small header">
-              @lang('lang.footer_guide')
-            </h3>
-          </a>
-          <a class="item" href="{{URL::to('projet')}}">
-             @lang('lang.header_projets')
-         </a>
-         <a class="item" href="{{URL::to('partenaire')}}">
-           @lang('lang.header_partners')
-       </a>
-       <a class="item" href="{{URL::to('evenement')}}">
-        @lang('lang.header_events')
-    </a>
-    <a class="item">
-        @if(Auth::guest())
-        <div class="ui orange button">
-           @lang('lang.header_connect')
-       </div>
-       @else
-       <div class="ui dropdown">
-        <div class="text">
-            <img class="ui avatar image" src="images/man.jpg" alt="" >
-            {{ Auth::user()->name }}
-        </div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-            @role('Admin')
-            <a href="#"><i class="unlock alternate icon"></i>
-                @lang('lang.header_admin')
-            </a>
-            @endrole
+    <div class="four wide column middle aligned">
+       <center>
+        <a href="/"><img src="{{ asset("images/test_modified.png") }}" alt="" class="ui  right floating small image" id="logo_right"></a>
+    </center>
 
-            <div class="item">
-             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="sign out icon"></i>
-                @lang('lang.header_logout')
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </div>
+
+    <div class="ui sidebar  compact orange vertical menu" id="sidebar_navigation">
+      <a href="/guide_porteur" class="item">
+        <h3 class="ui orange small header">
+          @lang('lang.footer_guide')
+      </h3>
+  </a>
+  <a class="item" href="{{URL::to('projet')}}">
+   @lang('lang.header_projets')
+</a>
+<a class="item" href="{{URL::to('partenaire')}}">
+ @lang('lang.header_partners')
+</a>
+<a class="item" href="{{URL::to('evenement')}}">
+    @lang('lang.header_events')
+</a>
+<a class="item">
+    @if(Auth::guest())
+    <div class="ui orange button">
+     @lang('lang.header_connect')
+ </div>
+ @else
+ <div class="ui dropdown">
+    <div class="text">
+        <img class="ui avatar image" src="images/man.jpg" alt="" >
+        {{ Auth::user()->name }}
     </div>
+    <i class="dropdown icon"></i>
+    <div class="menu">
+        @role('Admin')
+        <a href="#"><i class="unlock alternate icon"></i>
+            @lang('lang.header_admin')
+        </a>
+        @endrole
+
+        <div class="item">
+           <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i class="sign out icon"></i>
+            @lang('lang.header_logout')
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+    </div>
+</div>
 </div>
 @endif
 </a>
@@ -58,12 +60,12 @@
 </div>
 </div>
 
-<div class="nine wide column middle aligned" id="navigation_menu">
-    <div class="ui five orange compact item secondary menu">
+<div class="eleven wide column middle aligned" id="navigation_menu">
+    <div class="ui six orange compact item secondary menu">
       <a href="/guide_porteur" class="item">
           <h3 class="ui orange small header">
               @lang('lang.footer_guide')
-            </h3>
+          </h3>
       </a>
       <a href="{{URL::to('projet')}}" class=" item">
         <p class=" ui small orange header">
@@ -71,13 +73,13 @@
         </p> 
     </a>
     <a href="{{URL::to('evenement')}}" class="item">
-       <p class=" ui small orange header">
-           @lang('lang.header_events')
-       </p>  
-   </a>
+     <p class=" ui small orange header">
+         @lang('lang.header_events')
+     </p>  
+ </a>
 
-   <a href="{{URL::to('partenaire')}}" class="item">
-       <p class=" ui small orange header">
+ <a href="{{URL::to('partenaire')}}" class="item">
+     <p class=" ui small orange header">
         @lang('lang.header_partners')
     </p>
 </a>
@@ -130,17 +132,12 @@
     </div>
 </div>
 @endif
-</div>
-</div>
 
-@if(Auth::check())
-<div class="one wide column middle aligned">
-    <user-notifications></user-notifications>
-</div>        
-@endif
-
-<div class="two wide middle aligned column">
-    <div class="ui dropdown">
+<div class="item">  
+    <center>
+        
+ 
+     <div class="ui dropdown">
         <i class="world icon"></i>
         <span class="text">
             @if(App::getLocale()=="ar")
@@ -170,13 +167,16 @@
             @endforeach       
         </div>
     </div>
+       </center>
+</div>
+</div>
 </div>
 
-<div class="two wide column middle aligned">
-  <center>
-    <a href="/"><img src="{{ asset("images/test_modified.png") }}" alt="" class="ui  right floating small image" id="logo_right"></a>
-</center>
+@if(Auth::check())
+<div class="one wide column middle aligned">
+    <user-notifications></user-notifications>
+</div>        
+@endif
 
-</div>
 
 </div>

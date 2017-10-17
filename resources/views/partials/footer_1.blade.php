@@ -4,7 +4,6 @@
             <div class="five wide column">
                 <h4 class="ui orange header" id="footer_titles">@lang('lang.name_of_app')</h4>
                 <div class="ui inverted link list" id="footer_items">
-                    <a href="/qui_sommes_nous" class="item">@lang('lang.header_us')</a>
                     <a href="/contact" class="item">@lang('lang.footer_contact')</a>
                 </div>
             </div>
